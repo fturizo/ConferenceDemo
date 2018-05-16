@@ -1,14 +1,13 @@
 package fish.payara.demos.conference.speaker.api;
 
-import fish.payara.demos.conference.speaker.entitites.Venue;
-import fish.payara.demos.conference.speaker.services.VenueService;
-import java.util.Collection;
+import java.util.List;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
+import org.eclipse.microprofile.config.inject.ConfigProperty;
 
 /**
  *
@@ -20,11 +19,12 @@ import javax.ws.rs.core.MediaType;
 public class VenueResource {
     
     @Inject
-    VenueService venueService;
+    @ConfigProperty(name = "demo.conference.speaker.venues", defaultValue = "Ocarina")
+    private List<String> venues;
     
     @GET
     @Path("/all")
-    public Collection<Venue> all(){
-        return venueService.getAllVenues();
+    public List<String> all(){
+        return venues;
     }
 }
