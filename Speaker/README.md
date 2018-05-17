@@ -1,0 +1,13 @@
+# Speaker Service
+
+Handles the management of speakers and sessions venues.
+
+# Running the Service
+
+You can run the service directly by using the `payara-micro.jar` like this:
+
+	java -jar payara-micro.jar --deploy target\microservice-speaker.war --clusterName speaker --autoBindHttp
+
+Or by running the `payara-micro:start` goal:
+
+	mvn payara-micro:start

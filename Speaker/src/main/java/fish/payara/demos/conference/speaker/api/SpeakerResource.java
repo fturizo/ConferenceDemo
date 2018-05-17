@@ -3,6 +3,7 @@ package fish.payara.demos.conference.speaker.api;
 import fish.payara.demos.conference.speaker.entitites.Speaker;
 import fish.payara.demos.conference.speaker.services.SpeakerService;
 import java.net.URI;
+import java.util.Optional;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.ws.rs.GET;
@@ -29,7 +30,7 @@ public class SpeakerResource {
     @GET
     @Path("/{id}")
     public Response getSpeaker(@PathParam("id") Integer id) {
-        return speakerService.get(id)
+        return Optional.ofNullable(speakerService.get(id))
                 .map(Response::ok)
                 .orElse(Response.status(Status.NOT_FOUND))
                 .build();

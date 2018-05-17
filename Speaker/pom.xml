@@ -39,7 +39,7 @@
                             <value>true</value>
                         </option>
                         <option>
-                            <key>--name</key>
+                            <key>--clusterName</key>
                             <value>speaker</value>
                         </option>
                     </commandLineOptions>

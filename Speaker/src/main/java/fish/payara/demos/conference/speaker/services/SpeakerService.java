@@ -2,6 +2,10 @@ package fish.payara.demos.conference.speaker.services;
 
 import fish.payara.demos.conference.speaker.entitites.Speaker;
 import java.util.Optional;
+import java.util.logging.Logger;
+import javax.cache.annotation.CacheDefaults;
+import javax.cache.annotation.CacheKey;
+import javax.cache.annotation.CacheResult;
 import javax.enterprise.context.ApplicationScoped;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -12,7 +16,10 @@ import javax.transaction.Transactional;
  * @author fabio
  */
 @ApplicationScoped
+@CacheDefaults(cacheName = "speakers")
 public class SpeakerService {
+    
+    private static final Logger LOG = Logger.getLogger(SpeakerService.class.getName());
     
     @PersistenceContext(unitName = "Speaker")
     EntityManager em;
@@ -23,7 +30,9 @@ public class SpeakerService {
         return speaker;
     }
     
-    public Optional<Speaker> get(Integer id){
-        return Optional.ofNullable(em.find(Speaker.class, id));
+    @CacheResult
+    public Speaker get(@CacheKey Integer id){
+        LOG.info("Retrieving speaker from database");
+        return em.find(Speaker.class, id);
     } 
 }
