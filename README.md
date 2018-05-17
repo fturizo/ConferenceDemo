@@ -12,6 +12,6 @@ The following services are defined:
 2. **Session**: Handles session data. Unlike the official Conference demo, here scheduling sessions is doing in tandem while creating them, so no `schedule` service is used.
 3. **Vote**: Handles session rating and the creation of attendees.
 
-##Provisioning
+## Provisioning
 
 All three services are provisioned using [Payara Micro 5](https://www.payara.fish/payara_micro). The Payara Micro Maven Plugin is configured on all three projects.
