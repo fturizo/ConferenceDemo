@@ -47,4 +47,11 @@
                 <netbeans.deploy.clientUrlPart>/</netbeans.deploy.clientUrlPart>
             </properties>
         </action>
+        <action>
+            <actionName>CUSTOM-Run Payara Micro</actionName>
+            <displayName>Run Payara Micro</displayName>
+            <goals>
+                <goal>payara-micro:start</goal>
+            </goals>
+        </action>
     </actions>
