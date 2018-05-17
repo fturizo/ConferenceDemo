@@ -1,8 +1,6 @@
 package fish.payara.demos.conference.session.api;
 
-import fish.payara.demos.conference.session.entities.Schedule;
 import fish.payara.demos.conference.session.entities.Session;
-import fish.payara.demos.conference.session.services.ScheduleService;
 import fish.payara.demos.conference.session.services.SessionService;
 import java.net.URI;
 import java.time.LocalDate;
@@ -30,51 +28,43 @@ import org.eclipse.microprofile.metrics.annotation.Metered;
 @RequestScoped
 @Produces(MediaType.APPLICATION_JSON)
 public class SessionResource {
-    
+
     @Inject
     SessionService sessionService;
-    
-    @Inject
-    ScheduleService scheduleService;
-    
+
     @POST
     @Path("/{schedule}")
     @Consumes(MediaType.APPLICATION_JSON)
-    @Metered(name= "session.creation.tries", absolute = true)
-    public Response create(@PathParam("schedule") Integer scheduleId, Session session){
-        Optional<Schedule> schedule = scheduleService.getSchedule(scheduleId);
-        if(!schedule.isPresent()){
-            return Response.status(Status.NOT_FOUND).build();
-        }else{
-            session = sessionService.register(session, schedule.get());
-            return Response.created(URI.create("/" + session.getId()))
-                    .entity(session).build();
-        }
+    @Metered(name = "session.creation.tries", absolute = true)
+    public Response create(@PathParam("schedule") Integer scheduleId, Session session) {
+        session = sessionService.register(session);
+        return Response.created(URI.create("/" + session.getId()))
+                .entity(session).build();
     }
-    
+
     @GET
     @Path("/{id}")
-    @Metered(name= "session.deletion.tries", absolute = true)
-    public Response get(@PathParam("id") Integer id){
+    @Metered(name = "session.deletion.tries", absolute = true)
+    public Response get(@PathParam("id") Integer id) {
         return sessionService.retrieve(id).map(Response::ok)
-                             .orElse(Response.status(Status.NOT_FOUND)).build();
+                .orElse(Response.status(Status.NOT_FOUND)).build();
     }
-    
+
     @DELETE
     @Path("/{id}")
-    public Response delete(@PathParam("id") Integer id){
+    public Response delete(@PathParam("id") Integer id) {
         Optional<Session> session = sessionService.retrieve(id);
-        if(session.isPresent()){
+        if (session.isPresent()) {
             sessionService.delete(session.get());
             return Response.accepted().build();
-        }else{
+        } else {
             return Response.status(Status.NOT_FOUND).build();
         }
     }
-    
+
     @GET
     @Path("/date/{date}")
-    public List<Session> forDate(@PathParam("date") String date){
+    public List<Session> forDate(@PathParam("date") String date) {
         return sessionService.retrieve(LocalDate.parse(date));
     }
 }

@@ -1,6 +1,5 @@
 package fish.payara.demos.conference.session.services;
 
-import fish.payara.demos.conference.session.entities.Schedule;
 import fish.payara.demos.conference.session.entities.Session;
 import java.time.LocalDate;
 import java.util.List;
@@ -36,8 +35,7 @@ public class SessionService {
     
     @Transactional
     @Timed(name = "session.creation.time", absolute = true)
-    public Session register(Session session, Schedule schedule){
-        session = session.with(schedule);
+    public Session register(Session session){
         em.persist(session);
         em.flush();
         sessionSpaces.dec();

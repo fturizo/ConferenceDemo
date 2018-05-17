@@ -2,8 +2,10 @@ package fish.payara.demos.conference.session.entities;
 
 import fish.payara.demos.conference.session.converters.SpeakersConverter;
 import java.io.Serializable;
+import java.time.Duration;
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Objects;
 import javax.json.bind.annotation.JsonbCreator;
 import javax.json.bind.annotation.JsonbProperty;
 import javax.persistence.Convert;
@@ -11,7 +13,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 import javax.persistence.NamedQuery;
 
 /**
@@ -20,7 +21,7 @@ import javax.persistence.NamedQuery;
  */
 @Entity
 @NamedQuery(name = "Session.getForDay", 
-            query = "select s from Session s where s.schedule.date = :date order by s.title")
+            query = "select s from Session s where s.date = :date order by s.title")
 public class Session implements Serializable{
     
     @Id
@@ -28,53 +29,70 @@ public class Session implements Serializable{
     private Integer id;
     
     private String title;
+    private String venue;
+    private LocalDate date;
+    private Duration duration;
     
     @Convert(converter = SpeakersConverter.class)
     private List<String> speakers;
-    
-    @ManyToOne
-    private Schedule schedule;
 
     public Session() {
     }
 
     @JsonbCreator
-    public Session(@JsonbProperty("title") String title, @JsonbProperty("speakers") List<String> speakers) {
+    public Session(@JsonbProperty("title") String title,
+                   @JsonbProperty("venue") String venue,
+                   @JsonbProperty("date") LocalDate date,
+                   @JsonbProperty("speakers") List<String> speakers) {
         this.title = title;
+        this.date = date;
+        this.venue = venue;
         this.speakers = speakers;
     }
 
-    private Session(String title, List<String> speakers, Schedule schedule) {
-        this(title, speakers);
-        this.schedule = schedule;
-    }
-
-    @JsonbProperty
     public Integer getId() {
         return id;
     }
 
-    @JsonbProperty
     public String getTitle() {
         return title;
     }
 
-    @JsonbProperty
     public List<String> getSpeakers() {
         return speakers;
     }
-    
-    @JsonbProperty
-    public LocalDate getScheduledAt(){
-        return schedule.getDate();
+
+    public String getVenue() {
+        return venue;
     }
-    
-    @JsonbProperty
-    public String getVenue(){
-        return schedule.getVenue();
+
+    public LocalDate getDate() {
+        return date;
     }
-    
-    public Session with(Schedule schedule){
-        return new Session(title, speakers, schedule);
+
+    public Duration getDuration() {
+        return duration;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 89 * hash + Objects.hashCode(this.id);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Session other = (Session) obj;
+        return Objects.equals(this.id, other.id);
     }
 }
