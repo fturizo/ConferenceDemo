@@ -33,28 +33,38 @@ import org.eclipse.microprofile.faulttolerance.Fallback;
 @Produces(MediaType.APPLICATION_JSON)
 @RolesAllowed("CAN_VOTE")
 public class SessionVoteResource {
-    
+
     @Inject
     Principal jwtPrincipal;
-    
+
     @Inject
     AttendeeService attendeeService;
-    
+
     @Inject
     SessionRatingService ratingService;
-    
+
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response rate(SessionRating rating){
+    public Response rate(SessionRating rating) {
         Attendee currentUser = attendeeService.getByEmail(jwtPrincipal.getName())
-                                                .orElseThrow(() -> new BadRequestException("Invalid JWT token"));
-        //Attendee currentUser = attendeeService.getById(1).get();
+                .orElseThrow(() -> new BadRequestException("Invalid JWT token"));
         return Response.ok(ratingService.addRating(rating, currentUser)).build();
     }
-    
+
     @GET
     @Path("/session/{session}")
-    public List<SessionRating> getRatingSummary(@PathParam("session") Integer sessionId){
+    public List<SessionRating> getRatingsForSession(@PathParam("session") Integer sessionId) {
         return ratingService.getRatingsFor(sessionId);
+    }
+
+    @GET
+    @Path("/summary/{session}")
+    public Response getSummaryForSession(@PathParam("session") Integer sessionId) {
+        List<SessionRating> results = ratingService.getRatingsFor(sessionId);
+
+        return Response.ok().entity(Json.createObjectBuilder()
+                .add("count", results.size())
+                .add("average", results.stream().mapToDouble(SessionRating::getRating).average().orElse(0.0)))
+                .build();
     }
 }
