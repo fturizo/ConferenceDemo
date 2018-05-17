@@ -1,14 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package fish.payara.demos.conference.vote.entities;
 
 import java.io.Serializable;
 import java.util.Objects;
 import javax.json.bind.annotation.JsonbCreator;
 import javax.json.bind.annotation.JsonbProperty;
+import javax.json.bind.annotation.JsonbTransient;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -17,7 +13,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.NamedQuery;
 
 /**
- *
+ * 
  * @author Fabio Turizo
  */
 @Entity
@@ -78,6 +74,7 @@ public class SessionRating implements Serializable {
         return attendee.getName();
     }
 
+    @JsonbTransient
     public Attendee getAttendee() {
         return attendee;
     }

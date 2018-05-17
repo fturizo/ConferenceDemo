@@ -38,7 +38,7 @@ public class AttendeeResource {
     
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
-    @Retry(maxRetries = 3, delay = 30, delayUnit = ChronoUnit.SECONDS)
+    @Retry(maxRetries = 5, delay = 30, delayUnit = ChronoUnit.SECONDS)
     public Response register(Attendee attendee){
         Attendee result = attendeeService.create(attendee);
         return Response.created(URI.create("/attendee/" + result.getId()))

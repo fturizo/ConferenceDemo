@@ -5,7 +5,6 @@ import fish.payara.demos.conference.vote.entities.SessionRating;
 import static java.time.temporal.ChronoUnit.SECONDS;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.cache.Cache;
 import javax.enterprise.context.ApplicationScoped;

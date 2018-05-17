@@ -11,7 +11,7 @@ import org.eclipse.microprofile.auth.LoginConfig;
  * @author fabio
  */
 @ApplicationPath("/")
-//@ApplicationScoped
+@ApplicationScoped
 @LoginConfig(authMethod = "MP-JWT", realmName = "MP-JWT")
 @DeclareRoles("CAN_VOTE")
 public class VoteApplication extends Application{

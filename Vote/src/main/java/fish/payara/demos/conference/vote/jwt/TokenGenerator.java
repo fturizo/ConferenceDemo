@@ -11,7 +11,6 @@ import java.security.KeyFactory;
 import java.security.PrivateKey;
 import java.security.spec.PKCS8EncodedKeySpec;
 import java.util.Base64;
-import java.util.logging.Logger;
 import javax.enterprise.context.ApplicationScoped;
 import javax.json.Json;
 import javax.json.JsonObject;
@@ -22,16 +21,12 @@ import org.eclipse.microprofile.jwt.Claims;
  */
 @ApplicationScoped
 public class TokenGenerator {
-
-    private static final Logger LOG = Logger.getLogger(TokenGenerator.class.getName());
     
     public String generateFor(Attendee attendee){
         try{
-            String jwt = generateJWT(attendee).toString();
-            //LOG.info(jwt);
             SignedJWT signedJWT = new SignedJWT(new JWSHeader.Builder(JWSAlgorithm.RS256)
                     .keyID("/privateKey.pem")
-                    .type(JOSEObjectType.JWT).build(), JWTClaimsSet.parse(jwt));
+                    .type(JOSEObjectType.JWT).build(), JWTClaimsSet.parse(generateJWT(attendee).toString()));
             signedJWT.sign(new RSASSASigner(readPrivateKey("privateKey.pem")));
             return signedJWT.serialize();
         } catch(Exception ex){
@@ -47,16 +42,21 @@ public class TokenGenerator {
                 .add(Claims.jti.name(), "att-" + attendee.getId())
                 .add(Claims.sub.name(), attendee.getName())
                 .add(Claims.upn.name(), attendee.getEmail())
-                .add(Claims.exp.name(), secondsNow)
-                .add(Claims.iat.name(), secondsNow + 1_000)
+                .add(Claims.exp.name(), secondsNow + 1_000)
+                .add(Claims.iat.name(), secondsNow)
                 .add(Claims.iss.name(), "demos.payara.fish")
                 .add(Claims.auth_time.name(), secondsNow)
                 .add(Claims.groups.name(), Json.createArrayBuilder().add(attendee.getRole().name()).build())
                 .build();
     }
 
-    public static PrivateKey readPrivateKey(String resourceName) throws Exception {
-        byte[] byteBuffer = new byte[16384];
+    private static PrivateKey readPrivateKey(String resourceName) throws Exception {
+        return KeyFactory.getInstance("RSA")
+                         .generatePrivate(new PKCS8EncodedKeySpec(Base64.getDecoder().decode(readKey(resourceName))));
+    }
+    
+    private static String readKey(String resourceName) throws Exception{
+        byte[] byteBuffer = new byte[16384]; 
         int length = Thread.currentThread().getContextClassLoader()
                 .getResource(resourceName)
                 .openStream()
@@ -67,8 +67,6 @@ public class TokenGenerator {
                 .replaceAll("\r\n", "")
                 .replaceAll("\n", "")
                 .trim();
-        LOG.info(key);
-        return KeyFactory.getInstance("RSA")
-                         .generatePrivate(new PKCS8EncodedKeySpec(Base64.getDecoder().decode(key)));
+        return key;
     }
 }

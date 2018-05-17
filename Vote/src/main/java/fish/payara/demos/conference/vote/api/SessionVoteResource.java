@@ -28,13 +28,13 @@ import org.eclipse.microprofile.faulttolerance.Fallback;
  *
  * @author Fabio Turizo
  */
-@Path("/vote")
+@Path("/rating")
 @RequestScoped
 @Produces(MediaType.APPLICATION_JSON)
-//@RolesAllowed("CAN_VOTE")
+@RolesAllowed("CAN_VOTE")
 public class SessionVoteResource {
     
-    //@Inject
+    @Inject
     Principal jwtPrincipal;
     
     @Inject
@@ -46,14 +46,14 @@ public class SessionVoteResource {
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     public Response rate(SessionRating rating){
-        /*Attendee currentUser = attendeeService.getByEmail(jwtPrincipal.getName())
-                                                .orElseThrow(() -> new BadRequestException("Invalid JWT token"));*/
-        Attendee currentUser = attendeeService.getById(1).get();
+        Attendee currentUser = attendeeService.getByEmail(jwtPrincipal.getName())
+                                                .orElseThrow(() -> new BadRequestException("Invalid JWT token"));
+        //Attendee currentUser = attendeeService.getById(1).get();
         return Response.ok(ratingService.addRating(rating, currentUser)).build();
     }
     
     @GET
-    @Path("/summary/{session}")
+    @Path("/session/{session}")
     public List<SessionRating> getRatingSummary(@PathParam("session") Integer sessionId){
         return ratingService.getRatingsFor(sessionId);
     }
