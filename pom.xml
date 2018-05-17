@@ -34,12 +34,18 @@
                 <type>pom</type>
                 <scope>provided</scope>
             </dependency>
+            <dependency>
+                <groupId>javax.cache</groupId>
+                <artifactId>cache-api</artifactId>
+                <version>1.0.0</version>
+                <scope>provided</scope>
+            </dependency>
         </dependencies>
     </dependencyManagement>
     
     <modules>
-        <module>Schedule</module>
         <module>Session</module>
         <module>Vote</module>
+        <module>Speaker</module>
     </modules>
 </project>
