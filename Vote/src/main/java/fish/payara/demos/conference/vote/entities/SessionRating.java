@@ -38,16 +38,19 @@ public class SessionRating implements Serializable {
     
     @JsonbCreator
     public SessionRating(@JsonbProperty("session-id") Integer sessionId, 
-                         @JsonbProperty("summary") String sessionSummary, 
                          @JsonbProperty("rating") Integer rating) {
         this.sessionId = sessionId;
-        this.sessionSummary = sessionSummary;
         this.rating = rating;
+    }
+    
+    private SessionRating(Integer sessionId, Integer rating, Attendee attendee) {
+        this(sessionId, rating);
+        this.attendee = attendee;
     }
 
     private SessionRating(Integer sessionId, String sessionSummary, Integer rating, Attendee attendee) {
-        this(sessionId, sessionSummary, rating);
-        this.attendee = attendee;
+        this(sessionId, rating, attendee);
+        this.sessionSummary = sessionSummary;
     }
 
     @JsonbProperty
@@ -80,6 +83,10 @@ public class SessionRating implements Serializable {
     }
     
     public SessionRating with(Attendee attendee){
+        return new SessionRating(sessionId, rating, attendee);
+    }
+    
+    public SessionRating with(Attendee attendee, String sessionSummary){
         return new SessionRating(sessionId, sessionSummary, rating, attendee);
     }
 

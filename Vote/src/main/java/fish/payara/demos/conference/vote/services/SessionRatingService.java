@@ -26,7 +26,10 @@ public class SessionRatingService {
     private static final Logger LOG = Logger.getLogger(SessionRatingService.class.getName());
     
     @PersistenceContext(unitName = "Vote")
-    EntityManager em;  
+    EntityManager em;
+    
+    @Inject
+    SessionDataService dataService;
     
     @Inject
     Cache<Integer, List<SessionRating>> cachedRatings;
@@ -35,13 +38,13 @@ public class SessionRatingService {
     @Fallback(fallbackMethod = "cacheRating")
     @Transactional
     public SessionRating addRating(SessionRating rating, Attendee attendee) {
-        rating = rating.with(attendee);
+        rating = rating.with(attendee, dataService.getSessionSummary(rating.getSessionId()));
         em.persist(rating);
         em.flush();
         return rating;
     }
     
-    private SessionRating cacheRating(SessionRating rating, Attendee attendee){
+    public SessionRating cacheRating(SessionRating rating, Attendee attendee){
         rating = rating.with(attendee);
         cachedRatings.putIfAbsent(rating.getSessionId(), new ArrayList<>());
         cachedRatings.get(rating.getSessionId()).add(rating);
