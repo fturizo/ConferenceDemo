@@ -25,6 +25,9 @@ public class SessionService {
     EntityManager em;
     
     @Inject
+    SpeakerDomainChecker domainChecker;
+    
+    @Inject
     @Metric(name = "session.spaces", absolute = false)
     Counter sessionSpaces;
     
@@ -36,6 +39,11 @@ public class SessionService {
     @Transactional
     @Timed(name = "session.creation.time", absolute = true)
     public Session register(Session session){
+        if(!domainChecker.checkSpeakers(session) || !domainChecker.checkVenue(session)){
+            throw new IllegalArgumentException("Invalid venue or speaker names");
+        }else if(sessionSpaces.getCount() == 0){
+            throw new IllegalStateException("No more session spaces");
+        }
         em.persist(session);
         em.flush();
         sessionSpaces.dec();

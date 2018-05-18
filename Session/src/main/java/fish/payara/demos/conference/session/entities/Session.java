@@ -43,10 +43,12 @@ public class Session implements Serializable{
     public Session(@JsonbProperty("title") String title,
                    @JsonbProperty("venue") String venue,
                    @JsonbProperty("date") LocalDate date,
+                   @JsonbProperty("duration") Duration duration,
                    @JsonbProperty("speakers") List<String> speakers) {
         this.title = title;
         this.date = date;
         this.venue = venue;
+        this.duration = duration;
         this.speakers = speakers;
     }
 

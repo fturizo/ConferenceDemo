@@ -33,10 +33,9 @@ public class SessionResource {
     SessionService sessionService;
 
     @POST
-    @Path("/{schedule}")
     @Consumes(MediaType.APPLICATION_JSON)
     @Metered(name = "session.creation.tries", absolute = true)
-    public Response create(@PathParam("schedule") Integer scheduleId, Session session) {
+    public Response create(Session session) {
         session = sessionService.register(session);
         return Response.created(URI.create("/" + session.getId()))
                 .entity(session).build();
