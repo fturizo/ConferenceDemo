@@ -3,14 +3,17 @@ package fish.payara.demos.conference.speaker.api;
 import fish.payara.demos.conference.speaker.entitites.Speaker;
 import fish.payara.demos.conference.speaker.services.SpeakerService;
 import java.net.URI;
+import java.util.List;
 import java.util.Optional;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.ws.rs.GET;
+import javax.ws.rs.HEAD;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
@@ -39,7 +42,13 @@ public class SpeakerResource {
     @POST
     public Response addSpeaker(Speaker speaker) {
         Speaker result = speakerService.save(speaker);
-        return Response.created(URI.create("/" + result.getId()))
+        return Response.created(URI.create("/speaker/" + result.getId()))
                         .entity(speaker).build();
+    }
+    
+    @HEAD
+    @Path("/check/")
+    public Response checkSpeakers(@QueryParam("names") List<String> names){
+        return (speakerService.allNamesExists(names) ? Response.ok() : Response.status(Status.NOT_FOUND)).build();
     }
 }

@@ -8,12 +8,14 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQuery;
 
 /**
  *
  * @author Fabio Turizo
  */
 @Entity
+@NamedQuery(name = "Speaker.all", query = "select sp from Speaker sp order by sp.name")
 public class Speaker implements Serializable{
     
     @Id

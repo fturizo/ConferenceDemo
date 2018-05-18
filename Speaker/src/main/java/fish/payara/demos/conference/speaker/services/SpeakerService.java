@@ -1,8 +1,10 @@
 package fish.payara.demos.conference.speaker.services;
 
 import fish.payara.demos.conference.speaker.entitites.Speaker;
+import java.util.List;
 import java.util.Optional;
 import java.util.logging.Logger;
+import java.util.stream.Collectors;
 import javax.cache.annotation.CacheDefaults;
 import javax.cache.annotation.CacheKey;
 import javax.cache.annotation.CacheResult;
@@ -34,5 +36,11 @@ public class SpeakerService {
     public Speaker get(@CacheKey Integer id){
         LOG.info("Retrieving speaker from database");
         return em.find(Speaker.class, id);
-    } 
+    }
+    
+    public boolean allNamesExists(List<String> names){
+        List<String> allNames = em.createNamedQuery("Speaker.all", Speaker.class).getResultStream()
+                                  .map(Speaker::getName).collect(Collectors.toList());
+        return names.stream().allMatch(allNames::contains);
+    }
 }
