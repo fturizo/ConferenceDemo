@@ -18,7 +18,7 @@
             <plugin>
                 <groupId>fish.payara.maven.plugins</groupId>
                 <artifactId>payara-micro-maven-plugin</artifactId>
-                <version>1.0.0</version>
+                <version>1.0.1</version>
                 <executions>
                     <execution>
                         <goals>
@@ -30,13 +30,12 @@
                     <artifactItem>
                         <groupId>fish.payara.extras</groupId>
                         <artifactId>payara-micro</artifactId>
-                        <version>5.181</version>
+                        <version>${payara.version}</version>
                     </artifactItem>
                     <deployWar>true</deployWar>
                     <commandLineOptions>
                         <option>
                             <key>--autoBindHttp</key>
-                            <value>true</value>
                         </option>
                         <option>
                             <key>--clusterName</key>

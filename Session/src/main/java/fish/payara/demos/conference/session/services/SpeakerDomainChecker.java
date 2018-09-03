@@ -2,8 +2,6 @@ package fish.payara.demos.conference.session.services;
 
 import fish.payara.demos.conference.session.entities.Session;
 import java.net.URI;
-import java.util.logging.Logger;
-import java.util.stream.Collectors;
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.ApplicationScoped;
 import javax.ws.rs.client.ClientBuilder;
