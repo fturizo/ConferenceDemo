@@ -5,6 +5,7 @@ import fish.payara.demos.conference.vote.entities.SessionRating;
 import static java.time.temporal.ChronoUnit.SECONDS;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.cache.Cache;
 import javax.enterprise.context.ApplicationScoped;
@@ -65,7 +66,7 @@ public class SessionRatingService {
     
     private boolean isSlow(int secondsToSleep){
         if (Math.random() > 0.4) {
-            LOG.info("Sleeping " + secondsToSleep + "s");
+            LOG.log(Level.INFO, "Sleeping {0}s", secondsToSleep);
             try {
                 Thread.sleep(secondsToSleep * 1_000);
             } catch (InterruptedException ex) {}

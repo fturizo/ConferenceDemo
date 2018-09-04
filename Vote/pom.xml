@@ -27,15 +27,12 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <artifactItem>
-                        <groupId>fish.payara.extras</groupId>
-                        <artifactId>payara-micro</artifactId>
-                        <version>${payara.version}</version>
-                    </artifactItem>
+                    <payaraVersion>${payara.version}</payaraVersion>
                     <deployWar>true</deployWar>
                     <commandLineOptions>
                         <option>
-                            <key>--autoBindHttp</key>
+                            <key>--port</key>
+                            <value>8883</value>
                         </option>
                         <option>
                             <key>--clusterName</key>
@@ -43,7 +40,7 @@
                         </option>
                         <option>
                             <key>--prebootcommandfile</key>
-                            <value>prepare-jdbc.asadmin</value>
+                            <value>db/prepare-jdbc.asadmin</value>
                         </option>
                     </commandLineOptions>
                 </configuration>

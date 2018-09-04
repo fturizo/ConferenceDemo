@@ -1,16 +1,13 @@
 package fish.payara.demos.conference.vote.services;
 
-import java.io.StringReader;
-import java.net.URI;
-import javax.annotation.PostConstruct;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.enterprise.context.ApplicationScoped;
-import javax.json.Json;
+import javax.inject.Inject;
 import javax.json.JsonObject;
-import javax.json.JsonReader;
-import javax.ws.rs.client.ClientBuilder;
-import javax.ws.rs.client.WebTarget;
-import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
+import javax.ws.rs.WebApplicationException;
+import org.eclipse.microprofile.rest.client.inject.RestClient;
+import fish.payara.demos.conference.vote.rs.interfaces.SessionServiceClient;
 
 /**
  *
@@ -19,26 +16,19 @@ import javax.ws.rs.core.Response;
 @ApplicationScoped
 public class SessionDataService {
 
-    private WebTarget sessionService;
+    private static final Logger LOG = Logger.getLogger(SessionDataService.class.getName());
 
-    @PostConstruct
-    public void init() {
-        sessionService = ClientBuilder.newClient().target(URI.create("http://localhost:8081/microservice-session"));
-    }
+    @Inject
+    @RestClient
+    private SessionServiceClient sessionService;
 
     public String getSessionSummary(Integer id) {
-        Response response = sessionService.path("/session/" + id)
-                .request()
-                .accept(MediaType.APPLICATION_JSON)
-                .get();
-        if (response.getStatusInfo().toEnum() == Response.Status.OK) {
-            try (StringReader reader = new StringReader(response.readEntity(String.class));
-                    JsonReader jsonReader = Json.createReader(reader)) {
-                JsonObject result = jsonReader.readObject();
-                return String.format("[%s] - %s, V: %s", result.getString("date"),
-                        result.getString("title"), result.getString("venue"));
-            }
-        } else {
+        try{
+            JsonObject result = sessionService.get(id);
+            return String.format("[%s] - %s, V: %s", result.getString("date"), 
+                                result.getString("title"), result.getString("venue"));
+        }catch(WebApplicationException ex){
+            LOG.log(Level.WARNING, "Error retrieving session with id: {0} message: {1}", new Object[]{id, ex.getLocalizedMessage()});
             throw new IllegalArgumentException("Invalid session id");
         }
     }
