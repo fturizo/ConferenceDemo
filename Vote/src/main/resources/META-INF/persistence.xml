@@ -3,7 +3,7 @@
     <persistence-unit name="Vote" transaction-type="JTA">
         <jta-data-source>jdbc/voteDS</jta-data-source>  
         <properties>
-            <!--property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/-->
+            <property name="javax.persistence.schema-generation.database.action" value="create"/>
         </properties>
     </persistence-unit>
 </persistence>
