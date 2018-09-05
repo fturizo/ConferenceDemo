@@ -9,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQuery;
+import org.eclipse.microprofile.openapi.annotations.media.Schema;
 
 /**
  *
@@ -16,13 +17,18 @@ import javax.persistence.NamedQuery;
  */
 @Entity
 @NamedQuery(name = "Speaker.all", query = "select sp from Speaker sp order by sp.name")
+@Schema(description = "Stores speaker information")
 public class Speaker implements Serializable{
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Schema(description = "Identifier of the speaker", required = true)
     private Integer id;
     
+    @Schema(description = "Name of the speaker", required = true)
     private String name;
+    
+    @Schema(description = "Organization that the speaker belongs", required = true)
     private String organization;
 
     public Speaker() {

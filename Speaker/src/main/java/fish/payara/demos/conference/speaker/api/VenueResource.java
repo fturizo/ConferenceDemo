@@ -12,6 +12,12 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 import org.eclipse.microprofile.config.inject.ConfigProperty;
+import org.eclipse.microprofile.openapi.annotations.Operation;
+import org.eclipse.microprofile.openapi.annotations.enums.SchemaType;
+import org.eclipse.microprofile.openapi.annotations.media.Content;
+import org.eclipse.microprofile.openapi.annotations.media.Schema;
+import org.eclipse.microprofile.openapi.annotations.parameters.Parameter;
+import org.eclipse.microprofile.openapi.annotations.responses.APIResponse;
 
 /**
  *
@@ -28,13 +34,19 @@ public class VenueResource {
     
     @GET
     @Path("/all")
+    @Operation(description = "Retrieves a list of all current venues")
+    @APIResponse(description = "The list of current venues", responseCode = "200",
+                 content = @Content(schema = @Schema(type = SchemaType.ARRAY)))
     public List<String> all(){
         return venues;
     }
     
     @HEAD
-    @Path("/check/{name}")
-    public Response checkVenue(@PathParam("name") String name){
+    @Path("/{name}")
+    @Operation(description = "Verifies if venue exists")
+    @APIResponse(description = "The venue does exist", responseCode = "200")
+    @APIResponse(description = "Venue doesn't exist", responseCode = "404")
+    public Response checkVenue(@Parameter(description = "The name of the venue to verify") @PathParam("name") String name){
         return (venues.contains(name) ? Response.ok(): Response.status(Status.NOT_FOUND)).build();
     }
 }
