@@ -48,7 +48,7 @@ public class TokenGenerator {
                 .add(Claims.jti.name(), "att-" + attendee.getId())
                 .add(Claims.sub.name(), attendee.getName())
                 .add(Claims.upn.name(), attendee.getEmail())
-                .add(Claims.exp.name(), secondsNow + 1_000)
+                .add(Claims.exp.name(), secondsNow + 10_000)
                 .add(Claims.iat.name(), secondsNow)
                 .add(Claims.iss.name(), issuer)
                 .add(Claims.auth_time.name(), secondsNow)

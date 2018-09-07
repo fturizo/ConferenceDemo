@@ -50,6 +50,7 @@
         <action>
             <actionName>CUSTOM-Start Payara Micro</actionName>
             <displayName>Start Payara Micro</displayName>
+            <preAction>build-with-dependencies</preAction>
             <goals>
                 <goal>payara-micro:start</goal>
             </goals>

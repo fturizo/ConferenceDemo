@@ -4,7 +4,10 @@ import fish.payara.demos.conference.vote.entities.Attendee;
 import fish.payara.demos.conference.vote.entities.Credentials;
 import java.util.List;
 import java.util.Optional;
+import javax.cache.Cache;
+import javax.cache.annotation.CacheDefaults;
 import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
@@ -14,23 +17,35 @@ import javax.transaction.Transactional;
  * @author Fabio Turizo
  */
 @ApplicationScoped
+@CacheDefaults(cacheName = "attendees")
 public class AttendeeService {
 
     @PersistenceContext(unitName = "Vote")
     EntityManager em;
+    
+    @Inject
+    Cache<String, Attendee> attendees;
 
     @Transactional
     public Attendee create(Attendee attendee) {
         em.persist(attendee);
         em.flush();
+        attendees.put(attendee.getEmail(), attendee);
         return attendee;
     }
 
+    
     public Optional<Attendee> getByEmail(String email) {
-        return em.createNamedQuery("Attendee.fromEmail", Attendee.class)
-                .setParameter("email", email)
-                .getResultStream()
-                .findFirst();
+        if(attendees.containsKey(email)){
+            return Optional.of(attendees.get(email));
+        }else{
+            Optional<Attendee> result = em.createNamedQuery("Attendee.fromEmail", Attendee.class)
+                    .setParameter("email", email)
+                    .getResultStream()
+                    .findFirst();
+            result.ifPresent(attendee -> attendees.put(email, attendee));
+            return result;
+        }
     }
     
     public Optional<Attendee> getById(Integer id) {

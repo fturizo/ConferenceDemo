@@ -2,6 +2,7 @@ package fish.payara.demos.conference.vote.services;
 
 import fish.payara.demos.conference.vote.entities.Attendee;
 import fish.payara.demos.conference.vote.entities.SessionRating;
+import java.time.temporal.ChronoUnit;
 import static java.time.temporal.ChronoUnit.SECONDS;
 import java.util.ArrayList;
 import java.util.List;
@@ -35,9 +36,9 @@ public class SessionRatingService {
     @Inject
     Cache<Integer, List<SessionRating>> cachedRatings;
 
-    @Retry(maxRetries = 1)
-    @Fallback(fallbackMethod = "cacheRating")
     @Transactional
+    @Retry(maxRetries = 3, delay = 1, delayUnit = ChronoUnit.MINUTES)
+    @Fallback(fallbackMethod = "cacheRating")
     public SessionRating addRating(SessionRating rating, Attendee attendee) {
         rating = rating.with(attendee, dataService.getSessionSummary(rating.getSessionId()));
         em.persist(rating);
@@ -46,6 +47,7 @@ public class SessionRatingService {
     }
     
     public SessionRating cacheRating(SessionRating rating, Attendee attendee){
+        LOG.info("Caching attendee session rating");
         rating = rating.with(attendee);
         cachedRatings.putIfAbsent(rating.getSessionId(), new ArrayList<>());
         cachedRatings.get(rating.getSessionId()).add(rating);
