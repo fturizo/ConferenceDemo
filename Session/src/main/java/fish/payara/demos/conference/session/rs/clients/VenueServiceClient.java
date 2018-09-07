@@ -15,6 +15,6 @@ import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
 public interface VenueServiceClient {
     
     @HEAD
-    @Path("/check/{name}")
+    @Path("/{name}")
     Response checkVenue(@PathParam("name") String name);
 }

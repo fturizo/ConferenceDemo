@@ -12,8 +12,10 @@ import java.security.PrivateKey;
 import java.security.spec.PKCS8EncodedKeySpec;
 import java.util.Base64;
 import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Inject;
 import javax.json.Json;
 import javax.json.JsonObject;
+import org.eclipse.microprofile.config.inject.ConfigProperty;
 import org.eclipse.microprofile.jwt.Claims;
 
 /**
@@ -22,12 +24,16 @@ import org.eclipse.microprofile.jwt.Claims;
 @ApplicationScoped
 public class TokenGenerator {
     
+    @Inject
+    @ConfigProperty(name = "mp.jwt.verify.issuer")
+    private String issuer;
+    
     public String generateFor(Attendee attendee){
         try{
             SignedJWT signedJWT = new SignedJWT(new JWSHeader.Builder(JWSAlgorithm.RS256)
                     .keyID("/privateKey.pem")
                     .type(JOSEObjectType.JWT).build(), JWTClaimsSet.parse(generateJWT(attendee).toString()));
-            signedJWT.sign(new RSASSASigner(readPrivateKey("privateKey.pem")));
+            signedJWT.sign(new RSASSASigner(readPrivateKey("/META-INF/keys/privateKey.pem")));
             return signedJWT.serialize();
         } catch(Exception ex){
             throw new RuntimeException("Failed generating JWT", ex);
@@ -44,7 +50,7 @@ public class TokenGenerator {
                 .add(Claims.upn.name(), attendee.getEmail())
                 .add(Claims.exp.name(), secondsNow + 1_000)
                 .add(Claims.iat.name(), secondsNow)
-                .add(Claims.iss.name(), "demos.payara.fish")
+                .add(Claims.iss.name(), issuer)
                 .add(Claims.auth_time.name(), secondsNow)
                 .add(Claims.groups.name(), Json.createArrayBuilder().add(attendee.getRole().name()).build())
                 .build();

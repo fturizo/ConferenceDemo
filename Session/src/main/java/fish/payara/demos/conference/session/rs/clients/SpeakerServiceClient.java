@@ -17,6 +17,5 @@ import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
 public interface SpeakerServiceClient {
     
     @HEAD
-    @Path("/check")
     Response checkSpeakers(@QueryParam("names") List<String> names);
 }
