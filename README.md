@@ -1,6 +1,6 @@
 # Conference Demo
 
-This small sample project showcase the development of 3 micro-services using both Java EE 8 and Eclipse MicroProfile 1.2.
+This small sample project showcase the development of 3 micro-services using both Java EE 8 and Eclipse MicroProfile 2.0.
 
 The domain model and real-world requirements are inspired in the [official conference demo project](https://github.com/eclipse/microprofile-conference "Conference Demo") for the Eclipse MicroProfile stack.
 
