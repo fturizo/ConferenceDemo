@@ -42,6 +42,10 @@
                             <key>--prebootcommandfile</key>
                             <value>db/prepare-jdbc.asadmin</value>
                         </option>
+                        <option>
+                            <key>--enablerequesttracing</key>
+                            <value>true</value>
+                        </option>
                     </commandLineOptions>
                 </configuration>
             </plugin>
@@ -66,6 +70,12 @@
             <groupId>com.nimbusds</groupId>
             <artifactId>nimbus-jose-jwt</artifactId>
             <version>5.1</version>
+        </dependency>
+        <dependency>
+            <groupId>io.opentracing</groupId>
+            <artifactId>opentracing-api</artifactId>
+            <version>0.31.0</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 </project>
