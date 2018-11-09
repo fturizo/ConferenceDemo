@@ -6,7 +6,7 @@ Handles the management of speakers and sessions venues.
 
 You can run the service directly by using the `payara-micro.jar` like this:
 
-	java -jar payara-micro.jar --deploy target\microservice-speaker.war --clusterName speaker --autoBindHttp
+	java -jar payara-micro.jar --deploy target/microservice-speaker.war --clusterName speaker --autoBindHttp
 
 Or by running the `payara-micro:start` goal:
 
