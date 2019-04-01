@@ -6,8 +6,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.activation.DataSource;
-import javax.annotation.Resource;
 import javax.enterprise.context.ApplicationScoped;
 import org.eclipse.microprofile.health.Health;
 import org.eclipse.microprofile.health.HealthCheck;
@@ -36,7 +34,7 @@ public class DatabaseCheck implements HealthCheck{
     }
 
     private boolean checkOnDatabase() {
-        try(Connection connection = DriverManager.getConnection("jdbc:h2:tcp://localhost/C:\\Users\\fabio\\db\\session", "session", "session");
+        try(Connection connection = DriverManager.getConnection("jdbc:h2:~/db/session", "session", "session");
                 Statement statement = connection.createStatement()){
             return statement.execute("select 1 from dual");
         } catch (SQLException ex) {

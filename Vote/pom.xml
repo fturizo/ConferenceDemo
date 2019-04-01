@@ -18,7 +18,7 @@
             <plugin>
                 <groupId>fish.payara.maven.plugins</groupId>
                 <artifactId>payara-micro-maven-plugin</artifactId>
-                <version>1.0.1</version>
+                <version>${payara.micro.maven.version}</version>
                 <executions>
                     <execution>
                         <goals>
@@ -44,7 +44,6 @@
                         </option>
                         <option>
                             <key>--enablerequesttracing</key>
-                            <value>true</value>
                         </option>
                     </commandLineOptions>
                 </configuration>

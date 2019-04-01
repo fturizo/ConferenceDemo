@@ -1,6 +1,6 @@
 create-jdbc-connection-pool --datasourceClassname=org.h2.jdbcx.JdbcDataSource --resType=javax.sql.DataSource localH2Pool
 set resources.jdbc-connection-pool.localH2Pool.property.User=session
-set resources.jdbc-connection-pool.localH2Pool.property.URL=jdbc:h2:tcp://localhost/C:\Users\fabio\db\session
+set resources.jdbc-connection-pool.localH2Pool.property.URL=jdbc:h2:~/db/session;IFEXISTS=false
 set resources.jdbc-connection-pool.localH2Pool.property.Password=session
 set resources.jdbc-connection-pool.localH2Pool.connection-validation-method=table
 set resources.jdbc-connection-pool.localH2Pool.validation-table-name=dual

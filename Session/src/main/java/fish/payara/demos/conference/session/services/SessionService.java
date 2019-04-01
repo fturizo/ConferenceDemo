@@ -52,7 +52,7 @@ public class SessionService {
     
     @Transactional
     public void delete(Session session){
-        em.remove(session);
+        em.remove(em.find(Session.class, session.getId()));
         sessionSpaces.inc();
         em.flush();
     }
