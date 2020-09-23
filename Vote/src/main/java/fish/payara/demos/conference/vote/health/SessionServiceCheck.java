@@ -8,15 +8,11 @@ import javax.inject.Inject;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.core.Response;
 import org.eclipse.microprofile.config.inject.ConfigProperty;
-import org.eclipse.microprofile.health.Health;
 import org.eclipse.microprofile.health.HealthCheck;
 import org.eclipse.microprofile.health.HealthCheckResponse;
+import org.eclipse.microprofile.health.Readiness;
 
-/**
- *
- * @author Fabio Turizo
- */
-@Health
+//@Readiness
 @ApplicationScoped
 public class SessionServiceCheck implements HealthCheck {
 

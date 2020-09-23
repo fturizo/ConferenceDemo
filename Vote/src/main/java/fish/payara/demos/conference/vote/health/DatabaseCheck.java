@@ -7,34 +7,34 @@ import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.enterprise.context.ApplicationScoped;
-import org.eclipse.microprofile.health.Health;
 import org.eclipse.microprofile.health.HealthCheck;
 import org.eclipse.microprofile.health.HealthCheckResponse;
+import org.eclipse.microprofile.health.Liveness;
 
 /**
  *
  * @author Fabio Turizo
  */
-@Health
+@Liveness
 @ApplicationScoped
 public class DatabaseCheck implements HealthCheck{
 
     private static final Logger LOG = Logger.getLogger(DatabaseCheck.class.getName());
     
     //Resource injection not working correctly
-    /*@Resource(lookup = "jdbc/voteDS")
+    /*@Resource(name = "jdbc/voteDS")
     DataSource dataSource;*/
     
     @Override
     public HealthCheckResponse call() {
-        return HealthCheckResponse.named("database")
+        return HealthCheckResponse.named("DatabaseCheck")
                                  .withData("name", "session")
                                  .state(checkOnDatabase())
                                  .build();
     }
 
     private boolean checkOnDatabase() {
-        try(Connection connection = DriverManager.getConnection("jdbc:h2:~/db/session", "session", "session");
+        try(Connection connection = DriverManager.getConnection("jdbc:h2:tcp://localhost:1521/session", "session", "session");
                 Statement statement = connection.createStatement()){
             return statement.execute("select 1 from dual");
         } catch (SQLException ex) {

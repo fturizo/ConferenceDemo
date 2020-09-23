@@ -4,13 +4,14 @@ import fish.payara.demos.conference.session.entities.Session;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
+import java.util.concurrent.atomic.AtomicInteger;
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
-import org.eclipse.microprofile.metrics.Counter;
+import org.eclipse.microprofile.metrics.Gauge;
 import org.eclipse.microprofile.metrics.annotation.Metric;
 import org.eclipse.microprofile.metrics.annotation.Timed;
 
@@ -27,13 +28,16 @@ public class SessionService {
     @Inject
     SpeakerDomainChecker domainChecker;
     
-    @Inject
-    @Metric(name = "session.spaces", absolute = false)
-    Counter sessionSpaces;
+    AtomicInteger sessionSpaces;
     
     @PostConstruct
     public void init(){
-        sessionSpaces.inc(5);
+        sessionSpaces = new AtomicInteger(5);
+    }
+            
+    @Metric(name = "session.spaces", absolute = false)
+    public Gauge<Integer> sessionSpaces(){
+        return () -> sessionSpaces.get();
     }
     
     @Transactional
@@ -41,19 +45,19 @@ public class SessionService {
     public Session register(Session session){
         if(!domainChecker.checkSpeakers(session) || !domainChecker.checkVenue(session)){
             throw new IllegalArgumentException("Invalid venue or speaker names");
-        }else if(sessionSpaces.getCount() == 0){
+        }else if(sessionSpaces.get() == 0){
             throw new IllegalStateException("No more session spaces");
         }
         em.persist(session);
         em.flush();
-        sessionSpaces.dec();
+        sessionSpaces.decrementAndGet();
         return session;
     }
     
     @Transactional
     public void delete(Session session){
         em.remove(em.find(Session.class, session.getId()));
-        sessionSpaces.inc();
+        sessionSpaces.incrementAndGet();
         em.flush();
     }
     
