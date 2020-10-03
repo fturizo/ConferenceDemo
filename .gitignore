@@ -6,3 +6,5 @@
 /payara-micro-5.182.2.jar
 /payara-micro-5.183.jar
 /Vote/db/h2-1.4.199.jar
+/CombinedTestModule/nbproject/
+/CombinedTestModule/target/

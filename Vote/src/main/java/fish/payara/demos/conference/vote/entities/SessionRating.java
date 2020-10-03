@@ -2,6 +2,7 @@ package fish.payara.demos.conference.vote.entities;
 
 import java.io.Serializable;
 import java.util.Objects;
+import java.util.Optional;
 import javax.json.bind.annotation.JsonbCreator;
 import javax.json.bind.annotation.JsonbProperty;
 import javax.json.bind.annotation.JsonbTransient;
@@ -37,7 +38,7 @@ public class SessionRating implements Serializable {
     }
     
     @JsonbCreator
-    public SessionRating(@JsonbProperty("session-id") Integer sessionId, 
+    public SessionRating(@JsonbProperty("sessionId") Integer sessionId,
                          @JsonbProperty("rating") Integer rating) {
         this.sessionId = sessionId;
         this.rating = rating;
@@ -58,6 +59,7 @@ public class SessionRating implements Serializable {
         return id;
     }
 
+    @JsonbProperty
     public Integer getSessionId() {
         return sessionId;
     }
@@ -74,7 +76,7 @@ public class SessionRating implements Serializable {
     
     @JsonbProperty
     public String getAttendeeName(){
-        return attendee.getName();
+        return attendee != null ? attendee.getName() : null;
     }
 
     @JsonbTransient

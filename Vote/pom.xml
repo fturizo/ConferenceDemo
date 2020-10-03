@@ -16,6 +16,13 @@
         <finalName>microservice-vote</finalName>
         <plugins>
             <plugin>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.3.1</version>
+                <configuration>
+                    <attachClasses>true</attachClasses>
+                </configuration>
+            </plugin>
+            <plugin>
                 <groupId>fish.payara.maven.plugins</groupId>
                 <artifactId>payara-micro-maven-plugin</artifactId>
                 <version>${payara.micro.maven.version}</version>
@@ -39,15 +46,15 @@
                             <value>vote</value>
                         </option>
                         <option>
-                            <key>--prebootcommandfile</key>
-                            <value>db/prepare-jdbc.asadmin</value>
-                        </option>
-                        <option>
                             <key>--enablerequesttracing</key>
                         </option>
                         <option>
                             <key>--addLibs</key>
                             <value>${settings.localRepository}/fish/payara/ecosystem/jaeger-tracer-lib/1.0/jaeger-tracer-lib-1.0-jar-with-dependencies.jar</value>
+                        </option>
+                        <option>
+                            <key>--addLibs</key>
+                            <value>${settings.localRepository}/mysql/mysql-connector-java/8.0.20/mysql-connector-java-8.0.20.jar</value>
                         </option>
                     </commandLineOptions>                    
                 </configuration>

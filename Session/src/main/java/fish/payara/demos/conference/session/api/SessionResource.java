@@ -15,9 +15,9 @@ import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
-import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
+import javax.ws.rs.core.*;
 import javax.ws.rs.core.Response.Status;
+
 import org.eclipse.microprofile.metrics.annotation.Metered;
 
 /**
@@ -35,9 +35,9 @@ public class SessionResource {
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Metered(name = "session.creation.tries", absolute = true)
-    public Response create(Session session) {
+    public Response create(Session session, @Context UriInfo uriInfo) {
         session = sessionService.register(session);
-        return Response.created(URI.create("/" + session.getId()))
+        return Response.created(UriBuilder.fromPath(uriInfo.getPath()).path("{id}").build(session.getId()))
                 .entity(session).build();
     }
 
