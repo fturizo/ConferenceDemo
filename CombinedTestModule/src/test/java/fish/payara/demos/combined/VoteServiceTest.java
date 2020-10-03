@@ -25,6 +25,7 @@ import org.testcontainers.utility.DockerImageName;
 import java.time.Duration;
 import java.time.LocalDate;
 import java.util.List;
+import java.util.logging.Logger;
 
 @Testcontainers
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
@@ -153,21 +154,6 @@ public class VoteServiceTest {
     }
 
     @Test
-    @DisplayName("Rate non-existent session")
-    @Order(3)
-    public void rateNonExistantSession(){
-        SessionRating sampleRating = new SessionRating(2, 1);
-        given().
-                auth().preemptive().oauth2(retrieveAccessToken()).
-                contentType(ContentType.JSON).
-                body(sampleRating).
-                when().
-                post(buildURI(voteService, "/rating")).
-                then().
-                assertThat().statusCode(404);
-    }
-
-    @Test
     @DisplayName("Get session rating summary")
     @Order(4)
     public void getSessionSummary(){
@@ -179,7 +165,7 @@ public class VoteServiceTest {
                 then().
                 assertThat().statusCode(200).
                              and().
-                             body("count", equalTo( 2));
+                             body("count", equalTo( "2"));
     }
 
     private String retrieveAccessToken(){

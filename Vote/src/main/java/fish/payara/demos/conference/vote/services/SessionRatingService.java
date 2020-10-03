@@ -3,6 +3,8 @@ package fish.payara.demos.conference.vote.services;
 import fish.payara.demos.conference.vote.entities.Attendee;
 import fish.payara.demos.conference.vote.entities.SessionRating;
 import java.time.temporal.ChronoUnit;
+
+import static java.time.temporal.ChronoUnit.MINUTES;
 import static java.time.temporal.ChronoUnit.SECONDS;
 import java.util.ArrayList;
 import java.util.List;
@@ -54,9 +56,9 @@ public class SessionRatingService {
         return rating;
     }
     
-    @Timeout(value = 10, unit = SECONDS)
+    @Timeout(value = 1, unit = MINUTES)
     public List<SessionRating> getRatingsFor(Integer sessionId){
-        isSlow(11);
+        //isSlow(11);
         List<SessionRating> results = em.createNamedQuery("SessionRating.getForSession", SessionRating.class)
                                         .setParameter("id", sessionId)
                                         .getResultList();

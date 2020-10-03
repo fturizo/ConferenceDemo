@@ -7,6 +7,7 @@ import fish.payara.demos.conference.vote.services.SessionRatingService;
 import io.opentracing.Tracer;
 import java.security.Principal;
 import java.util.List;
+import java.util.logging.Logger;
 import javax.annotation.security.RolesAllowed;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
@@ -65,7 +66,6 @@ public class SessionVoteResource {
     @Path("/summary/{session}")
     public Response getSummaryForSession(@PathParam("session") Integer sessionId) {
         List<SessionRating> results = ratingService.getRatingsFor(sessionId);
-
         return Response.ok().entity(Json.createObjectBuilder()
                 .add("count", results.size())
                 .add("average", results.stream().mapToDouble(SessionRating::getRating).average().orElse(0.0)))
