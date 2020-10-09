@@ -11,7 +11,10 @@ import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
-import org.eclipse.microprofile.metrics.Gauge;
+
+import org.eclipse.microprofile.metrics.Histogram;
+import org.eclipse.microprofile.metrics.MetricUnits;
+import org.eclipse.microprofile.metrics.annotation.Gauge;
 import org.eclipse.microprofile.metrics.annotation.Metric;
 import org.eclipse.microprofile.metrics.annotation.Timed;
 
@@ -35,9 +38,9 @@ public class SessionService {
         sessionSpaces = new AtomicInteger(5);
     }
             
-    @Metric(name = "session.spaces", absolute = false)
-    public Gauge<Integer> sessionSpaces(){
-        return () -> sessionSpaces.get();
+    @Gauge(name = "session.spaces", absolute = true, unit = MetricUnits.NONE)
+    public Integer sessionSpaces(){
+        return sessionSpaces.get();
     }
     
     @Transactional
