@@ -1,0 +1,11 @@
+# config file version
+apiVersion: 1
+
+providers:
+  - name: default
+    folder: ''
+    type: file
+    disableDeletion: false
+    editable: true
+    options:
+      path: /etc/grafana/provisioning/dashboards/
