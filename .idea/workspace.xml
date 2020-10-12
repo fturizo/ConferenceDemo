@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="19c9dcd9-9911-4ae1-895d-64ea7062b75d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/service-compose.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +82,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Docker.service-compose.yaml.grafana-2: Compose Deployment">
+  <component name="RunManager" selected="Docker.DockerServiceSetup">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -266,7 +267,7 @@
       <workItem from="1602190294432" duration="2591000" />
       <workItem from="1602194205773" duration="8797000" />
       <workItem from="1602449794055" duration="4355000" />
-      <workItem from="1602513463386" duration="7757000" />
+      <workItem from="1602513463386" duration="10719000" />
     </task>
     <task id="LOCAL-00001" summary="-Implemented Integration tests project with TestContainers&#10;-Updated project to Java11">
       <created>1601683750426</created>
@@ -303,7 +304,14 @@
       <option name="project" value="LOCAL" />
       <updated>1602527343876</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Improved Grafana provisioning">
+      <created>1602527613397</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1602527613397</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -350,10 +358,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="640" y="256" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1040/-1920.0.1920.1080@0.0.1920.1040" timestamp="1601563558303" />
-    <state x="487" y="85" key="CommitChangelistDialog2" timestamp="1602527342932">
+    <state x="487" y="85" key="CommitChangelistDialog2" timestamp="1602527612599">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="487" y="85" key="CommitChangelistDialog2/0.0.1920.1040/-1920.0.1920.1080@0.0.1920.1040" timestamp="1602527342932" />
+    <state x="487" y="85" key="CommitChangelistDialog2/0.0.1920.1040/-1920.0.1920.1080@0.0.1920.1040" timestamp="1602527612599" />
     <state x="487" y="85" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1602463695713" />
     <state x="798" y="469" key="DockerComposeFileDialog" timestamp="1602277306981">
       <screen x="0" y="0" width="1920" height="1040" />
