@@ -30,12 +30,16 @@ public class SessionService {
     
     @Inject
     SpeakerDomainChecker domainChecker;
+
+    @Inject
+    @Metric(name = "session.duration.history", absolute = true, unit = MetricUnits.MINUTES)
+    Histogram sessionDurationHistogram;
     
     AtomicInteger sessionSpaces;
     
     @PostConstruct
     public void init(){
-        sessionSpaces = new AtomicInteger(5);
+        sessionSpaces = new AtomicInteger(20);
     }
             
     @Gauge(name = "session.spaces", absolute = true, unit = MetricUnits.NONE)
@@ -53,6 +57,7 @@ public class SessionService {
         }
         em.persist(session);
         em.flush();
+        sessionDurationHistogram.update(session.getDuration().toMinutes());
         sessionSpaces.decrementAndGet();
         return session;
     }

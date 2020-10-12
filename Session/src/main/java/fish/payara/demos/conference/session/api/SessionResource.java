@@ -19,6 +19,7 @@ import javax.ws.rs.core.*;
 import javax.ws.rs.core.Response.Status;
 
 import org.eclipse.microprofile.metrics.annotation.Metered;
+import org.eclipse.microprofile.metrics.annotation.SimplyTimed;
 
 /**
  *
@@ -34,7 +35,7 @@ public class SessionResource {
 
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
-    @Metered(name = "session.creation.tries", absolute = true)
+    @SimplyTimed(name = "session.creation.tries", absolute = true)
     public Response create(Session session, @Context UriInfo uriInfo) {
         session = sessionService.register(session);
         return Response.created(UriBuilder.fromPath(uriInfo.getPath()).path("{id}").build(session.getId()))
@@ -50,7 +51,7 @@ public class SessionResource {
 
     @DELETE
     @Path("/{id}")
-    @Metered(name = "session.deletion.tries", absolute = true)
+    @SimplyTimed(name = "session.deletion.tries", absolute = true)
     public Response delete(@PathParam("id") Integer id) {
         Optional<Session> session = sessionService.retrieve(id);
         if (session.isPresent()) {

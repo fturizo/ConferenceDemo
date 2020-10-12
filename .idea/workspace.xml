@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="19c9dcd9-9911-4ae1-895d-64ea7062b75d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/config/prometheus.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service-compose.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Session/src/main/java/fish/payara/demos/conference/session/api/SessionResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/Session/src/main/java/fish/payara/demos/conference/session/api/SessionResource.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Session/src/main/java/fish/payara/demos/conference/session/services/SessionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Session/src/main/java/fish/payara/demos/conference/session/services/SessionService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -21,6 +24,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MavenImportPreferences">
@@ -45,14 +53,18 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/CombinedTestModule" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/service-compose.yaml" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.runner" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsDialog.application.dockerMachine" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\fabio\Documents\Work\Conference\ConferenceDemo" />
+      <recent name="C:\Users\fabio\Documents\Work\Conference\ConferenceDemo\Docker" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="fish.payara.demos.combined" />
     </key>
@@ -72,14 +84,16 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.SpeakerServiceTest">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+  <component name="RunManager" selected="Docker.service-compose.yaml.session-service: Compose Deployment">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -100,21 +114,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SessionServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CombinedTestModule" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="fish.payara.demos.combined.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="fish.payara.demos.combined" />
-      <option name="MAIN_CLASS_NAME" value="fish.payara.demos.combined.SessionServiceTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="SpeakerServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CombinedTestModule" />
       <extension name="coverage">
@@ -125,21 +124,6 @@
       </extension>
       <option name="PACKAGE_NAME" value="fish.payara.demos.combined" />
       <option name="MAIN_CLASS_NAME" value="fish.payara.demos.combined.SpeakerServiceTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="VoteServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CombinedTestModule" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="fish.payara.demos.combined.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="fish.payara.demos.combined" />
-      <option name="MAIN_CLASS_NAME" value="fish.payara.demos.combined.VoteServiceTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -209,20 +193,55 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="DockerServiceSetup" type="docker-deploy" factoryName="docker-compose.yml" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="sourceFilePath" value="service-compose.yaml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="service-compose.yaml.session-service: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="session-service" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="service-compose.yaml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="service-compose.yaml.speaker-service: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="speaker-service" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="service-compose.yaml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
     <list>
-      <item itemvalue="JUnit.SessionServiceTest" />
-      <item itemvalue="JUnit.VoteServiceTest" />
+      <item itemvalue="Docker.DockerServiceSetup" />
+      <item itemvalue="Docker.service-compose.yaml.speaker-service: Compose Deployment" />
+      <item itemvalue="Docker.service-compose.yaml.session-service: Compose Deployment" />
       <item itemvalue="JUnit.All in CombinedTestModule" />
       <item itemvalue="JUnit.All in CombinedTestModule (1)" />
       <item itemvalue="JUnit.SpeakerServiceTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Docker.service-compose.yaml.session-service: Compose Deployment" />
+        <item itemvalue="Docker.service-compose.yaml.speaker-service: Compose Deployment" />
         <item itemvalue="JUnit.SpeakerServiceTest" />
         <item itemvalue="JUnit.All in CombinedTestModule (1)" />
         <item itemvalue="JUnit.All in CombinedTestModule" />
-        <item itemvalue="JUnit.VoteServiceTest" />
-        <item itemvalue="JUnit.SessionServiceTest" />
       </list>
     </recent_temporary>
   </component>
@@ -245,7 +264,8 @@
       <workItem from="1601599998306" duration="20493000" />
       <workItem from="1601745314636" duration="4394000" />
       <workItem from="1602190294432" duration="2591000" />
-      <workItem from="1602194205773" duration="2375000" />
+      <workItem from="1602194205773" duration="8797000" />
+      <workItem from="1602449794055" duration="4261000" />
     </task>
     <task id="LOCAL-00001" summary="-Implemented Integration tests project with TestContainers&#10;-Updated project to Java11">
       <created>1601683750426</created>
@@ -261,7 +281,14 @@
       <option name="project" value="LOCAL" />
       <updated>1601686834814</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Small update to session service metrics">
+      <created>1602274485028</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1602274485028</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -282,7 +309,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="-Implemented Integration tests project with TestContainers&#10;-Updated project to Java11" />
     <MESSAGE value="Small updates to adapt integration tests for session and vote microservices" />
-    <option name="LAST_COMMIT_MESSAGE" value="Small updates to adapt integration tests for session and vote microservices" />
+    <MESSAGE value="Small update to session service metrics" />
+    <option name="LAST_COMMIT_MESSAGE" value="Small update to session service metrics" />
   </component>
   <component name="WindowStateProjectService">
     <state x="741" y="495" key="#Payara_Server" timestamp="1601655667085">
@@ -297,46 +325,54 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="179" key="#Updates/0.0.1920.1040/-1920.0.1920.1080@0.0.1920.1040" timestamp="1601563544333" />
-    <state x="414" y="175" width="1092" height="828" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1601655702330">
+    <state x="414" y="164" width="1092" height="876" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1602277324261">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="414" y="175" width="1092" height="828" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/-1920.0.1920.1080@0.0.1920.1040" timestamp="1601655702330" />
+    <state x="414" y="164" width="1092" height="876" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/-1920.0.1920.1080@0.0.1920.1040" timestamp="1602277324261" />
     <state x="640" y="256" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1601563558303">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="640" y="256" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1040/-1920.0.1920.1080@0.0.1920.1040" timestamp="1601563558303" />
-    <state x="487" y="85" key="CommitChangelistDialog2" timestamp="1601686833675">
+    <state x="487" y="85" key="CommitChangelistDialog2" timestamp="1602274483946">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="487" y="85" key="CommitChangelistDialog2/0.0.1920.1040/-1920.0.1920.1080@0.0.1920.1040" timestamp="1601686833675" />
-    <state x="740" y="330" key="FileChooserDialogImpl" timestamp="1601655660537">
+    <state x="487" y="85" key="CommitChangelistDialog2/0.0.1920.1040/-1920.0.1920.1080@0.0.1920.1040" timestamp="1602274483946" />
+    <state x="798" y="469" key="DockerComposeFileDialog" timestamp="1602277306981">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="330" key="FileChooserDialogImpl/0.0.1920.1040/-1920.0.1920.1080@0.0.1920.1040" timestamp="1601655660537" />
-    <state width="1877" height="295" key="GridCell.Tab.0.bottom" timestamp="1601755835774">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state x="798" y="469" key="DockerComposeFileDialog/0.0.1920.1040/-1920.0.1920.1080@0.0.1920.1040" timestamp="1602277306981" />
+    <state x="740" y="330" key="FileChooserDialogImpl" timestamp="1602277305240">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1080@0.0.1920.1040" timestamp="1601749760758" />
+    <state x="740" y="330" key="FileChooserDialogImpl/0.0.1920.1040/-1920.0.1920.1080@0.0.1920.1040" timestamp="1602277305240" />
+    <state width="1877" height="281" key="GridCell.Tab.0.bottom" timestamp="1602458257337">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="281" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1080@0.0.1920.1040" timestamp="1602281372737" />
+    <state width="1877" height="281" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1602458257337" />
     <state width="1877" height="295" key="GridCell.Tab.0.bottom/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1601755835774" />
-    <state width="1877" height="295" key="GridCell.Tab.0.center" timestamp="1601755835774">
-      <screen x="1920" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1080@0.0.1920.1040" timestamp="1601749760758" />
-    <state width="1877" height="295" key="GridCell.Tab.0.center/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1601755835774" />
-    <state width="1877" height="295" key="GridCell.Tab.0.left" timestamp="1601755835774">
-      <screen x="1920" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1080@0.0.1920.1040" timestamp="1601749760758" />
-    <state width="1877" height="295" key="GridCell.Tab.0.left/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1601755835774" />
-    <state width="1877" height="295" key="GridCell.Tab.0.right" timestamp="1601755835774">
-      <screen x="1920" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1080@0.0.1920.1040" timestamp="1601749760758" />
-    <state width="1877" height="295" key="GridCell.Tab.0.right/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1601755835774" />
-    <state x="461" y="162" key="SettingsEditor" timestamp="1601476806735">
+    <state width="1877" height="281" key="GridCell.Tab.0.center" timestamp="1602458257337">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="461" y="162" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1080@0.0.1920.1040" timestamp="1601476806735" />
+    <state width="1877" height="281" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1080@0.0.1920.1040" timestamp="1602281372737" />
+    <state width="1877" height="281" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1602458257337" />
+    <state width="1877" height="295" key="GridCell.Tab.0.center/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1601755835774" />
+    <state width="1877" height="281" key="GridCell.Tab.0.left" timestamp="1602458257337">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="281" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1080@0.0.1920.1040" timestamp="1602281372737" />
+    <state width="1877" height="281" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1602458257337" />
+    <state width="1877" height="295" key="GridCell.Tab.0.left/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1601755835774" />
+    <state width="1877" height="281" key="GridCell.Tab.0.right" timestamp="1602458257337">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="281" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1080@0.0.1920.1040" timestamp="1602281372737" />
+    <state width="1877" height="281" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1602458257337" />
+    <state width="1877" height="295" key="GridCell.Tab.0.right/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1601755835774" />
+    <state x="461" y="162" key="SettingsEditor" timestamp="1602275095728">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="162" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1080@0.0.1920.1040" timestamp="1602275095728" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1601686852088">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
