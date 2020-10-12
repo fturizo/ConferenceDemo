@@ -12,7 +12,7 @@ services:
       - "9090:9090"
   grafana:
     image: grafana/grafana
-    container_name: grafana
+    container_name: temp_grafana
     environment:
       GF_SECURITY_ADMIN_PASSWORD: grafana
     volumes:
