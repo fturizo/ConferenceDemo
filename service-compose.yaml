@@ -12,9 +12,13 @@ services:
       - "9090:9090"
   grafana:
     image: grafana/grafana
-    container_name: grafana
+    container_name: temp_grafana
     environment:
       GF_SECURITY_ADMIN_PASSWORD: grafana
+    volumes:
+      - ./config/grafana-ds.yml:/etc/grafana/provisioning/datasources/default-datasource.yaml
+      - ./config/grafana-dashboard.yml:/etc/grafana/provisioning/dashboards/default-dashboard.yaml
+      - ./config/session-dashboard.json:/etc/grafana/provisioning/dashboards/session-dashboard.json
     depends_on:
       - prometheus
     ports:
