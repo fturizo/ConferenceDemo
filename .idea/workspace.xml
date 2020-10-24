@@ -3,10 +3,35 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="ALL" />
   </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:metrics-expanse" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="19c9dcd9-9911-4ae1-895d-64ea7062b75d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/service-compose.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sample_Requests.postman_collection" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,6 +81,7 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="reference.settingsDialog.application.dockerMachine" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -232,9 +258,9 @@
       <item itemvalue="Docker.DockerServiceSetup" />
       <item itemvalue="Docker.service-compose.yaml.speaker-service: Compose Deployment" />
       <item itemvalue="Docker.service-compose.yaml.session-service: Compose Deployment" />
+      <item itemvalue="Docker.service-compose.yaml.grafana-2: Compose Deployment" />
       <item itemvalue="JUnit.All in CombinedTestModule (1)" />
       <item itemvalue="JUnit.SpeakerServiceTest" />
-      <item itemvalue="Docker.service-compose.yaml.grafana-2: Compose Deployment" />
     </list>
     <recent_temporary>
       <list>
@@ -267,7 +293,9 @@
       <workItem from="1602190294432" duration="2591000" />
       <workItem from="1602194205773" duration="8797000" />
       <workItem from="1602449794055" duration="4355000" />
-      <workItem from="1602513463386" duration="10719000" />
+      <workItem from="1602513463386" duration="10979000" />
+      <workItem from="1602538889998" duration="1327000" />
+      <workItem from="1603554183843" duration="2247000" />
     </task>
     <task id="LOCAL-00001" summary="-Implemented Integration tests project with TestContainers&#10;-Updated project to Java11">
       <created>1601683750426</created>
@@ -311,7 +339,14 @@
       <option name="project" value="LOCAL" />
       <updated>1602527613397</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Minor fix to service-compose.yaml">
+      <created>1602531794947</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1602531794947</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -322,7 +357,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="metrics-expanse" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -335,7 +382,8 @@
     <MESSAGE value="Small update to session service metrics" />
     <MESSAGE value="Expanded MP metrics, added compose tools for Prom+Grafana" />
     <MESSAGE value="Improved Grafana provisioning" />
-    <option name="LAST_COMMIT_MESSAGE" value="Improved Grafana provisioning" />
+    <MESSAGE value="Minor fix to service-compose.yaml" />
+    <option name="LAST_COMMIT_MESSAGE" value="Minor fix to service-compose.yaml" />
   </component>
   <component name="WindowStateProjectService">
     <state x="741" y="495" key="#Payara_Server" timestamp="1601655667085">
@@ -358,19 +406,19 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="640" y="256" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1040/-1920.0.1920.1080@0.0.1920.1040" timestamp="1601563558303" />
-    <state x="487" y="85" key="CommitChangelistDialog2" timestamp="1602527612599">
+    <state x="487" y="85" key="CommitChangelistDialog2" timestamp="1602531794204">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="487" y="85" key="CommitChangelistDialog2/0.0.1920.1040/-1920.0.1920.1080@0.0.1920.1040" timestamp="1602527612599" />
+    <state x="487" y="85" key="CommitChangelistDialog2/0.0.1920.1040/-1920.0.1920.1080@0.0.1920.1040" timestamp="1602531794204" />
     <state x="487" y="85" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1602463695713" />
     <state x="798" y="469" key="DockerComposeFileDialog" timestamp="1602277306981">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="798" y="469" key="DockerComposeFileDialog/0.0.1920.1040/-1920.0.1920.1080@0.0.1920.1040" timestamp="1602277306981" />
-    <state x="740" y="330" key="FileChooserDialogImpl" timestamp="1602277305240">
+    <state x="740" y="330" key="FileChooserDialogImpl" timestamp="1602623090287">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="330" key="FileChooserDialogImpl/0.0.1920.1040/-1920.0.1920.1080@0.0.1920.1040" timestamp="1602277305240" />
+    <state x="740" y="330" key="FileChooserDialogImpl/0.0.1920.1040/-1920.0.1920.1080@0.0.1920.1040" timestamp="1602623090287" />
     <state width="1877" height="281" key="GridCell.Tab.0.bottom" timestamp="1602463708022">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -395,14 +443,22 @@
     <state width="1877" height="281" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1080@0.0.1920.1040" timestamp="1602281372737" />
     <state width="1877" height="281" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1602463708022" />
     <state width="1877" height="295" key="GridCell.Tab.0.right/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1601755835774" />
+    <state x="598" y="281" key="MultipleFileMergeDialog" timestamp="1602531869027">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="598" y="281" key="MultipleFileMergeDialog/0.0.1920.1040/-1920.0.1920.1080@0.0.1920.1040" timestamp="1602531869027" />
     <state x="461" y="162" key="SettingsEditor" timestamp="1602275095728">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="162" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1080@0.0.1920.1040" timestamp="1602275095728" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1602527470328">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1602531900783">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.0.1920.1080@0.0.1920.1040" timestamp="1602527470328" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.0.1920.1080@0.0.1920.1040" timestamp="1602531900783" />
+    <state x="551" y="181" key="new project wizard" timestamp="1602623132855">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="551" y="181" key="new project wizard/0.0.1920.1040/-1920.0.1920.1080@0.0.1920.1040" timestamp="1602623132855" />
     <state x="616" y="240" width="672" height="677" key="run.anything.popup" timestamp="1601679597467">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

@@ -15,3 +15,8 @@ The following services are defined:
 ## Provisioning
 
 All three services are provisioned using [Payara Micro 5](https://www.payara.fish/payara_micro). The Payara Micro Maven Plugin is configured on all three projects.
+
+## Metrics & Monitoring
+
+A Docker compose file named `service-compose.yaml` is provided to quickly launch a Prometheus + Grafana environment that is plugged to the session and speaker services and can be used 
+to quickly examine metrics data in real time. 
