@@ -6,29 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="19c9dcd9-9911-4ae1-895d-64ea7062b75d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CombinedTestModule/CombinedTestModule.iml" beforeDir="false" afterPath="$PROJECT_DIR$/CombinedTestModule/CombinedTestModule.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CombinedTestModule/nbactions.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/CombinedTestModule/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/CombinedTestModule/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CombinedTestModule/src/test/java/fish/payara/demos/combined/utils/ContainerUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/CombinedTestModule/src/test/java/fish/payara/demos/combined/utils/ContainerUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sample_Requests.postman_collection" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Session/nb-configuration.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Session/nbactions.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Session/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Session/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Session/src/main/java/fish/payara/demos/conference/session/services/SpeakerDomainChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/Session/src/main/java/fish/payara/demos/conference/session/services/SpeakerDomainChecker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Session/src/main/resources/META-INF/microprofile-config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Session/src/main/resources/META-INF/microprofile-config.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Speaker/nb-configuration.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Speaker/nbactions.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Speaker/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Speaker/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Speaker/src/main/java/fish/payara/demos/conference/speaker/services/SpeakerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Speaker/src/main/java/fish/payara/demos/conference/speaker/services/SpeakerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vote/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/Vote/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vote/nb-configuration.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vote/nbactions.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vote/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Vote/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vote/src/main/java/fish/payara/demos/conference/vote/VoteApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/Vote/src/main/java/fish/payara/demos/conference/vote/VoteApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vote/src/main/java/fish/payara/demos/conference/vote/api/AttendeeResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/Vote/src/main/java/fish/payara/demos/conference/vote/api/AttendeeResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vote/src/main/java/fish/payara/demos/conference/vote/api/SessionVoteResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/Vote/src/main/java/fish/payara/demos/conference/vote/api/SessionVoteResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vote/src/main/resources/META-INF/microprofile-config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Vote/src/main/resources/META-INF/microprofile-config.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CombinedTestModule/src/test/java/fish/payara/demos/combined/VoteServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/CombinedTestModule/src/test/java/fish/payara/demos/combined/VoteServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +77,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.VoteServiceTest">
+  <component name="RunManager" selected="JUnit.All in CombinedTestModule">
     <configuration name="All in CombinedTestModule (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CombinedTestModule" />
       <option name="PACKAGE_NAME" value="" />
@@ -233,10 +212,10 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.All in CombinedTestModule" />
         <item itemvalue="JUnit.VoteServiceTest" />
         <item itemvalue="JUnit.SpeakerServiceTest" />
         <item itemvalue="JUnit.SessionServiceTest" />
-        <item itemvalue="JUnit.All in CombinedTestModule" />
         <item itemvalue="JUnit.All in CombinedTestModule (1)" />
       </list>
     </recent_temporary>
@@ -268,7 +247,7 @@
       <workItem from="1612285677894" duration="29000" />
       <workItem from="1612300064819" duration="337000" />
       <workItem from="1612303826063" duration="2489000" />
-      <workItem from="1612378799250" duration="5962000" />
+      <workItem from="1612378799250" duration="8070000" />
     </task>
     <task id="LOCAL-00001" summary="-Implemented Integration tests project with TestContainers&#10;-Updated project to Java11">
       <created>1601683750426</created>
@@ -291,7 +270,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605821230092</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Update to current version of the Payara Platform + small optimizations">
+      <created>1612473443845</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1612473443845</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -313,6 +299,7 @@
     <MESSAGE value="-Implemented Integration tests project with TestContainers&#10;-Updated project to Java11" />
     <MESSAGE value="Small updates to adapt integration tests for session and vote microservices" />
     <MESSAGE value="Update to current version of the Payara Platform (testing)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update to current version of the Payara Platform (testing)" />
+    <MESSAGE value="Update to current version of the Payara Platform + small optimizations" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update to current version of the Payara Platform + small optimizations" />
   </component>
 </project>

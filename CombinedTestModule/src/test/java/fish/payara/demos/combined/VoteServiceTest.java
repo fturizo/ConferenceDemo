@@ -165,7 +165,7 @@ public class VoteServiceTest {
                 then().
                 assertThat().statusCode(200).
                              and().
-                             body("count", equalTo( "2"));
+                             body("count", equalTo( 2));
     }
 
     private String retrieveAccessToken(){
