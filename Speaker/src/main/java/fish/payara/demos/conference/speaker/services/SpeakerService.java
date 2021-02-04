@@ -33,15 +33,9 @@ public class SpeakerService {
         return em.find(Speaker.class, id);
     }
     
-    //TODO - MP Rest client fumbles list creation
-    private boolean disableCheck = true;
     public boolean allNamesExists(List<String> names){
-        if(disableCheck){
-            return true;
-        }else{
-            List<String> allNames = em.createNamedQuery("Speaker.all", Speaker.class).getResultStream()
-                                      .map(Speaker::getName).collect(Collectors.toList());
-            return names.stream().allMatch(allNames::contains);
-        }
+        List<String> allNames = em.createNamedQuery("Speaker.all", Speaker.class).getResultStream()
+                                  .map(Speaker::getName).collect(Collectors.toList());
+        return names.stream().allMatch(allNames::contains);
     }
 }

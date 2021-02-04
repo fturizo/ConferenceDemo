@@ -46,12 +46,16 @@
                             <value>vote</value>
                         </option>
                         <option>
-                            <key>--enablerequesttracing</key>
+                            <key>--contextRoot</key>
+                            <value>/</value>
                         </option>
                         <option>
-                            <key>--addLibs</key>
-                            <value>${settings.localRepository}/fish/payara/ecosystem/jaeger-tracer-lib/1.0/jaeger-tracer-lib-1.0-jar-with-dependencies.jar</value>
+                            <key>--enablerequesttracing</key>
                         </option>
+                        <!--option>
+                            <key>-addLibs</key>
+                            <value>${settings.localRepository}/fish/payara/ecosystem/jaeger-tracer-lib/1.0/jaeger-tracer-lib-1.0-jar-with-dependencies.jar</value>
+                        </option-->
                         <option>
                             <key>--addLibs</key>
                             <value>${settings.localRepository}/mysql/mysql-connector-java/8.0.20/mysql-connector-java-8.0.20.jar</value>

@@ -13,7 +13,7 @@ import org.eclipse.microprofile.auth.LoginConfig;
  */
 @ApplicationPath("/")
 @ApplicationScoped
-@LoginConfig(authMethod = "MP-JWT", realmName = "MP-JWT")
+@LoginConfig(authMethod = "MP-JWT")//, realmName = "MP-JWT")
 @DeclareRoles("CAN_VOTE")
 @DataSourceDefinition(
         name = "java:global/voteDS",
@@ -22,6 +22,7 @@ import org.eclipse.microprofile.auth.LoginConfig;
         password = "${ENV=DB_PASSWORD}",
         url = "${ENV=DB_JDBC_URL}",
         properties = {
+            "allowPublicKeyRetrieval=true",
             "useSSL=false",
             "requireSSL=false"
         }

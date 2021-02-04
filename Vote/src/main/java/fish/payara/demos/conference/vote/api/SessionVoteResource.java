@@ -67,8 +67,9 @@ public class SessionVoteResource {
     public Response getSummaryForSession(@PathParam("session") Integer sessionId) {
         List<SessionRating> results = ratingService.getRatingsFor(sessionId);
         return Response.ok().entity(Json.createObjectBuilder()
-                .add("count", results.size())
-                .add("average", results.stream().mapToDouble(SessionRating::getRating).average().orElse(0.0)))
+                    .add("count", results.size())
+                    .add("average", results.stream().mapToDouble(SessionRating::getRating).average().orElse(0.0))
+                    .build())
                 .build();
     }
 }

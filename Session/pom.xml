@@ -45,6 +45,10 @@
                             <key>--clusterName</key>
                             <value>session</value>
                         </option>
+                        <option>
+                            <key>--contextRoot</key>
+                            <value>/</value>
+                        </option>
                     </commandLineOptions>
                 </configuration>
             </plugin>

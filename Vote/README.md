@@ -6,13 +6,13 @@ Handles the management of attendee data and rating sessions.
 
 This service requires an already running **MYSQL** database in order to persist the data. The easiest way to prepare one is to use Docker:
 
-    docker run --name=test-mysql -e MYSQL_ROOT_PASSWORD=test -e MYSQL_USER=test -e MYSQL_PASSWORD=test -e MYSQL_DATABASE=test -p 3306:3306 mysql
+    docker run --name=test-mysql -e MYSQL_ROOT_PASSWORD=test -e MYSQL_USER=test -e MYSQL_PASSWORD=test -e MYSQL_DATABASE=test -p 3306:3306 --rm -d mysql
 
 Then, configure the following environment variables in your local environment:
 
 * `DB_USER`: The user of the database
-* `DB_PASSWORD` : The password of the corresponding user
-* `DB_JDBC_URL` : The full JDBC url used to connect to the database.
+* `DB_PASSWORD`: The password of the corresponding user
+* `DB_JDBC_URL`: The full JDBC url used to connect to the database.
 
 In addition, a proper MySQL Connector driver will have to be added to the classpath of the micro instance when started to correctly work as well.
 

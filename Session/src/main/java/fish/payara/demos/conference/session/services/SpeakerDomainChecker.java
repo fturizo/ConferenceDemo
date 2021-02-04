@@ -38,8 +38,14 @@ public class SpeakerDomainChecker {
         }
     }
 
+    private boolean disableSpeakersCheck = true;
+
     public boolean checkSpeakers(Session session) {
+        if(disableSpeakersCheck){
+            return true;
+        }
         try{
+            //TODO - Not working, see https://payara.atlassian.net/browse/FISH-62
             Response response = speakerServiceClient.checkSpeakers(session.getSpeakers());
             return response.getStatusInfo().toEnum() == Status.OK;
         }catch(WebApplicationException ex){

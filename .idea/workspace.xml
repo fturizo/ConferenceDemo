@@ -6,7 +6,29 @@
   <component name="ChangeListManager">
     <list default="true" id="19c9dcd9-9911-4ae1-895d-64ea7062b75d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Session/src/main/java/fish/payara/demos/conference/session/services/SessionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Session/src/main/java/fish/payara/demos/conference/session/services/SessionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CombinedTestModule/CombinedTestModule.iml" beforeDir="false" afterPath="$PROJECT_DIR$/CombinedTestModule/CombinedTestModule.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CombinedTestModule/nbactions.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CombinedTestModule/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/CombinedTestModule/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CombinedTestModule/src/test/java/fish/payara/demos/combined/utils/ContainerUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/CombinedTestModule/src/test/java/fish/payara/demos/combined/utils/ContainerUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sample_Requests.postman_collection" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Session/nb-configuration.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Session/nbactions.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Session/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Session/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Session/src/main/java/fish/payara/demos/conference/session/services/SpeakerDomainChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/Session/src/main/java/fish/payara/demos/conference/session/services/SpeakerDomainChecker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Session/src/main/resources/META-INF/microprofile-config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Session/src/main/resources/META-INF/microprofile-config.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Speaker/nb-configuration.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Speaker/nbactions.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Speaker/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Speaker/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Speaker/src/main/java/fish/payara/demos/conference/speaker/services/SpeakerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Speaker/src/main/java/fish/payara/demos/conference/speaker/services/SpeakerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vote/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/Vote/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vote/nb-configuration.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vote/nbactions.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vote/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Vote/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vote/src/main/java/fish/payara/demos/conference/vote/VoteApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/Vote/src/main/java/fish/payara/demos/conference/vote/VoteApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vote/src/main/java/fish/payara/demos/conference/vote/api/AttendeeResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/Vote/src/main/java/fish/payara/demos/conference/vote/api/AttendeeResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vote/src/main/java/fish/payara/demos/conference/vote/api/SessionVoteResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/Vote/src/main/java/fish/payara/demos/conference/vote/api/SessionVoteResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vote/src/main/resources/META-INF/microprofile-config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Vote/src/main/resources/META-INF/microprofile-config.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,14 +43,12 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="mavenHome" value="C:\Program Files\JetBrains\IntelliJ IDEA 2019.2.3\plugins\maven\lib\maven3" />
-      </MavenGeneralSettings>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="metrics-expanse" />
+      </map>
     </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MavenRunner">
     <option name="delegateBuildToMaven" value="true" />
@@ -46,6 +66,12 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/CombinedTestModule" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
@@ -53,11 +79,11 @@
     <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.runner" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="fish.payara.demos.combined" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\fabio\Documents\Work\Conference\ConferenceDemo\CombinedTestModule" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="fish.payara.demos.combined" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -72,18 +98,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.SpeakerServiceTest">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.VoteServiceTest">
     <configuration name="All in CombinedTestModule (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CombinedTestModule" />
       <option name="PACKAGE_NAME" value="" />
@@ -210,19 +225,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.SessionServiceTest" />
-      <item itemvalue="JUnit.VoteServiceTest" />
-      <item itemvalue="JUnit.All in CombinedTestModule" />
       <item itemvalue="JUnit.All in CombinedTestModule (1)" />
+      <item itemvalue="JUnit.All in CombinedTestModule" />
+      <item itemvalue="JUnit.SessionServiceTest" />
       <item itemvalue="JUnit.SpeakerServiceTest" />
+      <item itemvalue="JUnit.VoteServiceTest" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.SpeakerServiceTest" />
-        <item itemvalue="JUnit.All in CombinedTestModule (1)" />
-        <item itemvalue="JUnit.All in CombinedTestModule" />
         <item itemvalue="JUnit.VoteServiceTest" />
+        <item itemvalue="JUnit.SpeakerServiceTest" />
         <item itemvalue="JUnit.SessionServiceTest" />
+        <item itemvalue="JUnit.All in CombinedTestModule" />
+        <item itemvalue="JUnit.All in CombinedTestModule (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -246,6 +261,14 @@
       <workItem from="1601745314636" duration="4394000" />
       <workItem from="1602190294432" duration="2591000" />
       <workItem from="1602194205773" duration="2375000" />
+      <workItem from="1611788010410" duration="2980000" />
+      <workItem from="1612189949461" duration="730000" />
+      <workItem from="1612190822757" duration="14505000" />
+      <workItem from="1612285028706" duration="621000" />
+      <workItem from="1612285677894" duration="29000" />
+      <workItem from="1612300064819" duration="337000" />
+      <workItem from="1612303826063" duration="2489000" />
+      <workItem from="1612378799250" duration="5962000" />
     </task>
     <task id="LOCAL-00001" summary="-Implemented Integration tests project with TestContainers&#10;-Updated project to Java11">
       <created>1601683750426</created>
@@ -261,7 +284,14 @@
       <option name="project" value="LOCAL" />
       <updated>1601686834814</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Update to current version of the Payara Platform (testing)">
+      <created>1605821230092</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1605821230092</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -282,68 +312,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="-Implemented Integration tests project with TestContainers&#10;-Updated project to Java11" />
     <MESSAGE value="Small updates to adapt integration tests for session and vote microservices" />
-    <option name="LAST_COMMIT_MESSAGE" value="Small updates to adapt integration tests for session and vote microservices" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="741" y="495" key="#Payara_Server" timestamp="1601655667085">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="741" y="495" key="#Payara_Server/0.0.1920.1040/-1920.0.1920.1080@0.0.1920.1040" timestamp="1601655667085" />
-    <state x="552" y="178" key="#Project_Structure" timestamp="1601476758786">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="552" y="178" key="#Project_Structure/0.0.1920.1040/-1920.0.1920.1080@0.0.1920.1040" timestamp="1601476758786" />
-    <state x="552" y="179" key="#Updates" timestamp="1601563544333">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="552" y="179" key="#Updates/0.0.1920.1040/-1920.0.1920.1080@0.0.1920.1040" timestamp="1601563544333" />
-    <state x="414" y="175" width="1092" height="828" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1601655702330">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="414" y="175" width="1092" height="828" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/-1920.0.1920.1080@0.0.1920.1040" timestamp="1601655702330" />
-    <state x="640" y="256" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1601563558303">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="640" y="256" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1040/-1920.0.1920.1080@0.0.1920.1040" timestamp="1601563558303" />
-    <state x="487" y="85" key="CommitChangelistDialog2" timestamp="1601686833675">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="487" y="85" key="CommitChangelistDialog2/0.0.1920.1040/-1920.0.1920.1080@0.0.1920.1040" timestamp="1601686833675" />
-    <state x="740" y="330" key="FileChooserDialogImpl" timestamp="1601655660537">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="740" y="330" key="FileChooserDialogImpl/0.0.1920.1040/-1920.0.1920.1080@0.0.1920.1040" timestamp="1601655660537" />
-    <state width="1877" height="295" key="GridCell.Tab.0.bottom" timestamp="1601755835774">
-      <screen x="1920" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1080@0.0.1920.1040" timestamp="1601749760758" />
-    <state width="1877" height="295" key="GridCell.Tab.0.bottom/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1601755835774" />
-    <state width="1877" height="295" key="GridCell.Tab.0.center" timestamp="1601755835774">
-      <screen x="1920" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1080@0.0.1920.1040" timestamp="1601749760758" />
-    <state width="1877" height="295" key="GridCell.Tab.0.center/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1601755835774" />
-    <state width="1877" height="295" key="GridCell.Tab.0.left" timestamp="1601755835774">
-      <screen x="1920" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1080@0.0.1920.1040" timestamp="1601749760758" />
-    <state width="1877" height="295" key="GridCell.Tab.0.left/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1601755835774" />
-    <state width="1877" height="295" key="GridCell.Tab.0.right" timestamp="1601755835774">
-      <screen x="1920" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1080@0.0.1920.1040" timestamp="1601749760758" />
-    <state width="1877" height="295" key="GridCell.Tab.0.right/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1601755835774" />
-    <state x="461" y="162" key="SettingsEditor" timestamp="1601476806735">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="461" y="162" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1080@0.0.1920.1040" timestamp="1601476806735" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1601686852088">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.0.1920.1080@0.0.1920.1040" timestamp="1601686852088" />
-    <state x="616" y="240" width="672" height="677" key="run.anything.popup" timestamp="1601679597467">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="616" y="240" width="672" height="677" key="run.anything.popup/0.0.1920.1040/-1920.0.1920.1080@0.0.1920.1040" timestamp="1601679597467" />
+    <MESSAGE value="Update to current version of the Payara Platform (testing)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update to current version of the Payara Platform (testing)" />
   </component>
 </project>

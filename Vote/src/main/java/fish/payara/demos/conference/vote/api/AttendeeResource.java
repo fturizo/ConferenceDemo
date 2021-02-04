@@ -7,6 +7,7 @@ import fish.payara.demos.conference.vote.services.AttendeeService;
 import java.net.URI;
 import java.time.temporal.ChronoUnit;
 import java.util.List;
+import javax.annotation.security.RolesAllowed;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.json.Json;
