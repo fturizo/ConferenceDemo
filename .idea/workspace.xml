@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="19c9dcd9-9911-4ae1-895d-64ea7062b75d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CombinedTestModule/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/CombinedTestModule/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CombinedTestModule/src/test/java/fish/payara/demos/combined/VoteServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/CombinedTestModule/src/test/java/fish/payara/demos/combined/VoteServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +53,7 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.runner" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -77,7 +75,18 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.All in CombinedTestModule">
+  <component name="RunManager" selected="JUnit.VoteServiceTest">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="All in CombinedTestModule (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CombinedTestModule" />
       <option name="PACKAGE_NAME" value="" />
@@ -212,9 +221,9 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.All in CombinedTestModule" />
         <item itemvalue="JUnit.VoteServiceTest" />
         <item itemvalue="JUnit.SpeakerServiceTest" />
+        <item itemvalue="JUnit.All in CombinedTestModule" />
         <item itemvalue="JUnit.SessionServiceTest" />
         <item itemvalue="JUnit.All in CombinedTestModule (1)" />
       </list>
@@ -277,7 +286,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612473443845</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Improved testing base class for generating Payara Micro containers">
+      <created>1612552929813</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1612552929813</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -300,6 +316,7 @@
     <MESSAGE value="Small updates to adapt integration tests for session and vote microservices" />
     <MESSAGE value="Update to current version of the Payara Platform (testing)" />
     <MESSAGE value="Update to current version of the Payara Platform + small optimizations" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update to current version of the Payara Platform + small optimizations" />
+    <MESSAGE value="Improved testing base class for generating Payara Micro containers" />
+    <option name="LAST_COMMIT_MESSAGE" value="Improved testing base class for generating Payara Micro containers" />
   </component>
 </project>
