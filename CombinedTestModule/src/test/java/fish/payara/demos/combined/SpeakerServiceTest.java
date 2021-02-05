@@ -1,12 +1,10 @@
 package fish.payara.demos.combined;
 
-import fish.payara.demos.combined.utils.ContainerUtils;
+import fish.payara.demos.combined.base.PayaraMicroContainerBuilder;
 import fish.payara.demos.conference.speaker.entitites.Speaker;
 import io.restassured.http.ContentType;
 import org.junit.jupiter.api.*;
-import org.testcontainers.containers.BindMode;
 import org.testcontainers.containers.GenericContainer;
-import org.testcontainers.containers.wait.strategy.Wait;
 import org.testcontainers.junit.jupiter.Container;
 import org.testcontainers.junit.jupiter.Testcontainers;
 
@@ -19,11 +17,8 @@ import static org.hamcrest.Matchers.equalTo;
 public class SpeakerServiceTest {
 
     @Container
-    private static GenericContainer speakerService = new GenericContainer(ContainerUtils.PAYARA_MICRO_IMAGE)
-                .withExposedPorts(ContainerUtils.HTTP_PORT)
-                .withFileSystemBind("target/wars/microservice-speaker.war", "/opt/payara/deployments/micro-service-speaker.war", BindMode.READ_WRITE)
-                .waitingFor(Wait.forHttp("/application.wadl").forStatusCode(200))
-                .withCommand("--noCluster --deploy /opt/payara/deployments/micro-service-speaker.war --contextRoot /");
+    private static GenericContainer speakerService = PayaraMicroContainerBuilder.fromDefault()
+            .withArtifact("microservice-speaker.war").build();
 
     @Test
     @DisplayName("Add speakers")

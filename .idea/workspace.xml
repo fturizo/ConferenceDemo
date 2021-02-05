@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="19c9dcd9-9911-4ae1-895d-64ea7062b75d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CombinedTestModule/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/CombinedTestModule/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CombinedTestModule/src/test/java/fish/payara/demos/combined/VoteServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/CombinedTestModule/src/test/java/fish/payara/demos/combined/VoteServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,7 +22,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="metrics-expanse" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -77,7 +75,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.All in CombinedTestModule">
+  <component name="RunManager" selected="JUnit.VoteServiceTest">
     <configuration name="All in CombinedTestModule (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CombinedTestModule" />
       <option name="PACKAGE_NAME" value="" />
@@ -212,10 +210,10 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.All in CombinedTestModule" />
         <item itemvalue="JUnit.VoteServiceTest" />
         <item itemvalue="JUnit.SpeakerServiceTest" />
         <item itemvalue="JUnit.SessionServiceTest" />
+        <item itemvalue="JUnit.All in CombinedTestModule" />
         <item itemvalue="JUnit.All in CombinedTestModule (1)" />
       </list>
     </recent_temporary>

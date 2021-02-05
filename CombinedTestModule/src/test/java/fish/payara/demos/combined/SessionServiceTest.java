@@ -1,14 +1,12 @@
 package fish.payara.demos.combined;
 
-import fish.payara.demos.combined.utils.ContainerUtils;
+import fish.payara.demos.combined.base.PayaraMicroContainerBuilder;
 import fish.payara.demos.conference.session.entities.Session;
 import fish.payara.demos.conference.speaker.entitites.Speaker;
 import io.restassured.http.ContentType;
 import org.junit.jupiter.api.*;
-import org.testcontainers.containers.BindMode;
 import org.testcontainers.containers.GenericContainer;
 import org.testcontainers.containers.Network;
-import org.testcontainers.containers.wait.strategy.Wait;
 import org.testcontainers.junit.jupiter.Container;
 import org.testcontainers.junit.jupiter.Testcontainers;
 
@@ -27,23 +25,18 @@ public class SessionServiceTest {
     private final static Network INTERNAL_NETWORK = Network.newNetwork();
 
     @Container
-    private static GenericContainer speakerService = new GenericContainer(ContainerUtils.PAYARA_MICRO_IMAGE)
-                .withNetwork(INTERNAL_NETWORK)
-                .withNetworkAliases("speaker")
-                .withExposedPorts(ContainerUtils.HTTP_PORT)
-                .withFileSystemBind("target/wars/microservice-speaker.war", "/opt/payara/deployments/microservice-speaker.war", BindMode.READ_WRITE)
-                .waitingFor(Wait.forHttp("/application.wadl").forStatusCode(200))
-                .withCommand("--noCluster --deploy /opt/payara/deployments/microservice-speaker.war --contextRoot /");
+    private static GenericContainer speakerService = PayaraMicroContainerBuilder.fromDefault()
+            .withNetwork(INTERNAL_NETWORK, "speaker")
+            .withArtifact("microservice-speaker.war")
+            .build();
 
     @Container
-    private static GenericContainer sessionService = new GenericContainer(ContainerUtils.PAYARA_MICRO_IMAGE)
-            .withExposedPorts(ContainerUtils.HTTP_PORT)
-            .withNetwork(INTERNAL_NETWORK)
+    private static GenericContainer sessionService = PayaraMicroContainerBuilder.fromDefault()
+            .withNetwork(INTERNAL_NETWORK, "session")
+            .withArtifact("microservice-session.war")
             .withEnv("fish.payara.demos.conference.session.rs.clients.SpeakerServiceClient/mp-rest/url", "http://speaker:8080/")
             .withEnv("fish.payara.demos.conference.session.rs.clients.VenueServiceClient/mp-rest/url", "http://speaker:8080/")
-            .withFileSystemBind("target/wars/microservice-session.war", "/opt/payara/deployments/microservice-session.war", BindMode.READ_WRITE)
-            .waitingFor(Wait.forHttp("/application.wadl").forStatusCode(200))
-            .withCommand("--noCluster --deploy /opt/payara/deployments/microservice-session.war --contextRoot /");
+            .build();
 
     @Test
     @DisplayName("Add speakers")

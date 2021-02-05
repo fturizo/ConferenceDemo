@@ -1,5 +1,6 @@
 package fish.payara.demos.combined;
 
+import fish.payara.demos.combined.base.PayaraMicroContainerBuilder;
 import fish.payara.demos.combined.utils.ContainerUtils;
 import fish.payara.demos.conference.session.entities.Session;
 import fish.payara.demos.conference.vote.entities.Attendee;
@@ -25,7 +26,6 @@ import org.testcontainers.utility.DockerImageName;
 import java.time.Duration;
 import java.time.LocalDate;
 import java.util.List;
-import java.util.logging.Logger;
 
 @Testcontainers
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
@@ -39,39 +39,43 @@ public class VoteServiceTest {
                                                 .withNetwork(INTERNAL_NETWORK)
                                                 .withNetworkAliases(DB_ALIAS);
     @Container
-    private static GenericContainer speakerService = new GenericContainer(ContainerUtils.PAYARA_MICRO_IMAGE)
-                .withNetwork(INTERNAL_NETWORK)
-                .withNetworkAliases("speaker")
-                .withExposedPorts(ContainerUtils.HTTP_PORT)
-                .withFileSystemBind("target/wars/microservice-speaker.war", "/opt/payara/deployments/microservice-speaker.war", BindMode.READ_WRITE)
-                .waitingFor(Wait.forHttp("/application.wadl").forStatusCode(200))
-                .withCommand("--noCluster --deploy /opt/payara/deployments/microservice-speaker.war --contextRoot /");
+    private static GenericContainer speakerService = PayaraMicroContainerBuilder.fromDefault()
+            .withNetwork(INTERNAL_NETWORK, "speaker")
+            .withArtifact("microservice-speaker.war")
+            .build();
 
     @Container
-    private static GenericContainer sessionService = new GenericContainer(ContainerUtils.PAYARA_MICRO_IMAGE)
-                .withExposedPorts(ContainerUtils.HTTP_PORT)
-                .dependsOn(speakerService)
-                .withNetwork(INTERNAL_NETWORK)
-                .withNetworkAliases("session")
-                .withEnv("fish.payara.demos.conference.session.rs.clients.SpeakerServiceClient/mp-rest/url", "http://speaker:8080/")
-                .withEnv("fish.payara.demos.conference.session.rs.clients.VenueServiceClient/mp-rest/url", "http://speaker:8080/")
-                .withFileSystemBind("target/wars/microservice-session.war", "/opt/payara/deployments/microservice-session.war", BindMode.READ_WRITE)
-                .waitingFor(Wait.forHttp("/application.wadl").forStatusCode(200))
-                .withCommand("--noCluster --deploy /opt/payara/deployments/microservice-session.war --contextRoot /");
+    private static GenericContainer sessionService = PayaraMicroContainerBuilder.fromDefault()
+            .withNetwork(INTERNAL_NETWORK, "session")
+            .withDependencies(speakerService)
+            .withArtifact("microservice-session.war")
+            .withEnv("fish.payara.demos.conference.session.rs.clients.SpeakerServiceClient/mp-rest/url", "http://speaker:8080/")
+            .withEnv("fish.payara.demos.conference.session.rs.clients.VenueServiceClient/mp-rest/url", "http://speaker:8080/")
+            .build();
 
     @Container
-    private static GenericContainer voteService = new GenericContainer(ContainerUtils.PAYARA_MICRO_IMAGE)
-                .withExposedPorts(ContainerUtils.HTTP_PORT)
-                .withNetwork(INTERNAL_NETWORK)
-                .dependsOn(dbContainer, sessionService)
-                .withEnv("DB_JDBC_URL", String.format("jdbc:mysql://%s:3306/%s", DB_ALIAS, dbContainer.getDatabaseName()))
-                .withEnv("DB_USER", dbContainer.getUsername())
-                .withEnv("DB_PASSWORD",  dbContainer.getPassword())
-                .withEnv("fish.payara.demos.conference.vote.rs.interfaces.SessionServiceClient/mp-rest/url", "http://session:8080/")
-                .withFileSystemBind("target/wars/microservice-vote.war", "/opt/payara/deployments/micro-service-vote.war", BindMode.READ_WRITE)
-                .withFileSystemBind("target/libs/mysql-connector.jar", "/opt/payara/libs/mysql-connector.jar", BindMode.READ_WRITE)
-                .waitingFor(Wait.forHttp("/application.wadl").forStatusCode(200))
-                .withCommand("--deploy /opt/payara/deployments/micro-service-vote.war --addLibs /opt/payara/libs/mysql-connector.jar --enablerequesttracing --contextRoot /");
+    private static GenericContainer voteService = PayaraMicroContainerBuilder.fromDefault()
+            .withClustering()
+            .withNetwork(INTERNAL_NETWORK, "vote")
+            .withArtifact("microservice-vote.war")
+            .withLibBinding("mysql-connector.jar")
+            .withDependencies(dbContainer, sessionService)
+            .withEnv("DB_JDBC_URL", String.format("jdbc:mysql://%s:3306/%s", DB_ALIAS, dbContainer.getDatabaseName()))
+            .withEnv("DB_USER", dbContainer.getUsername())
+            .withEnv("DB_PASSWORD",  dbContainer.getPassword())
+            .withEnv("fish.payara.demos.conference.vote.rs.interfaces.SessionServiceClient/mp-rest/url", "http://session:8080/")
+            .withStartupArg("--enableRequestTracing")
+            .build();
+
+    @BeforeAll
+    public static void createSession(){
+        Session sampleSession = new Session("Easy IT with TestContainers", "OCARINA", LocalDate.now(), Duration.ofHours(1), List.of("Fabio Turizo"));
+        given().
+                contentType(ContentType.JSON).
+                body(sampleSession).
+                when().
+                post(buildURI(sessionService, "/session"));
+    }
     
     @Test
     @DisplayName("Register attendee")
@@ -111,16 +115,6 @@ public class VoteServiceTest {
                 post(buildURI(voteService, "/attendee/login")).
                 then().
                 assertThat().statusCode(400);
-    }
-
-    @BeforeAll
-    public static void createSession(){
-        Session sampleSession = new Session("Easy IT with TestContainers", "OCARINA", LocalDate.now(), Duration.ofHours(1), List.of("Fabio Turizo"));
-        given().
-                contentType(ContentType.JSON).
-                body(sampleSession).
-                when().
-                post(buildURI(sessionService, "/session"));
     }
 
     @Test
