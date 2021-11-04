@@ -10,7 +10,7 @@ public interface ContainerUtils {
 
     int HTTP_PORT = 8080;
 
-    DockerImageName PAYARA_MICRO_IMAGE = DockerImageName.parse("payara/micro:5.2020.7-jdk11");
+    DockerImageName PAYARA_MICRO_IMAGE = DockerImageName.parse("payara/micro:5.2021.8-jdk11");
 
     static URI buildURI(GenericContainer container, String path){
         return UriBuilder.fromUri("http://" + container.getHost())

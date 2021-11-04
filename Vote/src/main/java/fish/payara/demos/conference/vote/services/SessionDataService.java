@@ -2,10 +2,10 @@ package fish.payara.demos.conference.vote.services;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.enterprise.context.ApplicationScoped;
-import javax.inject.Inject;
-import javax.json.JsonObject;
-import javax.ws.rs.WebApplicationException;
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.inject.Inject;
+import jakarta.json.JsonObject;
+import jakarta.ws.rs.WebApplicationException;
 import org.eclipse.microprofile.rest.client.inject.RestClient;
 import fish.payara.demos.conference.vote.rs.interfaces.SessionServiceClient;
 

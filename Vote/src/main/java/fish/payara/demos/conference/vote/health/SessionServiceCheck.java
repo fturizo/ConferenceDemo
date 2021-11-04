@@ -3,16 +3,16 @@ package fish.payara.demos.conference.vote.health;
 import java.net.URI;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.enterprise.context.ApplicationScoped;
-import javax.inject.Inject;
-import javax.ws.rs.client.ClientBuilder;
-import javax.ws.rs.core.Response;
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.inject.Inject;
+import jakarta.ws.rs.client.ClientBuilder;
+import jakarta.ws.rs.core.Response;
 import org.eclipse.microprofile.config.inject.ConfigProperty;
 import org.eclipse.microprofile.health.HealthCheck;
 import org.eclipse.microprofile.health.HealthCheckResponse;
 import org.eclipse.microprofile.health.Readiness;
 
-//@Readiness
+@Readiness
 @ApplicationScoped
 public class SessionServiceCheck implements HealthCheck {
 
@@ -26,7 +26,7 @@ public class SessionServiceCheck implements HealthCheck {
     public HealthCheckResponse call() {
         return HealthCheckResponse.named("microservice-session")
                 .withData("url", sessionServiceURL.toString())
-                .state(checkService())
+                .status(checkService())
                 .build();
     }
 

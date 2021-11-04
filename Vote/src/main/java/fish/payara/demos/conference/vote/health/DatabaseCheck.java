@@ -6,7 +6,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.enterprise.context.ApplicationScoped;
+import jakarta.enterprise.context.ApplicationScoped;
 import org.eclipse.microprofile.health.HealthCheck;
 import org.eclipse.microprofile.health.HealthCheckResponse;
 import org.eclipse.microprofile.health.Liveness;
@@ -29,7 +29,7 @@ public class DatabaseCheck implements HealthCheck{
     public HealthCheckResponse call() {
         return HealthCheckResponse.named("DatabaseCheck")
                                  .withData("name", "session")
-                                 .state(checkOnDatabase())
+                                 .status(checkOnDatabase())
                                  .build();
     }
 

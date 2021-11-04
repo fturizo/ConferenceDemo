@@ -26,30 +26,20 @@
                 <groupId>fish.payara.maven.plugins</groupId>
                 <artifactId>payara-micro-maven-plugin</artifactId>
                 <version>${payara.micro.maven.version}</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>start</goal>
-                        </goals>
-                    </execution>
-                </executions>
                 <configuration>
                     <payaraVersion>${payara.version}</payaraVersion>
                     <deployWar>true</deployWar>
                     <commandLineOptions>
                         <option>
                             <key>--port</key>
-                            <value>8882</value>
+                            <value>${conference.service.session.port}</value>
                         </option>
                         <option>
                             <key>--clusterName</key>
                             <value>session</value>
                         </option>
-                        <option>
-                            <key>--contextRoot</key>
-                            <value>/</value>
-                        </option>
                     </commandLineOptions>
+                    <contextRoot>/</contextRoot>
                 </configuration>
             </plugin>
         </plugins>
@@ -57,12 +47,14 @@
     
     <dependencies>
         <dependency>
-            <groupId>javax</groupId>
-            <artifactId>javaee-web-api</artifactId>
+            <groupId>jakarta.platform</groupId>
+            <artifactId>jakarta.jakartaee-web-api</artifactId>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.eclipse.microprofile</groupId>
             <artifactId>microprofile</artifactId>
+            <scope>provided</scope>
             <type>pom</type>
         </dependency>
     </dependencies>

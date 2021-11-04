@@ -26,28 +26,17 @@
                 <groupId>fish.payara.maven.plugins</groupId>
                 <artifactId>payara-micro-maven-plugin</artifactId>
                 <version>${payara.micro.maven.version}</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>start</goal>
-                        </goals>
-                    </execution>
-                </executions>
                 <configuration>
                     <payaraVersion>${payara.version}</payaraVersion>
                     <deployWar>true</deployWar>
                     <commandLineOptions>
                         <option>
                             <key>--port</key>
-                            <value>8883</value>
+                            <value>${conference.service.vote.port}</value>
                         </option>
                         <option>
                             <key>--clusterName</key>
                             <value>vote</value>
-                        </option>
-                        <option>
-                            <key>--contextRoot</key>
-                            <value>/</value>
                         </option>
                         <option>
                             <key>--enablerequesttracing</key>
@@ -60,7 +49,8 @@
                             <key>--addLibs</key>
                             <value>${settings.localRepository}/mysql/mysql-connector-java/8.0.20/mysql-connector-java-8.0.20.jar</value>
                         </option>
-                    </commandLineOptions>                    
+                    </commandLineOptions>
+                    <contextRoot>/</contextRoot>
                 </configuration>
             </plugin>
         </plugins>
@@ -68,13 +58,14 @@
     
     <dependencies>
         <dependency>
-            <groupId>javax</groupId>
-            <artifactId>javaee-web-api</artifactId>
+            <groupId>jakarta.platform</groupId>
+            <artifactId>jakarta.jakartaee-web-api</artifactId>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.eclipse.microprofile</groupId>
             <artifactId>microprofile</artifactId>
-            <version>3.3</version>
+            <scope>provided</scope>
             <type>pom</type>
         </dependency>
         <dependency>

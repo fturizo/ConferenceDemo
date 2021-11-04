@@ -4,9 +4,45 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="19c9dcd9-9911-4ae1-895d-64ea7062b75d" name="Default Changelist" comment="">
+    <list default="true" id="19c9dcd9-9911-4ae1-895d-64ea7062b75d" name="Default Changelist" comment="Upgrade Jakarta EE and Payara Platform dependencies">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CombinedTestModule/CombinedTestModule.iml" beforeDir="false" afterPath="$PROJECT_DIR$/CombinedTestModule/CombinedTestModule.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CombinedTestModule/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/CombinedTestModule/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CombinedTestModule/src/test/java/fish/payara/demos/combined/utils/ContainerUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/CombinedTestModule/src/test/java/fish/payara/demos/combined/utils/ContainerUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Session/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Session/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Session/src/main/java/fish/payara/demos/conference/session/SessionApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/Session/src/main/java/fish/payara/demos/conference/session/SessionApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Session/src/main/java/fish/payara/demos/conference/session/api/PingResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/Session/src/main/java/fish/payara/demos/conference/session/api/PingResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Session/src/main/java/fish/payara/demos/conference/session/api/SessionResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/Session/src/main/java/fish/payara/demos/conference/session/api/SessionResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Session/src/main/java/fish/payara/demos/conference/session/api/exception/RuntimeExceptionMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/Session/src/main/java/fish/payara/demos/conference/session/api/exception/RuntimeExceptionMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Session/src/main/java/fish/payara/demos/conference/session/converters/DurationConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Session/src/main/java/fish/payara/demos/conference/session/converters/DurationConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Session/src/main/java/fish/payara/demos/conference/session/converters/SpeakersConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Session/src/main/java/fish/payara/demos/conference/session/converters/SpeakersConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Session/src/main/java/fish/payara/demos/conference/session/entities/Session.java" beforeDir="false" afterPath="$PROJECT_DIR$/Session/src/main/java/fish/payara/demos/conference/session/entities/Session.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Session/src/main/java/fish/payara/demos/conference/session/rs/clients/SpeakerServiceClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/Session/src/main/java/fish/payara/demos/conference/session/rs/clients/SpeakerServiceClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Session/src/main/java/fish/payara/demos/conference/session/rs/clients/VenueServiceClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/Session/src/main/java/fish/payara/demos/conference/session/rs/clients/VenueServiceClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Session/src/main/java/fish/payara/demos/conference/session/services/SessionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Session/src/main/java/fish/payara/demos/conference/session/services/SessionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Session/src/main/java/fish/payara/demos/conference/session/services/SpeakerDomainChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/Session/src/main/java/fish/payara/demos/conference/session/services/SpeakerDomainChecker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Speaker/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Speaker/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Speaker/src/main/java/fish/payara/demos/conference/speaker/SpeakerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/Speaker/src/main/java/fish/payara/demos/conference/speaker/SpeakerApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Speaker/src/main/java/fish/payara/demos/conference/speaker/api/SpeakerResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/Speaker/src/main/java/fish/payara/demos/conference/speaker/api/SpeakerResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Speaker/src/main/java/fish/payara/demos/conference/speaker/api/VenueResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/Speaker/src/main/java/fish/payara/demos/conference/speaker/api/VenueResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Speaker/src/main/java/fish/payara/demos/conference/speaker/entitites/Speaker.java" beforeDir="false" afterPath="$PROJECT_DIR$/Speaker/src/main/java/fish/payara/demos/conference/speaker/entitites/Speaker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Speaker/src/main/java/fish/payara/demos/conference/speaker/services/SpeakerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Speaker/src/main/java/fish/payara/demos/conference/speaker/services/SpeakerService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Vote/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Vote/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vote/src/main/java/fish/payara/demos/conference/vote/VoteApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/Vote/src/main/java/fish/payara/demos/conference/vote/VoteApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vote/src/main/java/fish/payara/demos/conference/vote/api/AttendeeResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/Vote/src/main/java/fish/payara/demos/conference/vote/api/AttendeeResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vote/src/main/java/fish/payara/demos/conference/vote/api/SessionVoteResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/Vote/src/main/java/fish/payara/demos/conference/vote/api/SessionVoteResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vote/src/main/java/fish/payara/demos/conference/vote/api/providers/FTExceptionMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/Vote/src/main/java/fish/payara/demos/conference/vote/api/providers/FTExceptionMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vote/src/main/java/fish/payara/demos/conference/vote/entities/Attendee.java" beforeDir="false" afterPath="$PROJECT_DIR$/Vote/src/main/java/fish/payara/demos/conference/vote/entities/Attendee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vote/src/main/java/fish/payara/demos/conference/vote/entities/Credentials.java" beforeDir="false" afterPath="$PROJECT_DIR$/Vote/src/main/java/fish/payara/demos/conference/vote/entities/Credentials.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vote/src/main/java/fish/payara/demos/conference/vote/entities/SessionRating.java" beforeDir="false" afterPath="$PROJECT_DIR$/Vote/src/main/java/fish/payara/demos/conference/vote/entities/SessionRating.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vote/src/main/java/fish/payara/demos/conference/vote/health/DatabaseCheck.java" beforeDir="false" afterPath="$PROJECT_DIR$/Vote/src/main/java/fish/payara/demos/conference/vote/health/DatabaseCheck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vote/src/main/java/fish/payara/demos/conference/vote/health/SessionServiceCheck.java" beforeDir="false" afterPath="$PROJECT_DIR$/Vote/src/main/java/fish/payara/demos/conference/vote/health/SessionServiceCheck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vote/src/main/java/fish/payara/demos/conference/vote/jwt/TokenGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/Vote/src/main/java/fish/payara/demos/conference/vote/jwt/TokenGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vote/src/main/java/fish/payara/demos/conference/vote/rs/interfaces/SessionServiceClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/Vote/src/main/java/fish/payara/demos/conference/vote/rs/interfaces/SessionServiceClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vote/src/main/java/fish/payara/demos/conference/vote/services/AttendeeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Vote/src/main/java/fish/payara/demos/conference/vote/services/AttendeeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vote/src/main/java/fish/payara/demos/conference/vote/services/SessionDataService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Vote/src/main/java/fish/payara/demos/conference/vote/services/SessionDataService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vote/src/main/java/fish/payara/demos/conference/vote/services/SessionRatingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Vote/src/main/java/fish/payara/demos/conference/vote/services/SessionRatingService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +79,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/CombinedTestModule" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/ContextPropagationCDI" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -51,7 +87,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
@@ -76,7 +112,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.VoteServiceTest">
+  <component name="RunManager" selected="JUnit.All in CombinedTestModule">
     <configuration name="All in CombinedTestModule (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CombinedTestModule" />
       <option name="PACKAGE_NAME" value="" />
@@ -211,10 +247,10 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.VoteServiceTest" />
-        <item itemvalue="JUnit.SpeakerServiceTest" />
-        <item itemvalue="JUnit.SessionServiceTest" />
         <item itemvalue="JUnit.All in CombinedTestModule" />
+        <item itemvalue="JUnit.SpeakerServiceTest" />
+        <item itemvalue="JUnit.VoteServiceTest" />
+        <item itemvalue="JUnit.SessionServiceTest" />
         <item itemvalue="JUnit.All in CombinedTestModule (1)" />
       </list>
     </recent_temporary>
@@ -247,6 +283,11 @@
       <workItem from="1612300064819" duration="337000" />
       <workItem from="1612303826063" duration="2489000" />
       <workItem from="1612378799250" duration="8070000" />
+      <workItem from="1612796325104" duration="558000" />
+      <workItem from="1613413257458" duration="595000" />
+      <workItem from="1613425407646" duration="60000" />
+      <workItem from="1613589287899" duration="3894000" />
+      <workItem from="1636058948827" duration="3430000" />
     </task>
     <task id="LOCAL-00001" summary="-Implemented Integration tests project with TestContainers&#10;-Updated project to Java11">
       <created>1601683750426</created>
@@ -307,6 +348,7 @@
     <MESSAGE value="Update to current version of the Payara Platform (testing)" />
     <MESSAGE value="Update to current version of the Payara Platform + small optimizations" />
     <MESSAGE value="Improved testing base class for generating Payara Micro containers" />
-    <option name="LAST_COMMIT_MESSAGE" value="Improved testing base class for generating Payara Micro containers" />
+    <MESSAGE value="Upgrade Jakarta EE and Payara Platform dependencies" />
+    <option name="LAST_COMMIT_MESSAGE" value="Upgrade Jakarta EE and Payara Platform dependencies" />
   </component>
 </project>

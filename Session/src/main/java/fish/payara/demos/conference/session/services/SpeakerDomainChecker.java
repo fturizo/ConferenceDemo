@@ -4,11 +4,11 @@ import fish.payara.demos.conference.session.rs.clients.SpeakerServiceClient;
 import fish.payara.demos.conference.session.rs.clients.VenueServiceClient;
 import fish.payara.demos.conference.session.entities.Session;
 import java.util.logging.Logger;
-import javax.enterprise.context.ApplicationScoped;
-import javax.inject.Inject;
-import javax.ws.rs.WebApplicationException;
-import javax.ws.rs.core.Response;
-import javax.ws.rs.core.Response.Status;
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.inject.Inject;
+import jakarta.ws.rs.WebApplicationException;
+import jakarta.ws.rs.core.Response;
+import jakarta.ws.rs.core.Response.Status;
 import org.eclipse.microprofile.rest.client.inject.RestClient;
 
 /**

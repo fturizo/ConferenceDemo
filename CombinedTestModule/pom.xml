@@ -11,32 +11,33 @@
     <packaging>jar</packaging>
 
     <properties>
-        <testcontainers.version>1.15.1</testcontainers.version>
+        <junit.version>5.8.1</junit.version>
+        <testcontainers.version>1.16.2</testcontainers.version>
+        <mysql.jdbc.version>8.0.21</mysql.jdbc.version>
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>jakarta.platform</groupId>
-            <artifactId>jakarta.jakartaee-api</artifactId>
-            <version>8.0.0</version>
+            <artifactId>jakarta.jakartaee-web-api</artifactId>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
-            <version>5.4.2</version>
+            <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-params</artifactId>
-            <version>5.4.2</version>
+            <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>
-            <version>5.4.2</version>
+            <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>        
         <dependency>
@@ -60,7 +61,7 @@
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>8.0.21</version>
+            <version>${mysql.jdbc.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -148,7 +149,7 @@
                                 <artifactItem>
                                     <groupId>mysql</groupId>
                                     <artifactId>mysql-connector-java</artifactId>
-                                    <version>8.0.21</version>
+                                    <version>${mysql.jdbc.version}</version>
                                     <destFileName>mysql-connector.jar</destFileName>
                                     <outputDirectory>${project.build.directory}/libs</outputDirectory>
                                 </artifactItem>

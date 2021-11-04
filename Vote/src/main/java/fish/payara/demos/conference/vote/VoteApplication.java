@@ -1,10 +1,10 @@
 package fish.payara.demos.conference.vote;
 
-import javax.annotation.security.DeclareRoles;
-import javax.annotation.sql.DataSourceDefinition;
-import javax.enterprise.context.ApplicationScoped;
-import javax.ws.rs.ApplicationPath;
-import javax.ws.rs.core.Application;
+import jakarta.annotation.security.DeclareRoles;
+import jakarta.annotation.sql.DataSourceDefinition;
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.ws.rs.ApplicationPath;
+import jakarta.ws.rs.core.Application;
 import org.eclipse.microprofile.auth.LoginConfig;
 
 /**
@@ -13,7 +13,7 @@ import org.eclipse.microprofile.auth.LoginConfig;
  */
 @ApplicationPath("/")
 @ApplicationScoped
-@LoginConfig(authMethod = "MP-JWT")//, realmName = "MP-JWT")
+@LoginConfig(authMethod = "MP-JWT")
 @DeclareRoles("CAN_VOTE")
 @DataSourceDefinition(
         name = "java:global/voteDS",
