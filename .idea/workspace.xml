@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="19c9dcd9-9911-4ae1-895d-64ea7062b75d" name="Default Changelist" comment="Upgrade Jakarta EE and Payara Platform dependencies">
+    <list default="true" id="19c9dcd9-9911-4ae1-895d-64ea7062b75d" name="Default Changelist" comment="Fixed minor issue with Rest Client validation">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Session/src/main/java/fish/payara/demos/conference/session/services/SpeakerDomainChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/Session/src/main/java/fish/payara/demos/conference/session/services/SpeakerDomainChecker.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +27,18 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="JpbToolWindowState">
+    <option name="myId2FirstActivated">
+      <map>
+        <entry key="JPA Structure" value="true" />
+      </map>
+    </option>
+    <option name="myId2Visible">
+      <map>
+        <entry key="JPA Structure" value="true" />
+      </map>
+    </option>
+  </component>
   <component name="MavenRunner">
     <option name="delegateBuildToMaven" value="true" />
     <option name="skipTests" value="true" />
@@ -43,7 +54,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/ContextPropagationCDI" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Support_Scenarios/from_customers/2115-pt-rest" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -76,7 +87,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.SessionServiceTest">
+  <component name="RunManager" selected="JUnit.All in CombinedTestModule">
     <configuration name="All in CombinedTestModule (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CombinedTestModule" />
       <option name="PACKAGE_NAME" value="" />
@@ -211,8 +222,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.SessionServiceTest" />
         <item itemvalue="JUnit.All in CombinedTestModule" />
+        <item itemvalue="JUnit.SessionServiceTest" />
         <item itemvalue="JUnit.SpeakerServiceTest" />
         <item itemvalue="JUnit.VoteServiceTest" />
         <item itemvalue="JUnit.All in CombinedTestModule (1)" />
@@ -251,7 +262,8 @@
       <workItem from="1613413257458" duration="595000" />
       <workItem from="1613425407646" duration="60000" />
       <workItem from="1613589287899" duration="3894000" />
-      <workItem from="1636058948827" duration="5537000" />
+      <workItem from="1636058948827" duration="7316000" />
+      <workItem from="1636155068682" duration="570000" />
     </task>
     <task id="LOCAL-00001" summary="-Implemented Integration tests project with TestContainers&#10;-Updated project to Java11">
       <created>1601683750426</created>
@@ -295,7 +307,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636063041253</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Fixed minor issue with Rest Client validation">
+      <created>1636066463189</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1636066463190</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -320,6 +339,7 @@
     <MESSAGE value="Update to current version of the Payara Platform + small optimizations" />
     <MESSAGE value="Improved testing base class for generating Payara Micro containers" />
     <MESSAGE value="Upgrade Jakarta EE and Payara Platform dependencies" />
-    <option name="LAST_COMMIT_MESSAGE" value="Upgrade Jakarta EE and Payara Platform dependencies" />
+    <MESSAGE value="Fixed minor issue with Rest Client validation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed minor issue with Rest Client validation" />
   </component>
 </project>
