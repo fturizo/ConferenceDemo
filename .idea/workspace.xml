@@ -4,8 +4,12 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="19c9dcd9-9911-4ae1-895d-64ea7062b75d" name="Default Changelist" comment="Fixed minor issue with Rest Client validation">
+    <list default="true" id="19c9dcd9-9911-4ae1-895d-64ea7062b75d" name="Default Changelist" comment="Updated readme">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CombinedTestModule/src/test/java/fish/payara/demos/combined/SessionServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/CombinedTestModule/src/test/java/fish/payara/demos/combined/SessionServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CombinedTestModule/src/test/java/fish/payara/demos/combined/SpeakerServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/CombinedTestModule/src/test/java/fish/payara/demos/combined/SpeakerServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CombinedTestModule/src/test/java/fish/payara/demos/combined/VoteServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/CombinedTestModule/src/test/java/fish/payara/demos/combined/VoteServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CombinedTestModule/src/test/java/fish/payara/demos/combined/utils/ContainerUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/CombinedTestModule/src/test/java/fish/payara/demos/combined/utils/ContainerUtils.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,13 +20,14 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="improved-tests" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -30,18 +35,22 @@
   <component name="JpbToolWindowState">
     <option name="myId2FirstActivated">
       <map>
+        <entry key="JPA Inspector" value="true" />
+        <entry key="JPA Palette" value="true" />
         <entry key="JPA Structure" value="true" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="true" />
       </map>
     </option>
     <option name="myId2Visible">
       <map>
-        <entry key="JPA Structure" value="true" />
+        <entry key="JPA Inspector" value="true" />
+        <entry key="JPA Structure" value="false" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="false" />
       </map>
     </option>
   </component>
   <component name="MavenRunner">
     <option name="delegateBuildToMaven" value="true" />
-    <option name="skipTests" value="true" />
   </component>
   <component name="ProjectId" id="1TIvUwvKeuVVe0rzl5KrpKWvJ2r" />
   <component name="ProjectViewState">
@@ -54,7 +63,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Support_Scenarios/from_customers/2115-pt-rest" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/EAR-with-multiple-modules" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -87,15 +96,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.All in CombinedTestModule">
-    <configuration name="All in CombinedTestModule (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CombinedTestModule" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.VoteServiceTest">
     <configuration name="All in CombinedTestModule" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CombinedTestModule" />
       <option name="PACKAGE_NAME" value="" />
@@ -115,6 +116,22 @@
       <option name="PACKAGE_NAME" value="fish.payara.demos.combined" />
       <option name="MAIN_CLASS_NAME" value="fish.payara.demos.combined.SessionServiceTest" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SimpleDeploymentTest.execute" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CombinedTestModule" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="fish.payara.demos.combined.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="fish.payara.demos.combined" />
+      <option name="MAIN_CLASS_NAME" value="fish.payara.demos.combined.SimpleDeploymentTest" />
+      <option name="METHOD_NAME" value="execute" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -214,19 +231,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.All in CombinedTestModule (1)" />
       <item itemvalue="JUnit.All in CombinedTestModule" />
       <item itemvalue="JUnit.SessionServiceTest" />
       <item itemvalue="JUnit.SpeakerServiceTest" />
       <item itemvalue="JUnit.VoteServiceTest" />
+      <item itemvalue="JUnit.SimpleDeploymentTest.execute" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.All in CombinedTestModule" />
-        <item itemvalue="JUnit.SessionServiceTest" />
-        <item itemvalue="JUnit.SpeakerServiceTest" />
         <item itemvalue="JUnit.VoteServiceTest" />
-        <item itemvalue="JUnit.All in CombinedTestModule (1)" />
+        <item itemvalue="JUnit.SessionServiceTest" />
+        <item itemvalue="JUnit.SimpleDeploymentTest.execute" />
+        <item itemvalue="JUnit.SpeakerServiceTest" />
+        <item itemvalue="JUnit.All in CombinedTestModule" />
       </list>
     </recent_temporary>
   </component>
@@ -263,7 +280,13 @@
       <workItem from="1613425407646" duration="60000" />
       <workItem from="1613589287899" duration="3894000" />
       <workItem from="1636058948827" duration="7316000" />
-      <workItem from="1636155068682" duration="570000" />
+      <workItem from="1636155068682" duration="3403000" />
+      <workItem from="1636384152621" duration="596000" />
+      <workItem from="1639512645293" duration="1112000" />
+      <workItem from="1639517713935" duration="310000" />
+      <workItem from="1642112375822" duration="18876000" />
+      <workItem from="1642211740273" duration="34000" />
+      <workItem from="1642546184872" duration="5262000" />
     </task>
     <task id="LOCAL-00001" summary="-Implemented Integration tests project with TestContainers&#10;-Updated project to Java11">
       <created>1601683750426</created>
@@ -314,7 +337,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636066463190</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Updated readme">
+      <created>1636220792332</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1636220792332</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -340,6 +370,7 @@
     <MESSAGE value="Improved testing base class for generating Payara Micro containers" />
     <MESSAGE value="Upgrade Jakarta EE and Payara Platform dependencies" />
     <MESSAGE value="Fixed minor issue with Rest Client validation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed minor issue with Rest Client validation" />
+    <MESSAGE value="Updated readme" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated readme" />
   </component>
 </project>

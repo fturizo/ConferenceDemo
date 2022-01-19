@@ -9,6 +9,9 @@ import org.testcontainers.containers.GenericContainer;
 import org.testcontainers.containers.wait.strategy.Wait;
 import org.testcontainers.junit.jupiter.Container;
 import org.testcontainers.junit.jupiter.Testcontainers;
+import org.testcontainers.utility.MountableFile;
+
+import java.nio.file.Paths;
 
 import static fish.payara.demos.combined.utils.ContainerUtils.buildURI;
 import static io.restassured.RestAssured.given;
@@ -18,12 +21,14 @@ import static org.hamcrest.Matchers.equalTo;
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class SpeakerServiceTest {
 
+    static final MountableFile SPEAKER_DEPLOYABLE = MountableFile.forHostPath(Paths.get("target/wars/microservice-speaker.war").toAbsolutePath(), 0777);
+
     @Container
     private static GenericContainer speakerService = new GenericContainer(ContainerUtils.PAYARA_MICRO_IMAGE)
                 .withExposedPorts(ContainerUtils.HTTP_PORT)
-                .withFileSystemBind("target/wars/microservice-speaker.war", "/opt/payara/deployments/micro-service-speaker.war", BindMode.READ_WRITE)
+                .withCopyFileToContainer(SPEAKER_DEPLOYABLE, "/opt/payara/deployments/microservice-speaker.war")
                 .waitingFor(Wait.forHttp("/application.wadl").forStatusCode(200))
-                .withCommand("--noCluster --deploy /opt/payara/deployments/micro-service-speaker.war --contextRoot /");
+                .withCommand("--noCluster --deploy /opt/payara/deployments/microservice-speaker.war --contextRoot /");
 
     @Test
     @DisplayName("Add speakers")

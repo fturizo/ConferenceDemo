@@ -11,7 +11,9 @@ import org.testcontainers.containers.Network;
 import org.testcontainers.containers.wait.strategy.Wait;
 import org.testcontainers.junit.jupiter.Container;
 import org.testcontainers.junit.jupiter.Testcontainers;
+import org.testcontainers.utility.MountableFile;
 
+import java.nio.file.Paths;
 import java.time.Duration;
 import java.time.LocalDate;
 import java.util.List;
@@ -24,6 +26,7 @@ import static org.hamcrest.Matchers.equalTo;
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class SessionServiceTest {
 
+    static final MountableFile SESSION_DEPLOYABLE = MountableFile.forHostPath(Paths.get("target/wars/microservice-session.war").toAbsolutePath(), 0777);
     private final static Network INTERNAL_NETWORK = Network.newNetwork();
 
     @Container
@@ -31,7 +34,7 @@ public class SessionServiceTest {
                 .withNetwork(INTERNAL_NETWORK)
                 .withNetworkAliases("speaker")
                 .withExposedPorts(ContainerUtils.HTTP_PORT)
-                .withFileSystemBind("target/wars/microservice-speaker.war", "/opt/payara/deployments/microservice-speaker.war", BindMode.READ_WRITE)
+                .withCopyFileToContainer(SpeakerServiceTest.SPEAKER_DEPLOYABLE, "/opt/payara/deployments/microservice-speaker.war")
                 .waitingFor(Wait.forHttp("/application.wadl").forStatusCode(200))
                 .withCommand("--noCluster --deploy /opt/payara/deployments/microservice-speaker.war --contextRoot /");
 
@@ -41,7 +44,7 @@ public class SessionServiceTest {
             .withNetwork(INTERNAL_NETWORK)
             .withEnv("fish.payara.demos.conference.session.rs.clients.SpeakerServiceClient/mp-rest/url", "http://speaker:8080/")
             .withEnv("fish.payara.demos.conference.session.rs.clients.VenueServiceClient/mp-rest/url", "http://speaker:8080/")
-            .withFileSystemBind("target/wars/microservice-session.war", "/opt/payara/deployments/microservice-session.war", BindMode.READ_WRITE)
+            .withCopyFileToContainer(SESSION_DEPLOYABLE, "/opt/payara/deployments/microservice-session.war")
             .waitingFor(Wait.forHttp("/application.wadl").forStatusCode(200))
             .withCommand("--noCluster --deploy /opt/payara/deployments/microservice-session.war --contextRoot /");
 

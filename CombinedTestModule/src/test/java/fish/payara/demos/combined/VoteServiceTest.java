@@ -21,7 +21,9 @@ import org.testcontainers.containers.wait.strategy.Wait;
 import org.testcontainers.junit.jupiter.Container;
 import org.testcontainers.junit.jupiter.Testcontainers;
 import org.testcontainers.utility.DockerImageName;
+import org.testcontainers.utility.MountableFile;
 
+import java.nio.file.Paths;
 import java.time.Duration;
 import java.time.LocalDate;
 import java.util.List;
@@ -29,8 +31,11 @@ import java.util.logging.Logger;
 
 @Testcontainers
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+@Disabled
 public class VoteServiceTest {
 
+    static final MountableFile VOTE_DEPLOYABLE = MountableFile.forHostPath(Paths.get("target/wars/microservice-vote.war").toAbsolutePath(), 0777);
+    static final MountableFile MYSQL_DRIVER = MountableFile.forHostPath("target/libs/mysql-connector.jar", 0777);
     private static final Network INTERNAL_NETWORK = Network.newNetwork();
     private static final String DB_ALIAS = "db";
     
@@ -43,7 +48,7 @@ public class VoteServiceTest {
                 .withNetwork(INTERNAL_NETWORK)
                 .withNetworkAliases("speaker")
                 .withExposedPorts(ContainerUtils.HTTP_PORT)
-                .withFileSystemBind("target/wars/microservice-speaker.war", "/opt/payara/deployments/microservice-speaker.war", BindMode.READ_WRITE)
+                .withCopyFileToContainer(SpeakerServiceTest.SPEAKER_DEPLOYABLE, "/opt/payara/deployments/microservice-speaker.war")
                 .waitingFor(Wait.forHttp("/application.wadl").forStatusCode(200))
                 .withCommand("--noCluster --deploy /opt/payara/deployments/microservice-speaker.war --contextRoot /");
 
@@ -55,7 +60,7 @@ public class VoteServiceTest {
                 .withNetworkAliases("session")
                 .withEnv("fish.payara.demos.conference.session.rs.clients.SpeakerServiceClient/mp-rest/url", "http://speaker:8080/")
                 .withEnv("fish.payara.demos.conference.session.rs.clients.VenueServiceClient/mp-rest/url", "http://speaker:8080/")
-                .withFileSystemBind("target/wars/microservice-session.war", "/opt/payara/deployments/microservice-session.war", BindMode.READ_WRITE)
+                .withCopyFileToContainer(SessionServiceTest.SESSION_DEPLOYABLE, "/opt/payara/deployments/microservice-session.war")
                 .waitingFor(Wait.forHttp("/application.wadl").forStatusCode(200))
                 .withCommand("--noCluster --deploy /opt/payara/deployments/microservice-session.war --contextRoot /");
 
@@ -68,11 +73,11 @@ public class VoteServiceTest {
                 .withEnv("DB_USER", dbContainer.getUsername())
                 .withEnv("DB_PASSWORD",  dbContainer.getPassword())
                 .withEnv("fish.payara.demos.conference.vote.rs.interfaces.SessionServiceClient/mp-rest/url", "http://session:8080/")
-                .withFileSystemBind("target/wars/microservice-vote.war", "/opt/payara/deployments/micro-service-vote.war", BindMode.READ_WRITE)
-                .withFileSystemBind("target/libs/mysql-connector.jar", "/opt/payara/libs/mysql-connector.jar", BindMode.READ_WRITE)
+                .withCopyFileToContainer(VOTE_DEPLOYABLE, "/opt/payara/deployments/micro-service-vote.war")
+                .withCopyFileToContainer(MYSQL_DRIVER, "/opt/payara/libs/mysql-connector.jar")
                 .waitingFor(Wait.forHttp("/application.wadl").forStatusCode(200))
                 .withCommand("--deploy /opt/payara/deployments/micro-service-vote.war --addLibs /opt/payara/libs/mysql-connector.jar --enablerequesttracing --contextRoot /");
-    
+
     @Test
     @DisplayName("Register attendee")
     @Order(1)
