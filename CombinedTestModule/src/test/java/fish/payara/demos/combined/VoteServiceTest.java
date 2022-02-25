@@ -13,7 +13,6 @@ import static org.hamcrest.Matchers.equalTo;
 import fish.payara.demos.conference.vote.entities.SessionRating;
 import io.restassured.http.ContentType;
 import org.junit.jupiter.api.*;
-import org.testcontainers.containers.BindMode;
 import org.testcontainers.containers.GenericContainer;
 import org.testcontainers.containers.MySQLContainer;
 import org.testcontainers.containers.Network;
@@ -27,11 +26,12 @@ import java.nio.file.Paths;
 import java.time.Duration;
 import java.time.LocalDate;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 import java.util.logging.Logger;
 
 @Testcontainers
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-@Disabled
 public class VoteServiceTest {
 
     static final MountableFile VOTE_DEPLOYABLE = MountableFile.forHostPath(Paths.get("target/wars/microservice-vote.war").toAbsolutePath(), 0777);
@@ -120,6 +120,7 @@ public class VoteServiceTest {
 
     @BeforeAll
     public static void createSession(){
+        //Review this works
         Session sampleSession = new Session("Easy IT with TestContainers", "OCARINA", LocalDate.now(), Duration.ofHours(1), List.of("Fabio Turizo"));
         given().
                 contentType(ContentType.JSON).
