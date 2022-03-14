@@ -2,6 +2,7 @@ package fish.payara.demos.combined;
 
 import fish.payara.demos.combined.utils.ContainerUtils;
 import fish.payara.demos.conference.session.entities.Session;
+import fish.payara.demos.conference.speaker.entitites.Speaker;
 import fish.payara.demos.conference.vote.entities.Attendee;
 import fish.payara.demos.conference.vote.entities.Credentials;
 import fish.payara.demos.conference.vote.entities.Role;
@@ -16,6 +17,7 @@ import org.junit.jupiter.api.*;
 import org.testcontainers.containers.GenericContainer;
 import org.testcontainers.containers.MySQLContainer;
 import org.testcontainers.containers.Network;
+import org.testcontainers.containers.output.ToStringConsumer;
 import org.testcontainers.containers.wait.strategy.Wait;
 import org.testcontainers.junit.jupiter.Container;
 import org.testcontainers.junit.jupiter.Testcontainers;
@@ -118,10 +120,17 @@ public class VoteServiceTest {
                 assertThat().statusCode(400);
     }
 
+    //Create sample speaker and session data
     @BeforeAll
-    public static void createSession(){
-        //Review this works
-        Session sampleSession = new Session("Easy IT with TestContainers", "OCARINA", LocalDate.now(), Duration.ofHours(1), List.of("Fabio Turizo"));
+    public static void prepareData(){
+        Speaker sampleSpeaker = new Speaker("Fabio Turizo", "Payara Services Limited");
+        given().
+                contentType(ContentType.JSON).
+                body(sampleSpeaker).
+                when().
+                post(buildURI(speakerService, "/speaker"));
+
+        Session sampleSession = new Session("Easy IT with TestContainers", "OCARINA", LocalDate.now(), Duration.ofHours(1), List.of(sampleSpeaker.getName()));
         given().
                 contentType(ContentType.JSON).
                 body(sampleSession).
