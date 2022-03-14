@@ -80,6 +80,24 @@ public class VoteServiceTest {
                 .waitingFor(Wait.forHttp("/application.wadl").forStatusCode(200))
                 .withCommand("--deploy /opt/payara/deployments/micro-service-vote.war --addLibs /opt/payara/libs/mysql-connector.jar --enablerequesttracing --contextRoot /");
 
+    //Create sample speaker and session data
+    @BeforeAll
+    public static void prepareData(){
+        Speaker sampleSpeaker = new Speaker("Fabio Turizo", "Payara Services Limited");
+        given().
+                contentType(ContentType.JSON).
+                body(sampleSpeaker).
+                when().
+                post(buildURI(speakerService, "/speaker"));
+
+        Session sampleSession = new Session("Easy IT with TestContainers", "OCARINA", LocalDate.now(), Duration.ofHours(1), List.of(sampleSpeaker.getName()));
+        given().
+                contentType(ContentType.JSON).
+                body(sampleSession).
+                when().
+                post(buildURI(sessionService, "/session"));
+    }
+
     @Test
     @DisplayName("Register attendee")
     @Order(1)
@@ -118,24 +136,6 @@ public class VoteServiceTest {
                 post(buildURI(voteService, "/attendee/login")).
                 then().
                 assertThat().statusCode(400);
-    }
-
-    //Create sample speaker and session data
-    @BeforeAll
-    public static void prepareData(){
-        Speaker sampleSpeaker = new Speaker("Fabio Turizo", "Payara Services Limited");
-        given().
-                contentType(ContentType.JSON).
-                body(sampleSpeaker).
-                when().
-                post(buildURI(speakerService, "/speaker"));
-
-        Session sampleSession = new Session("Easy IT with TestContainers", "OCARINA", LocalDate.now(), Duration.ofHours(1), List.of(sampleSpeaker.getName()));
-        given().
-                contentType(ContentType.JSON).
-                body(sampleSession).
-                when().
-                post(buildURI(sessionService, "/session"));
     }
 
     @Test
