@@ -48,24 +48,20 @@ public class SessionServiceTest {
             .waitingFor(Wait.forHttp("/application.wadl").forStatusCode(200))
             .withCommand("--noCluster --deploy /opt/payara/deployments/microservice-session.war --contextRoot /");
 
-    @Test
-    @DisplayName("Add speakers")
-    @Order(1)
-    public void addSpeaker() {
+    //Create sample speaker data
+    @BeforeAll
+    public static void prepareData(){
         given().
                 contentType(ContentType.JSON).
                 body(new Speaker("Fabio Turizo", "Payara Services Limited")).
                 when().
                 post(buildURI(speakerService, "/speaker")).
-                then().
-                assertThat().statusCode(201)
-                            .and()
-                            .header("Location", buildURI(speakerService, "/speaker/1").toString());
+                then();
     }
 
     @Test
     @DisplayName("Add new session 1")
-    @Order(2)
+    @Order(1)
     public void addSession1(){
         Session sampleSession = new Session("Easy IT with TestContainers", "OCARINA", LocalDate.now(), Duration.ofHours(1), List.of("Fabio Turizo"));
         given().
@@ -81,7 +77,7 @@ public class SessionServiceTest {
 
     @Test
     @DisplayName("Add new session 2")
-    @Order(3)
+    @Order(2)
     public void addSession2(){
         Session sampleSession = new Session("Securing Microservices with Okta", "ESPERANZA", LocalDate.now(), Duration.ofHours(1), List.of("Fabio Turizo"));
         given().
@@ -97,7 +93,7 @@ public class SessionServiceTest {
 
     @Test
     @DisplayName("Get session data")
-    @Order(4)
+    @Order(3)
     public void getSessionData(){
         given().
                 contentType(ContentType.JSON).
@@ -111,7 +107,7 @@ public class SessionServiceTest {
 
     @Test
     @DisplayName("Check session doesn't exist")
-    @Order(4)
+    @Order(3)
     public void checkSessionDoesntExists(){
         given().
                 when().
@@ -122,7 +118,7 @@ public class SessionServiceTest {
 
     @Test
     @DisplayName("Delete session data")
-    @Order(5)
+    @Order(4)
     public void deleteSession(){
         given().
                 when().

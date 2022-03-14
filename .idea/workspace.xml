@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="19c9dcd9-9911-4ae1-895d-64ea7062b75d" name="Default Changelist" comment="Updated TC instructions for TCC compatibility">
+    <list default="true" id="19c9dcd9-9911-4ae1-895d-64ea7062b75d" name="Default Changelist" comment="Minor fixes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CombinedTestModule/src/test/java/fish/payara/demos/combined/SessionServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/CombinedTestModule/src/test/java/fish/payara/demos/combined/SessionServiceTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CombinedTestModule/src/test/java/fish/payara/demos/combined/VoteServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/CombinedTestModule/src/test/java/fish/payara/demos/combined/VoteServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vote/src/main/java/fish/payara/demos/conference/vote/api/SessionVoteResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/Vote/src/main/java/fish/payara/demos/conference/vote/api/SessionVoteResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vote/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Vote/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +22,9 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="Git.Rebase.Settings">
+    <option name="NEW_BASE" value="tc-cloud-testing" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -61,7 +65,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/EAR-with-multiple-modules" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Support_Scenarios/from_customers/2297-UCAS-Project" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -72,7 +76,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="settings.editor.selected.configurable" value="com.haulmont.jpb.entityDeclaration" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -94,7 +98,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.VoteServiceTest">
+  <component name="RunManager" selected="JUnit.All in CombinedTestModule">
     <configuration name="All in CombinedTestModule" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CombinedTestModule" />
       <option name="PACKAGE_NAME" value="" />
@@ -237,11 +241,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.All in CombinedTestModule" />
         <item itemvalue="JUnit.VoteServiceTest" />
         <item itemvalue="JUnit.SessionServiceTest" />
         <item itemvalue="JUnit.SimpleDeploymentTest.execute" />
         <item itemvalue="JUnit.SpeakerServiceTest" />
-        <item itemvalue="JUnit.All in CombinedTestModule" />
       </list>
     </recent_temporary>
   </component>
@@ -285,6 +289,12 @@
       <workItem from="1642112375822" duration="18876000" />
       <workItem from="1642211740273" duration="34000" />
       <workItem from="1642546184872" duration="5262000" />
+      <workItem from="1646172948805" duration="3812000" />
+      <workItem from="1646345619670" duration="5453000" />
+      <workItem from="1646666703295" duration="90000" />
+      <workItem from="1646774072436" duration="1442000" />
+      <workItem from="1646857834746" duration="78000" />
+      <workItem from="1647287407536" duration="3523000" />
     </task>
     <task id="LOCAL-00001" summary="-Implemented Integration tests project with TestContainers&#10;-Updated project to Java11">
       <created>1601683750426</created>
