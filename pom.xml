@@ -18,7 +18,7 @@
         <maven.compiler.target>11</maven.compiler.target>
         <jakarta.ee.version>9.1.0</jakarta.ee.version>
         <eclipse.microprofile.version>4.1</eclipse.microprofile.version>
-        <payara.version>5.2021.8</payara.version>
+        <payara.version>5.2022.3</payara.version>
         <payara.micro.maven.version>1.3.0</payara.micro.maven.version>
         <failOnMissingWebXml>false</failOnMissingWebXml>
         <conference.service.speaker.port>8881</conference.service.speaker.port>

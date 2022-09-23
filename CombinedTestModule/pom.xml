@@ -12,7 +12,7 @@
 
     <properties>
         <junit.version>5.8.1</junit.version>
-        <testcontainers.version>1.16.2</testcontainers.version>
+        <testcontainers.version>1.17.3</testcontainers.version>
         <mysql.jdbc.version>8.0.21</mysql.jdbc.version>
     </properties>
 

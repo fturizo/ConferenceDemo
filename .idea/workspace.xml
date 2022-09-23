@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="19c9dcd9-9911-4ae1-895d-64ea7062b75d" name="Default Changelist" comment="Minor fixes">
+    <list default="true" id="19c9dcd9-9911-4ae1-895d-64ea7062b75d" name="Default Changelist" comment="Minor re-layout of test class">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CombinedTestModule/src/test/java/fish/payara/demos/combined/SessionServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/CombinedTestModule/src/test/java/fish/payara/demos/combined/SessionServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CombinedTestModule/src/test/java/fish/payara/demos/combined/VoteServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/CombinedTestModule/src/test/java/fish/payara/demos/combined/VoteServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vote/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Vote/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CombinedTestModule/CombinedTestModule.iml" beforeDir="false" afterPath="$PROJECT_DIR$/CombinedTestModule/CombinedTestModule.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CombinedTestModule/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/CombinedTestModule/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CombinedTestModule/src/test/java/fish/payara/demos/combined/utils/ContainerUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/CombinedTestModule/src/test/java/fish/payara/demos/combined/utils/ContainerUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,33 +52,27 @@
       </map>
     </option>
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="MavenRunner">
     <option name="delegateBuildToMaven" value="true" />
+    <option name="skipTests" value="true" />
   </component>
   <component name="ProjectId" id="1TIvUwvKeuVVe0rzl5KrpKWvJ2r" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Support_Scenarios/from_customers/2297-UCAS-Project" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.detected.package.tslint" value="true" />
-    <property name="node.js.path.for.package.eslint" value="project" />
-    <property name="node.js.path.for.package.tslint" value="project" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="com.haulmont.jpb.entityDeclaration" />
-  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/fabio/Documents/Work/Support_Scenarios/from_customers/2575-rlservice&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
+  }
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\fabio\Documents\Work\Conference\ConferenceDemo\CombinedTestModule" />
@@ -294,7 +289,16 @@
       <workItem from="1646666703295" duration="90000" />
       <workItem from="1646774072436" duration="1442000" />
       <workItem from="1646857834746" duration="78000" />
-      <workItem from="1647287407536" duration="3523000" />
+      <workItem from="1647287407536" duration="4590000" />
+      <workItem from="1649196330488" duration="7779000" />
+      <workItem from="1649357630024" duration="550000" />
+      <workItem from="1649358388786" duration="374000" />
+      <workItem from="1649359782318" duration="324000" />
+      <workItem from="1649361903892" duration="2634000" />
+      <workItem from="1651698479038" duration="21000" />
+      <workItem from="1663011134534" duration="2722000" />
+      <workItem from="1663806840426" duration="638000" />
+      <workItem from="1663959377508" duration="1655000" />
     </task>
     <task id="LOCAL-00001" summary="-Implemented Integration tests project with TestContainers&#10;-Updated project to Java11">
       <created>1601683750426</created>
@@ -352,7 +356,28 @@
       <option name="project" value="LOCAL" />
       <updated>1636220792332</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Fixed it tests on Vote service + removed unused dependencies.">
+      <created>1647294762847</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1647294762847</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Fixed it tests on Vote service + removed unused dependencies.">
+      <created>1647294959571</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1647294959571</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Minor re-layout of test class">
+      <created>1647295025401</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1647295025401</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -368,7 +393,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="-Implemented Integration tests project with TestContainers&#10;-Updated project to Java11" />
@@ -379,6 +403,8 @@
     <MESSAGE value="Upgrade Jakarta EE and Payara Platform dependencies" />
     <MESSAGE value="Fixed minor issue with Rest Client validation" />
     <MESSAGE value="Updated readme" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated readme" />
+    <MESSAGE value="Fixed it tests on Vote service + removed unused dependencies." />
+    <MESSAGE value="Minor re-layout of test class" />
+    <option name="LAST_COMMIT_MESSAGE" value="Minor re-layout of test class" />
   </component>
 </project>
