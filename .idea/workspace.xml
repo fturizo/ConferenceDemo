@@ -7,9 +7,6 @@
     <list default="true" id="19c9dcd9-9911-4ae1-895d-64ea7062b75d" name="Default Changelist" comment="Minor re-layout of test class">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CombinedTestModule/CombinedTestModule.iml" beforeDir="false" afterPath="$PROJECT_DIR$/CombinedTestModule/CombinedTestModule.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CombinedTestModule/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/CombinedTestModule/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CombinedTestModule/src/test/java/fish/payara/demos/combined/utils/ContainerUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/CombinedTestModule/src/test/java/fish/payara/demos/combined/utils/ContainerUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,12 +45,21 @@
       <map>
         <entry key="JPA Inspector" value="true" />
         <entry key="JPA Structure" value="false" />
+        <entry key="com.haulmont.jpb.jpaInspector" value="false" />
+        <entry key="com.haulmont.jpb.jpaPalette" value="false" />
         <entry key="com.haulmont.jpb.jpaStructure" value="false" />
       </map>
     </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
   </component>
   <component name="MavenRunner">
     <option name="delegateBuildToMaven" value="true" />
@@ -69,8 +75,9 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/fabio/Documents/Work/Support_Scenarios/from_customers/2575-rlservice&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/fabio/Documents/Work/Demos/MicroServicesOkta&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -236,11 +243,11 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.All in CombinedTestModule" />
         <item itemvalue="JUnit.VoteServiceTest" />
-        <item itemvalue="JUnit.SessionServiceTest" />
-        <item itemvalue="JUnit.SimpleDeploymentTest.execute" />
         <item itemvalue="JUnit.SpeakerServiceTest" />
+        <item itemvalue="JUnit.SimpleDeploymentTest.execute" />
+        <item itemvalue="JUnit.SessionServiceTest" />
+        <item itemvalue="JUnit.All in CombinedTestModule" />
       </list>
     </recent_temporary>
   </component>
@@ -299,6 +306,13 @@
       <workItem from="1663011134534" duration="2722000" />
       <workItem from="1663806840426" duration="638000" />
       <workItem from="1663959377508" duration="1655000" />
+      <workItem from="1667489039552" duration="3389000" />
+      <workItem from="1668095362755" duration="1461000" />
+      <workItem from="1668215464840" duration="146000" />
+      <workItem from="1668451326459" duration="1447000" />
+      <workItem from="1668453187845" duration="583000" />
+      <workItem from="1668453833677" duration="184000" />
+      <workItem from="1668694989972" duration="1352000" />
     </task>
     <task id="LOCAL-00001" summary="-Implemented Integration tests project with TestContainers&#10;-Updated project to Java11">
       <created>1601683750426</created>
@@ -406,5 +420,9 @@
     <MESSAGE value="Fixed it tests on Vote service + removed unused dependencies." />
     <MESSAGE value="Minor re-layout of test class" />
     <option name="LAST_COMMIT_MESSAGE" value="Minor re-layout of test class" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

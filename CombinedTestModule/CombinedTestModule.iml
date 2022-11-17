@@ -4,9 +4,7 @@
     <facet type="jpa" name="JPA">
       <configuration>
         <setting name="validation-enabled" value="true" />
-        <datasource-mapping>
-          <factory-entry name="CombinedTestModule" />
-        </datasource-mapping>
+        <datasource-mapping />
         <naming-strategy-map />
       </configuration>
     </facet>
@@ -15,7 +13,6 @@
     <output url="file://$MODULE_DIR$/target/classes" />
     <output-test url="file://$MODULE_DIR$/target/test-classes" />
     <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/test/java" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
@@ -85,7 +82,7 @@
     <orderEntry type="module" module-name="microservice-speaker" scope="TEST" />
     <orderEntry type="module" module-name="microservice-session" scope="TEST" />
     <orderEntry type="module" module-name="microservice-vote" scope="TEST" />
-    <orderEntry type="library" scope="TEST" name="Maven: com.nimbusds:nimbus-jose-jwt:9.25.2" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: com.nimbusds:nimbus-jose-jwt:9.25.6" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: com.github.stephenc.jcip:jcip-annotations:1.0-1" level="project" />
   </component>
 </module>
