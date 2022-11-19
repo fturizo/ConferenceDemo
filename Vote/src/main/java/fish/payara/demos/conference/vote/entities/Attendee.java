@@ -24,8 +24,8 @@ import jakarta.persistence.NamedQuery;
 public class Attendee implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private String id;
 
     private String name;
 
@@ -50,7 +50,7 @@ public class Attendee implements Serializable {
     }
 
     @JsonbProperty
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
@@ -74,7 +74,7 @@ public class Attendee implements Serializable {
 
     @Override
     public int hashCode() {
-        int hash = 5;
+        var hash = 5;
         hash = 23 * hash + Objects.hashCode(this.id);
         return hash;
     }

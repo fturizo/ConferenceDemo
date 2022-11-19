@@ -30,7 +30,7 @@ public class SpeakerDomainChecker {
 
     public boolean checkVenue(Session session) {
         try{
-            Response response = venueServiceClient.checkVenue(session.getVenue());
+            var response = venueServiceClient.checkVenue(session.getVenue());
             return response.getStatusInfo().toEnum() == Status.OK;
         }catch(WebApplicationException ex){
             LOG.warning(ex.getLocalizedMessage());
@@ -40,7 +40,7 @@ public class SpeakerDomainChecker {
 
     public boolean checkSpeakers(Session session) {
         try{
-            Response response = speakerServiceClient.checkSpeakers(session.getSpeakers());
+            var response = speakerServiceClient.checkSpeakers(session.getSpeakers());
             return response.getStatusInfo().toEnum() == Status.OK;
         }catch(WebApplicationException ex){
             LOG.warning(ex.getLocalizedMessage());

@@ -23,10 +23,10 @@ import jakarta.persistence.NamedQuery;
 public class SessionRating implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private String id;
     
-    private Integer sessionId;
+    private String sessionId;
     private String sessionSummary;
     
     private Integer rating;
@@ -38,29 +38,29 @@ public class SessionRating implements Serializable {
     }
     
     @JsonbCreator
-    public SessionRating(@JsonbProperty("sessionId") Integer sessionId,
+    public SessionRating(@JsonbProperty("sessionId") String sessionId,
                          @JsonbProperty("rating") Integer rating) {
         this.sessionId = sessionId;
         this.rating = rating;
     }
     
-    private SessionRating(Integer sessionId, Integer rating, Attendee attendee) {
+    private SessionRating(String sessionId, Integer rating, Attendee attendee) {
         this(sessionId, rating);
         this.attendee = attendee;
     }
 
-    private SessionRating(Integer sessionId, String sessionSummary, Integer rating, Attendee attendee) {
+    private SessionRating(String sessionId, String sessionSummary, Integer rating, Attendee attendee) {
         this(sessionId, rating, attendee);
         this.sessionSummary = sessionSummary;
     }
 
     @JsonbProperty
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
     @JsonbProperty
-    public Integer getSessionId() {
+    public String getSessionId() {
         return sessionId;
     }
 

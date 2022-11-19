@@ -142,7 +142,7 @@ public class VoteServiceTest {
     @DisplayName("Rate session #1")
     @Order(3)
     public void rateSession1(){
-        SessionRating sampleRating = new SessionRating(1, 5);
+        SessionRating sampleRating = new SessionRating("1", 5);
         given().
                 auth().preemptive().oauth2(retrieveAccessToken()).
                 contentType(ContentType.JSON).
@@ -157,7 +157,7 @@ public class VoteServiceTest {
     @DisplayName("Rate session #2")
     @Order(3)
     public void rateSession2(){
-        SessionRating sampleRating = new SessionRating(1, 3);
+        SessionRating sampleRating = new SessionRating("1", 3);
         given().
                 auth().preemptive().oauth2(retrieveAccessToken()).
                 contentType(ContentType.JSON).

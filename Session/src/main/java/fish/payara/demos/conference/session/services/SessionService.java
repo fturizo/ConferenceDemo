@@ -64,7 +64,7 @@ public class SessionService {
         em.flush();
     }
     
-    public Optional<Session> retrieve(Integer id){
+    public Optional<Session> retrieve(String id){
         return Optional.ofNullable(em.find(Session.class, id));
     }
     

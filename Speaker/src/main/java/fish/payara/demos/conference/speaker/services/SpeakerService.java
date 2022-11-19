@@ -2,7 +2,6 @@ package fish.payara.demos.conference.speaker.services;
 
 import fish.payara.demos.conference.speaker.entitites.Speaker;
 import java.util.List;
-import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
 import jakarta.enterprise.context.ApplicationScoped;
@@ -28,7 +27,7 @@ public class SpeakerService {
         return speaker;
     }
     
-    public Speaker get(Integer id){
+    public Speaker get(String id){
         LOG.info("Retrieving speaker from database");
         return em.find(Speaker.class, id);
     }

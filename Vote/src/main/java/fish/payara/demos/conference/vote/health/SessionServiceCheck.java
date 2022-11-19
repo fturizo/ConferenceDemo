@@ -32,7 +32,7 @@ public class SessionServiceCheck implements HealthCheck {
 
     private boolean checkService() {
         try{
-            Response response = ClientBuilder.newClient()
+            var response = ClientBuilder.newClient()
                     .target(sessionServiceURL)
                     .path("/ping")
                     .request()

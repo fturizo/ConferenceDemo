@@ -11,6 +11,10 @@
     <version>1.0.0-SNAPSHOT</version>
     <name>Conference Demo [Vote]</name>
     <packaging>war</packaging>
+
+    <properties>
+        <mysql.version>8.0.28</mysql.version>
+    </properties>
     
     <build>
         <finalName>microservice-vote</finalName>
@@ -41,10 +45,7 @@
                         <option>
                             <key>--enablerequesttracing</key>
                         </option>
-                        <option>
-                            <key>--addLibs</key>
-                            <value>${settings.localRepository}/mysql/mysql-connector-java/8.0.20/mysql-connector-java-8.0.20.jar</value>
-                        </option>
+
                     </commandLineOptions>
                     <contextRoot>/</contextRoot>
                 </configuration>
@@ -71,7 +72,13 @@
         <dependency>
             <groupId>com.nimbusds</groupId>
             <artifactId>nimbus-jose-jwt</artifactId>
-            <version>[7.9,)</version>
+            <version>9.25.6</version>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>${mysql.version}</version>
+            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>io.opentracing</groupId>

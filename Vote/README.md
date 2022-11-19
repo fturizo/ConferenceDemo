@@ -6,7 +6,7 @@ Handles the management of attendee data and rating sessions.
 
 This service requires an already running **MYSQL** database in order to persist the data. The easiest way to prepare one is to use Docker:
 
-    docker run --name=test-mysql -e MYSQL_ROOT_PASSWORD=test -e MYSQL_USER=test -e MYSQL_PASSWORD=test -e MYSQL_DATABASE=test -p 3306:3306 --rm -d mysql
+    docker run --name=test-mysql -e MYSQL_ROOT_PASSWORD=test -e MYSQL_USER=test -e MYSQL_PASSWORD=test -e MYSQL_DATABASE=test -p 3306:3306 --rm -d mysql-vote
 
 Then, configure the following environment variables in your local environment:
 

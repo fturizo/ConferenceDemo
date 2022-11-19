@@ -19,5 +19,5 @@ public interface SessionServiceClient {
     
     @GET
     @Path("/{id}")
-    JsonObject get(@PathParam("id") Integer id);
+    JsonObject get(@PathParam("id") String id);
 }

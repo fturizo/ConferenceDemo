@@ -25,8 +25,8 @@ import jakarta.persistence.NamedQuery;
 public class Session implements Serializable{
     
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private String id;
     
     private String title;
     private String venue;
@@ -52,7 +52,7 @@ public class Session implements Serializable{
         this.speakers = speakers;
     }
 
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 

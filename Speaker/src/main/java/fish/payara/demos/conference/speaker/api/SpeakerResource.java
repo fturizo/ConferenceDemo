@@ -50,7 +50,7 @@ public class SpeakerResource {
                  responseCode = "200")
     @APIResponse(description = "Speaker not found", responseCode = "404")
     public Response getSpeaker(@Parameter(description = "ID of the speaker", required = false) 
-                               @PathParam("id") Integer id) {
+                               @PathParam("id") String id) {
         return Optional.ofNullable(speakerService.get(id))
                 .map(Response::ok)
                 .orElse(Response.status(Status.NOT_FOUND))

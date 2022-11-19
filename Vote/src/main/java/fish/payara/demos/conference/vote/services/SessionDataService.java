@@ -22,7 +22,7 @@ public class SessionDataService {
     @RestClient
     private SessionServiceClient sessionService;
 
-    public String getSessionSummary(Integer id) {
+    public String getSessionSummary(String id) {
         try{
             JsonObject result = sessionService.get(id);
             return String.format("[%s] - %s, V: %s", result.getString("date"), 

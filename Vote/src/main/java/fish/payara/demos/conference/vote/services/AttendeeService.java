@@ -48,7 +48,7 @@ public class AttendeeService {
         }
     }
     
-    public Optional<Attendee> getById(Integer id) {
+    public Optional<Attendee> getById(String id) {
         return Optional.ofNullable(em.find(Attendee.class, id));
     }
 

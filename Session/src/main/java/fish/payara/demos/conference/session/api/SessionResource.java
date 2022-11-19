@@ -43,7 +43,7 @@ public class SessionResource {
 
     @GET
     @Path("/{id}")
-    public Response get(@PathParam("id") Integer id) {
+    public Response get(@PathParam("id") String id) {
         return sessionService.retrieve(id).map(Response::ok)
                 .orElse(Response.status(Status.NOT_FOUND)).build();
     }
@@ -51,7 +51,7 @@ public class SessionResource {
     @DELETE
     @Path("/{id}")
     @Metered(name = "session.deletion.tries", absolute = true)
-    public Response delete(@PathParam("id") Integer id) {
+    public Response delete(@PathParam("id") String id) {
         Optional<Session> session = sessionService.retrieve(id);
         if (session.isPresent()) {
             sessionService.delete(session.get());

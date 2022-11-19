@@ -30,7 +30,7 @@ public class TokenGenerator {
     
     public String generateFor(Attendee attendee){
         try{
-            SignedJWT signedJWT = new SignedJWT(new JWSHeader.Builder(JWSAlgorithm.RS256)
+            var signedJWT = new SignedJWT(new JWSHeader.Builder(JWSAlgorithm.RS256)
                     .keyID("/privateKey.pem")
                     .type(JOSEObjectType.JWT).build(), JWTClaimsSet.parse(generateJWT(attendee).toString()));
             signedJWT.sign(new RSASSASigner(readPrivateKey("/META-INF/keys/privateKey.pem")));
@@ -42,7 +42,7 @@ public class TokenGenerator {
 
     private JsonObject generateJWT(Attendee attendee) {
         
-        long secondsNow = System.currentTimeMillis() / 1_000;
+        var secondsNow = System.currentTimeMillis() / 1_000;
         return Json.createObjectBuilder()
                 .add(Claims.aud.name(), "attendees")
                 .add(Claims.jti.name(), "att-" + attendee.getId())
@@ -62,7 +62,7 @@ public class TokenGenerator {
     }
     
     private static String readKey(String resourceName) throws Exception{
-        byte[] byteBuffer = new byte[16384]; 
+        var byteBuffer = new byte[16384];
         int length = Thread.currentThread().getContextClassLoader()
                 .getResource(resourceName)
                 .openStream()

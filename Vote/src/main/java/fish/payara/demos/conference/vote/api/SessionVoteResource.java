@@ -58,15 +58,14 @@ public class SessionVoteResource {
     @GET
     @Traced(operationName = "get-ratings")
     @Path("/session/{session}")
-    public List<SessionRating> getRatingsForSession(@PathParam("session") Integer sessionId) {
+    public List<SessionRating> getRatingsForSession(@PathParam("session") String sessionId) {
         return ratingService.getRatingsFor(sessionId);
     }
 
     @GET
     @Path("/summary/{session}")
-    public Response getSummaryForSession(@PathParam("session") Integer sessionId) {
-        List<SessionRating> results = ratingService.getRatingsFor(sessionId);
-        System.out.println("Session count: " + results.size());
+    public Response getSummaryForSession(@PathParam("session") String sessionId) {
+        var results = ratingService.getRatingsFor(sessionId);
         return Response.ok().entity(Json.createObjectBuilder()
                     .add("count", results.size())
                     .add("average", results.stream().mapToDouble(SessionRating::getRating).average().orElse(0.0))

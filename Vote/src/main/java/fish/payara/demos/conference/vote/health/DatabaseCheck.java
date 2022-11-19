@@ -6,10 +6,14 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+import jakarta.annotation.Resource;
 import jakarta.enterprise.context.ApplicationScoped;
 import org.eclipse.microprofile.health.HealthCheck;
 import org.eclipse.microprofile.health.HealthCheckResponse;
 import org.eclipse.microprofile.health.Liveness;
+
+import javax.sql.DataSource;
 
 /**
  *
@@ -34,7 +38,10 @@ public class DatabaseCheck implements HealthCheck{
     }
 
     private boolean checkOnDatabase() {
-        try(Connection connection = DriverManager.getConnection("jdbc:h2:tcp://localhost:1521/session", "session", "session");
+        //FIXME - Driver load fails when included in the WAR file
+        try(Connection connection = DriverManager.getConnection(System.getenv("DB_JDBC_URL"),
+                                                                System.getenv("DB_USER"),
+                                                                System.getenv("DB_PASSWORD"));
                 Statement statement = connection.createStatement()){
             return statement.execute("select 1 from dual");
         } catch (SQLException ex) {

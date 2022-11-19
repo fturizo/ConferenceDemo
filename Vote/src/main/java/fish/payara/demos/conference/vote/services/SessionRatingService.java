@@ -35,7 +35,7 @@ public class SessionRatingService {
     SessionDataService dataService;
     
     @Inject
-    Cache<Integer, List<SessionRating>> cachedRatings;
+    Cache<String, List<SessionRating>> cachedRatings;
 
     @Transactional
     @Retry(maxRetries = 3, delay = 1, delayUnit = ChronoUnit.MINUTES)
@@ -56,9 +56,9 @@ public class SessionRatingService {
     }
     
     @Timeout(value = 1, unit = MINUTES)
-    public List<SessionRating> getRatingsFor(Integer sessionId){
-        //isSlow(11);
-        List<SessionRating> results = em.createNamedQuery("SessionRating.getForSession", SessionRating.class)
+    public List<SessionRating> getRatingsFor(String sessionId){
+        isSlow(11);
+        var results = em.createNamedQuery("SessionRating.getForSession", SessionRating.class)
                                         .setParameter("id", sessionId)
                                         .getResultList();
         if(cachedRatings.containsKey(sessionId)){

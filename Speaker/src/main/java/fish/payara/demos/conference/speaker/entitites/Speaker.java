@@ -1,14 +1,11 @@
 package fish.payara.demos.conference.speaker.entitites;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.Objects;
 import jakarta.json.bind.annotation.JsonbCreator;
 import jakarta.json.bind.annotation.JsonbProperty;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.NamedQuery;
+import jakarta.persistence.*;
 import org.eclipse.microprofile.openapi.annotations.media.Schema;
 
 /**
@@ -21,15 +18,18 @@ import org.eclipse.microprofile.openapi.annotations.media.Schema;
 public class Speaker implements Serializable{
     
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.UUID)
     @Schema(description = "Identifier of the speaker", required = true)
-    private Integer id;
+    private String id;
     
     @Schema(description = "Name of the speaker", required = true)
     private String name;
     
     @Schema(description = "Organization that the speaker belongs", required = true)
     private String organization;
+
+    @Schema(description = "Date that the speaker was registered")
+    private LocalDate registeredAt;
 
     public Speaker() {
     }
@@ -38,9 +38,10 @@ public class Speaker implements Serializable{
     public Speaker(@JsonbProperty("name") String name,@JsonbProperty("organization")  String organization) {
         this.name = name;
         this.organization = organization;
+        this.registeredAt = LocalDate.now();
     }
 
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
@@ -52,9 +53,13 @@ public class Speaker implements Serializable{
         return organization;
     }
 
+    public LocalDate getRegisteredAt() {
+        return registeredAt;
+    }
+
     @Override
     public int hashCode() {
-        int hash = 7;
+        var hash = 7;
         hash = 79 * hash + Objects.hashCode(this.id);
         return hash;
     }
