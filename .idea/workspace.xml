@@ -4,39 +4,10 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="19c9dcd9-9911-4ae1-895d-64ea7062b75d" name="Default Changelist" comment="Minor changes to IDE settings">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="19c9dcd9-9911-4ae1-895d-64ea7062b75d" name="Default Changelist" comment="Updated project to Jakarta EE 10 + MP 5">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CombinedTestModule/CombinedTestModule.iml" beforeDir="false" afterPath="$PROJECT_DIR$/CombinedTestModule/CombinedTestModule.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CombinedTestModule/src/test/java/fish/payara/demos/combined/VoteServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/CombinedTestModule/src/test/java/fish/payara/demos/combined/VoteServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Session/src/main/java/fish/payara/demos/conference/session/api/SessionResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/Session/src/main/java/fish/payara/demos/conference/session/api/SessionResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Session/src/main/java/fish/payara/demos/conference/session/entities/Session.java" beforeDir="false" afterPath="$PROJECT_DIR$/Session/src/main/java/fish/payara/demos/conference/session/entities/Session.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Session/src/main/java/fish/payara/demos/conference/session/services/SessionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Session/src/main/java/fish/payara/demos/conference/session/services/SessionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Session/src/main/java/fish/payara/demos/conference/session/services/SpeakerDomainChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/Session/src/main/java/fish/payara/demos/conference/session/services/SpeakerDomainChecker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Session/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Session/src/main/resources/META-INF/persistence.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Session/src/main/webapp/WEB-INF/beans.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Session/src/main/webapp/WEB-INF/beans.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Speaker/src/main/java/fish/payara/demos/conference/speaker/api/SpeakerResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/Speaker/src/main/java/fish/payara/demos/conference/speaker/api/SpeakerResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Speaker/src/main/java/fish/payara/demos/conference/speaker/entitites/Speaker.java" beforeDir="false" afterPath="$PROJECT_DIR$/Speaker/src/main/java/fish/payara/demos/conference/speaker/entitites/Speaker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Speaker/src/main/java/fish/payara/demos/conference/speaker/services/SpeakerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Speaker/src/main/java/fish/payara/demos/conference/speaker/services/SpeakerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Speaker/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Speaker/src/main/resources/META-INF/persistence.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Speaker/src/main/webapp/WEB-INF/beans.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Speaker/src/main/webapp/WEB-INF/beans.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vote/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/Vote/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vote/db/prepare-jdbc.asadmin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vote/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Vote/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vote/src/main/java/fish/payara/demos/conference/vote/api/SessionVoteResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/Vote/src/main/java/fish/payara/demos/conference/vote/api/SessionVoteResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vote/src/main/java/fish/payara/demos/conference/vote/entities/Attendee.java" beforeDir="false" afterPath="$PROJECT_DIR$/Vote/src/main/java/fish/payara/demos/conference/vote/entities/Attendee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vote/src/main/java/fish/payara/demos/conference/vote/entities/SessionRating.java" beforeDir="false" afterPath="$PROJECT_DIR$/Vote/src/main/java/fish/payara/demos/conference/vote/entities/SessionRating.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vote/src/main/java/fish/payara/demos/conference/vote/health/DatabaseCheck.java" beforeDir="false" afterPath="$PROJECT_DIR$/Vote/src/main/java/fish/payara/demos/conference/vote/health/DatabaseCheck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vote/src/main/java/fish/payara/demos/conference/vote/health/SessionServiceCheck.java" beforeDir="false" afterPath="$PROJECT_DIR$/Vote/src/main/java/fish/payara/demos/conference/vote/health/SessionServiceCheck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vote/src/main/java/fish/payara/demos/conference/vote/jwt/TokenGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/Vote/src/main/java/fish/payara/demos/conference/vote/jwt/TokenGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vote/src/main/java/fish/payara/demos/conference/vote/rs/interfaces/SessionServiceClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/Vote/src/main/java/fish/payara/demos/conference/vote/rs/interfaces/SessionServiceClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vote/src/main/java/fish/payara/demos/conference/vote/services/AttendeeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Vote/src/main/java/fish/payara/demos/conference/vote/services/AttendeeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vote/src/main/java/fish/payara/demos/conference/vote/services/SessionDataService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Vote/src/main/java/fish/payara/demos/conference/vote/services/SessionDataService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vote/src/main/java/fish/payara/demos/conference/vote/services/SessionRatingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Vote/src/main/java/fish/payara/demos/conference/vote/services/SessionRatingService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vote/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Vote/src/main/resources/META-INF/persistence.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vote/src/main/webapp/WEB-INF/beans.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Vote/src/main/webapp/WEB-INF/beans.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CombinedTestModule/src/test/java/fish/payara/demos/combined/utils/ContainerUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/CombinedTestModule/src/test/java/fish/payara/demos/combined/utils/ContainerUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +79,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;full.screen.before.presentation.mode&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/fabio/Documents/Work/Demos/ConferenceDemo/Vote&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/fabio/Downloads/Helloworld&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
@@ -136,7 +107,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Payara Micro.Vote Start">
+  <component name="RunManager" selected="JUnit.SpeakerServiceTest">
     <configuration name="All in CombinedTestModule" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CombinedTestModule" />
       <option name="PACKAGE_NAME" value="" />
@@ -207,29 +178,6 @@
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
-    </configuration>
-    <configuration default="true" type="MavenRunConfiguration" factoryName="Maven">
-      <MavenSettings>
-        <option name="myGeneralSettings" />
-        <option name="myRunnerSettings" />
-        <option name="myRunnerParameters">
-          <MavenRunnerParameters>
-            <option name="profiles">
-              <set />
-            </option>
-            <option name="goals">
-              <list />
-            </option>
-            <option name="pomFileName" />
-            <option name="profilesMap">
-              <map />
-            </option>
-            <option name="resolveToWorkspace" value="false" />
-            <option name="workingDirPath" value="" />
-          </MavenRunnerParameters>
-        </option>
-      </MavenSettings>
-      <method v="2" />
     </configuration>
     <configuration name="Session Start" type="PAYARA_MICRO_CONFIGURATION" factoryName="Maven">
       <MavenSettings>
@@ -421,8 +369,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.VoteServiceTest" />
         <item itemvalue="JUnit.SpeakerServiceTest" />
+        <item itemvalue="JUnit.VoteServiceTest" />
         <item itemvalue="JUnit.SimpleDeploymentTest.execute" />
         <item itemvalue="JUnit.SessionServiceTest" />
         <item itemvalue="JUnit.All in CombinedTestModule" />
@@ -492,7 +440,12 @@
       <workItem from="1668453833677" duration="184000" />
       <workItem from="1668694989972" duration="6686000" />
       <workItem from="1668798548751" duration="15382000" />
-      <workItem from="1668824081182" duration="1508000" />
+      <workItem from="1668824081182" duration="1721000" />
+      <workItem from="1668881821225" duration="158000" />
+      <workItem from="1668882090124" duration="2844000" />
+      <workItem from="1669068269236" duration="19000" />
+      <workItem from="1669069545237" duration="312000" />
+      <workItem from="1669991736324" duration="2260000" />
     </task>
     <task id="LOCAL-00001" summary="-Implemented Integration tests project with TestContainers&#10;-Updated project to Java11">
       <created>1601683750426</created>
@@ -578,7 +531,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668717078674</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Updated project to Jakarta EE 10 + MP 5">
+      <created>1668825711022</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1668825711022</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -618,7 +578,8 @@
     <MESSAGE value="Fixed it tests on Vote service + removed unused dependencies." />
     <MESSAGE value="Minor re-layout of test class" />
     <MESSAGE value="Minor changes to IDE settings" />
-    <option name="LAST_COMMIT_MESSAGE" value="Minor changes to IDE settings" />
+    <MESSAGE value="Updated project to Jakarta EE 10 + MP 5" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated project to Jakarta EE 10 + MP 5" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
