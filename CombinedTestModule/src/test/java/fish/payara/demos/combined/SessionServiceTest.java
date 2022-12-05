@@ -1,24 +1,18 @@
 package fish.payara.demos.combined;
 
-import fish.payara.demos.combined.utils.ContainerUtils;
 import fish.payara.demos.conference.session.entities.Session;
 import fish.payara.demos.conference.speaker.entitites.Speaker;
+import fish.payara.test.testcontainers.PayaraMicroContainer;
 import io.restassured.http.ContentType;
 import org.junit.jupiter.api.*;
-import org.testcontainers.containers.BindMode;
-import org.testcontainers.containers.GenericContainer;
 import org.testcontainers.containers.Network;
-import org.testcontainers.containers.wait.strategy.Wait;
 import org.testcontainers.junit.jupiter.Container;
 import org.testcontainers.junit.jupiter.Testcontainers;
-import org.testcontainers.utility.MountableFile;
 
-import java.nio.file.Paths;
 import java.time.Duration;
 import java.time.LocalDate;
 import java.util.List;
 
-import static fish.payara.demos.combined.utils.ContainerUtils.buildURI;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
 
@@ -26,27 +20,21 @@ import static org.hamcrest.Matchers.equalTo;
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class SessionServiceTest {
 
-    static final MountableFile SESSION_DEPLOYABLE = MountableFile.forHostPath(Paths.get("target/wars/microservice-session.war").toAbsolutePath(), 0777);
     private final static Network INTERNAL_NETWORK = Network.newNetwork();
 
     @Container
-    private static GenericContainer speakerService = new GenericContainer(ContainerUtils.PAYARA_MICRO_IMAGE)
-                .withNetwork(INTERNAL_NETWORK)
-                .withNetworkAliases("speaker")
-                .withExposedPorts(ContainerUtils.HTTP_PORT)
-                .withCopyFileToContainer(SpeakerServiceTest.SPEAKER_DEPLOYABLE, "/opt/payara/deployments/microservice-speaker.war")
-                .waitingFor(Wait.forHttp("/application.wadl").forStatusCode(200))
-                .withCommand("--noCluster --deploy /opt/payara/deployments/microservice-speaker.war --contextRoot /");
+    private static PayaraMicroContainer speakerService = new PayaraMicroContainer()
+                .withNoCluster()
+                .withNetworkAndAlias(INTERNAL_NETWORK, "speaker")
+                .withDeployment("microservice-speaker.war");
 
     @Container
-    private static GenericContainer sessionService = new GenericContainer(ContainerUtils.PAYARA_MICRO_IMAGE)
-            .withExposedPorts(ContainerUtils.HTTP_PORT)
+    private static PayaraMicroContainer sessionService = new PayaraMicroContainer()
+            .withNoCluster()
             .withNetwork(INTERNAL_NETWORK)
             .withEnv("fish.payara.demos.conference.session.rs.clients.SpeakerServiceClient/mp-rest/url", "http://speaker:8080/")
             .withEnv("fish.payara.demos.conference.session.rs.clients.VenueServiceClient/mp-rest/url", "http://speaker:8080/")
-            .withCopyFileToContainer(SESSION_DEPLOYABLE, "/opt/payara/deployments/microservice-session.war")
-            .waitingFor(Wait.forHttp("/application.wadl").forStatusCode(200))
-            .withCommand("--noCluster --deploy /opt/payara/deployments/microservice-session.war --contextRoot /");
+            .withDeployment("microservice-session.war");
 
     //Create sample speaker data
     @BeforeAll
@@ -55,7 +43,7 @@ public class SessionServiceTest {
                 contentType(ContentType.JSON).
                 body(new Speaker("Fabio Turizo", "Payara Services Limited")).
                 when().
-                post(buildURI(speakerService, "/speaker")).
+                post(speakerService.buildURI("/speaker")).
                 then();
     }
 
@@ -68,11 +56,11 @@ public class SessionServiceTest {
                 contentType(ContentType.JSON).
                 body(sampleSession).
                 when().
-                post(buildURI(sessionService, "/session")).
+                post(sessionService.buildURI("/session")).
                 then().
                 assertThat().statusCode(201)
                             .and()
-                            .header("Location",  buildURI(sessionService, "/session/1").toString());
+                            .header("Location",  sessionService.buildURI("/session/1").toString());
     }
 
     @Test
@@ -84,11 +72,11 @@ public class SessionServiceTest {
                 contentType(ContentType.JSON).
                 body(sampleSession).
                 when().
-                post(buildURI(sessionService, "/session")).
+                post(sessionService.buildURI("/session")).
                 then().
                 assertThat().statusCode(201)
                 .and()
-                .header("Location",  buildURI(sessionService, "/session/2").toString());
+                .header("Location",  sessionService.buildURI("/session/2").toString());
     }
 
     @Test
@@ -98,7 +86,7 @@ public class SessionServiceTest {
         given().
                 contentType(ContentType.JSON).
                 when().
-                get(buildURI(sessionService, "/session/1")).
+                get(sessionService.buildURI("/session/1")).
                 then().
                 assertThat().statusCode(200).
                             and().
@@ -111,7 +99,7 @@ public class SessionServiceTest {
     public void checkSessionDoesntExists(){
         given().
                 when().
-                get(buildURI(sessionService, "/session/100")).
+                get(sessionService.buildURI("/session/100")).
                 then().
                 assertThat().statusCode(404);
     }
@@ -122,7 +110,7 @@ public class SessionServiceTest {
     public void deleteSession(){
         given().
                 when().
-                delete(buildURI(sessionService, "/session/1")).
+                delete(sessionService.buildURI("/session/1")).
                 then().
                 assertThat().statusCode(202);
     }
