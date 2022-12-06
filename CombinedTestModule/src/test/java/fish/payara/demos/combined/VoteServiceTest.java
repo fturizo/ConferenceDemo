@@ -51,7 +51,6 @@ public class VoteServiceTest {
 
     @Container
     private static PayaraMicroContainer voteService = new PayaraMicroContainer()
-                .withNoCluster()
                 .withRequestTracing()
                 .withNetwork(INTERNAL_NETWORK)
                 .dependsOn(dbContainer, sessionService)
