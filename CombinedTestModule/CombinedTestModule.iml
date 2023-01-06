@@ -84,7 +84,7 @@
     <orderEntry type="module" module-name="microservice-speaker" scope="TEST" />
     <orderEntry type="module" module-name="microservice-session" scope="TEST" />
     <orderEntry type="module" module-name="microservice-vote" scope="TEST" />
-    <orderEntry type="library" scope="TEST" name="Maven: com.nimbusds:nimbus-jose-jwt:9.25.6" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: com.nimbusds:nimbus-jose-jwt:9.28" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: com.github.stephenc.jcip:jcip-annotations:1.0-1" level="project" />
   </component>
 </module>
