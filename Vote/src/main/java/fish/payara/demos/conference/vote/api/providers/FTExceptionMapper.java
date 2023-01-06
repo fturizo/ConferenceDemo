@@ -1,9 +1,9 @@
 package fish.payara.demos.conference.vote.api.providers;
 
-import jakarta.json.Json;
-import jakarta.ws.rs.core.Response;
-import jakarta.ws.rs.ext.ExceptionMapper;
-import jakarta.ws.rs.ext.Provider;
+import javax.json.Json;
+import javax.ws.rs.core.Response;
+import javax.ws.rs.ext.ExceptionMapper;
+import javax.ws.rs.ext.Provider;
 import org.eclipse.microprofile.faulttolerance.exceptions.FaultToleranceException;
 
 /**

@@ -1,7 +1,7 @@
 package fish.payara.demos.conference.vote.entities;
 
-import jakarta.json.bind.annotation.JsonbCreator;
-import jakarta.json.bind.annotation.JsonbProperty;
+import javax.json.bind.annotation.JsonbCreator;
+import javax.json.bind.annotation.JsonbProperty;
 
 /**
  *

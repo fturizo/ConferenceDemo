@@ -5,12 +5,12 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 import java.util.concurrent.atomic.AtomicInteger;
-import jakarta.annotation.PostConstruct;
-import jakarta.enterprise.context.ApplicationScoped;
-import jakarta.inject.Inject;
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.PersistenceContext;
-import jakarta.transaction.Transactional;
+import javax.annotation.PostConstruct;
+import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Inject;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.transaction.Transactional;
 
 import org.eclipse.microprofile.metrics.Histogram;
 import org.eclipse.microprofile.metrics.MetricUnits;

@@ -1,8 +1,0 @@
-create-jdbc-connection-pool --datasourceClassname=org.h2.jdbcx.JdbcDataSource --resType=javax.sql.DataSource localH2Pool
-set resources.jdbc-connection-pool.localH2Pool.property.User=session
-set resources.jdbc-connection-pool.localH2Pool.property.Password=session
-set resources.jdbc-connection-pool.localH2Pool.property.Url=jdbc:h2:tcp://localhost:1521/session
-set resources.jdbc-connection-pool.localH2Pool.connection-validation-method=table
-set resources.jdbc-connection-pool.localH2Pool.validation-table-name=dual
-set resources.jdbc-connection-pool.localH2Pool.is-connection-validation-required=true
-create-jdbc-resource --enabled=true --poolName=localH2Pool jdbc/voteDS

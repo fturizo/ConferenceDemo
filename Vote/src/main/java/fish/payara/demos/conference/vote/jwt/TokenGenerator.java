@@ -11,10 +11,10 @@ import java.security.KeyFactory;
 import java.security.PrivateKey;
 import java.security.spec.PKCS8EncodedKeySpec;
 import java.util.Base64;
-import jakarta.enterprise.context.ApplicationScoped;
-import jakarta.inject.Inject;
-import jakarta.json.Json;
-import jakarta.json.JsonObject;
+import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Inject;
+import javax.json.Json;
+import javax.json.JsonObject;
 import org.eclipse.microprofile.config.inject.ConfigProperty;
 import org.eclipse.microprofile.jwt.Claims;
 

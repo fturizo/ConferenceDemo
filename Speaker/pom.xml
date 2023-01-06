@@ -47,8 +47,8 @@
     
     <dependencies>
         <dependency>
-            <groupId>jakarta.platform</groupId>
-            <artifactId>jakarta.jakartaee-web-api</artifactId>
+            <groupId>javax</groupId>
+            <artifactId>javaee-web-api</artifactId>
             <scope>provided</scope>
         </dependency>
         <dependency>
