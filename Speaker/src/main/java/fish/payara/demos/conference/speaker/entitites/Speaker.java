@@ -35,7 +35,7 @@ public class Speaker implements Serializable{
     }
 
     @JsonbCreator
-    public Speaker(@JsonbProperty("name") String name,@JsonbProperty("organization")  String organization) {
+    public Speaker(@JsonbProperty("name") String name, @JsonbProperty("organization")  String organization) {
         this.name = name;
         this.organization = organization;
         this.registeredAt = LocalDate.now();
@@ -62,6 +62,13 @@ public class Speaker implements Serializable{
         var hash = 7;
         hash = 79 * hash + Objects.hashCode(this.id);
         return hash;
+    }
+
+    @PrePersist
+    public void verifyRegisteredDate(){
+        if(registeredAt == null){
+            this.registeredAt = LocalDate.now();
+        }
     }
 
     @Override

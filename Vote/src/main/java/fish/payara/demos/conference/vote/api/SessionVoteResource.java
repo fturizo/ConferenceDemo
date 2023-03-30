@@ -4,10 +4,9 @@ import fish.payara.demos.conference.vote.entities.Attendee;
 import fish.payara.demos.conference.vote.entities.SessionRating;
 import fish.payara.demos.conference.vote.services.AttendeeService;
 import fish.payara.demos.conference.vote.services.SessionRatingService;
-import io.opentracing.Tracer;
 import java.security.Principal;
 import java.util.List;
-import java.util.logging.Logger;
+import io.opentracing.Tracer;
 import jakarta.annotation.security.RolesAllowed;
 import jakarta.enterprise.context.RequestScoped;
 import jakarta.inject.Inject;
@@ -21,7 +20,6 @@ import jakarta.ws.rs.PathParam;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
-import org.eclipse.microprofile.opentracing.Traced;
 
 /**
  *
@@ -41,22 +39,16 @@ public class SessionVoteResource {
 
     @Inject
     SessionRatingService ratingService;
-    
-    @Inject
-    Tracer tracer;
 
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
-    @Traced
     public Response rate(SessionRating rating) {
-        tracer.activeSpan().setTag("isCritical", true);
         Attendee currentUser = attendeeService.getByEmail(jwtPrincipal.getName())
                 .orElseThrow(() -> new BadRequestException("Invalid JWT token"));
         return Response.ok(ratingService.addRating(rating, currentUser)).build();
     }
 
     @GET
-    @Traced(operationName = "get-ratings")
     @Path("/session/{session}")
     public List<SessionRating> getRatingsForSession(@PathParam("session") String sessionId) {
         return ratingService.getRatingsFor(sessionId);

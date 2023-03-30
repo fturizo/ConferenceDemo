@@ -70,6 +70,14 @@ public class SpeakerResource {
         return Response.created(UriBuilder.fromPath(uriInfo.getPath()).path("{id}").build(result.getId()))
                         .entity(speaker).build();
     }
+
+    @GET
+    @Operation(description = "Get all speaker data")
+    @APIResponse(description = "Speaker data", responseCode = "200")
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<Speaker> getSpeakers(){
+        return speakerService.all();
+    }
     
     @HEAD
     @Operation(description = "Verifies that the supplied speakers exists")

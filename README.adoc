@@ -1,6 +1,6 @@
 = Conference Demo
 
-This small sample project showcase the development of 3 micro-services using both Jakarta EE 10 and Eclipse MicroProfile 5.0
+This small sample project showcase the development of 3 microservices using both Jakarta EE 10 and Eclipse MicroProfile 6.0
 
 The domain model and real-world requirements are inspired in the https://github.com/eclipse/microprofile-conference[official conference demo project] for the Eclipse MicroProfile stack.
 

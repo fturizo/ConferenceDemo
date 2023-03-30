@@ -31,9 +31,13 @@ public class SpeakerService {
         LOG.info("Retrieving speaker from database");
         return em.find(Speaker.class, id);
     }
+
+    public List<Speaker> all(){
+        return em.createNamedQuery("Speaker.all", Speaker.class).getResultList();
+    }
     
     public boolean allNamesExists(List<String> names){
-        List<String> allNames = em.createNamedQuery("Speaker.all", Speaker.class).getResultStream()
+        var allNames = em.createNamedQuery("Speaker.all", Speaker.class).getResultStream()
                                   .map(Speaker::getName).collect(Collectors.toList());
         return names.stream().allMatch(allNames::contains);
     }

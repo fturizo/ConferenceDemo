@@ -17,13 +17,14 @@
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <jakarta.ee.version>10.0.0</jakarta.ee.version>
-        <eclipse.microprofile.version>5.0</eclipse.microprofile.version>
-        <payara.version>6.2022.1</payara.version>
-        <payara.micro.maven.version>1.3.0</payara.micro.maven.version>
+        <eclipse.microprofile.version>6.0</eclipse.microprofile.version>
+        <payara.version>6.2023.3</payara.version>
+        <payara.micro.maven.version>1.4.0</payara.micro.maven.version>
         <failOnMissingWebXml>false</failOnMissingWebXml>
         <conference.service.speaker.port>8881</conference.service.speaker.port>
         <conference.service.session.port>8882</conference.service.session.port>
         <conference.service.vote.port>8883</conference.service.vote.port>
+        <conference.dashboard.port>8880</conference.dashboard.port>
     </properties>
     
     <dependencyManagement>
@@ -53,5 +54,6 @@
         <module>Vote</module>
         <module>Speaker</module>
         <module>CombinedTestModule</module>
+        <module>Dashboard</module>
     </modules>
 </project>

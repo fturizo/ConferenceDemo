@@ -2,7 +2,6 @@ package fish.payara.demos.conference.session.api;
 
 import fish.payara.demos.conference.session.entities.Session;
 import fish.payara.demos.conference.session.services.SessionService;
-import java.net.URI;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
@@ -17,8 +16,7 @@ import jakarta.ws.rs.PathParam;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.*;
 import jakarta.ws.rs.core.Response.Status;
-
-import org.eclipse.microprofile.metrics.annotation.Metered;
+import org.eclipse.microprofile.metrics.annotation.Counted;
 
 /**
  *
@@ -34,7 +32,7 @@ public class SessionResource {
 
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
-    @Metered(name = "session.creation.tries", absolute = true)
+    @Counted(name = "session.creation.tries", absolute = true)
     public Response create(Session session, @Context UriInfo uriInfo) {
         session = sessionService.register(session);
         return Response.created(UriBuilder.fromPath(uriInfo.getPath()).path("{id}").build(session.getId()))
@@ -50,7 +48,7 @@ public class SessionResource {
 
     @DELETE
     @Path("/{id}")
-    @Metered(name = "session.deletion.tries", absolute = true)
+    @Counted(name = "session.deletion.tries", absolute = true)
     public Response delete(@PathParam("id") String id) {
         Optional<Session> session = sessionService.retrieve(id);
         if (session.isPresent()) {
