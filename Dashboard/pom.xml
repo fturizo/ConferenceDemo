@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>fish.payara.demos</groupId>
+        <artifactId>conference</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>Dashboard</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <name>Conference Demo [Dashboard]</name>
+    <packaging>war</packaging>
+
+    <build>
+        <finalName>ui-dashboard</finalName>
+        <plugins>
+            <plugin>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.3.1</version>
+                <configuration>
+                    <failOnMissingWebXml>true</failOnMissingWebXml>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>fish.payara.maven.plugins</groupId>
+                <artifactId>payara-micro-maven-plugin</artifactId>
+                <version>${payara.micro.maven.version}</version>
+                <configuration>
+                    <payaraVersion>${payara.version}</payaraVersion>
+                    <deployWar>true</deployWar>
+                    <commandLineOptions>
+                        <option>
+                            <key>--port</key>
+                            <value>${conference.dashboard.port}</value>
+                        </option>
+                        <option>
+                            <key>--noCluster</key>
+                        </option>
+                    </commandLineOptions>
+                    <contextRoot>/dashboard</contextRoot>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencies>
+        <dependency>
+            <groupId>jakarta.platform</groupId>
+            <artifactId>jakarta.jakartaee-web-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.microprofile</groupId>
+            <artifactId>microprofile</artifactId>
+            <scope>provided</scope>
+            <type>pom</type>
+        </dependency>
+        <dependency>
+            <groupId>org.primefaces</groupId>
+            <artifactId>primefaces</artifactId>
+            <version>12.0.0</version>
+            <classifier>jakarta</classifier>
+        </dependency>
+        <dependency>
+            <groupId>org.webjars.npm</groupId>
+            <artifactId>primeflex</artifactId>
+            <version>3.3.0</version>
+        </dependency>
+    </dependencies>
+
+</project>

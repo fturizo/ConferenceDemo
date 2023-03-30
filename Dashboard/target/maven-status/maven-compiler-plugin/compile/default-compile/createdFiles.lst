@@ -1,0 +1,5 @@
+fish\payara\demos\conference\ui\controllers\SpeakerController.class
+fish\payara\demos\conference\ui\clients\SpeakerServiceClient.class
+fish\payara\demos\conference\ui\controllers\BaseController.class
+fish\payara\demos\conference\ui\clients\VenueServiceClient.class
+fish\payara\demos\conference\ui\entities\Speaker.class
