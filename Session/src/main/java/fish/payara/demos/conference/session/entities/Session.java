@@ -20,6 +20,7 @@ import jakarta.persistence.NamedQuery;
  * @author Fabio Turizo
  */
 @Entity
+@NamedQuery(name = "Session.all", query = "select s from Session s order by s.date")
 @NamedQuery(name = "Session.getForDay", 
             query = "select s from Session s where s.date = :date order by s.title")
 public class Session implements Serializable{

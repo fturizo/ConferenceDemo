@@ -1,11 +1,9 @@
 package fish.payara.demos.conference.vote;
 
-import jakarta.annotation.security.DeclareRoles;
 import jakarta.annotation.sql.DataSourceDefinition;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.ws.rs.ApplicationPath;
 import jakarta.ws.rs.core.Application;
-import org.eclipse.microprofile.auth.LoginConfig;
 
 /**
  *
@@ -13,8 +11,6 @@ import org.eclipse.microprofile.auth.LoginConfig;
  */
 @ApplicationPath("/")
 @ApplicationScoped
-@LoginConfig(authMethod = "MP-JWT")
-@DeclareRoles("CAN_VOTE")
 @DataSourceDefinition(
         name = "java:global/voteDS",
         className = "com.mysql.cj.jdbc.MysqlDataSource",

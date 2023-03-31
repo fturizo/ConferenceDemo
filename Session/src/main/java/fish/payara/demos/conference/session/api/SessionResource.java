@@ -30,10 +30,13 @@ public class SessionResource {
     @Inject
     SessionService sessionService;
 
+    @Context
+    UriInfo uriInfo;
+
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Counted(name = "session.creation.tries", absolute = true)
-    public Response create(Session session, @Context UriInfo uriInfo) {
+    public Response create(Session session) {
         session = sessionService.register(session);
         return Response.created(UriBuilder.fromPath(uriInfo.getPath()).path("{id}").build(session.getId()))
                 .entity(session).build();
@@ -57,6 +60,11 @@ public class SessionResource {
         } else {
             return Response.status(Status.NOT_FOUND).build();
         }
+    }
+
+    @GET
+    public List<Session> getAll(){
+        return sessionService.all();
     }
 
     @GET

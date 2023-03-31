@@ -4,8 +4,6 @@ import fish.payara.demos.combined.utils.ContainerUtils;
 import fish.payara.demos.conference.session.entities.Session;
 import fish.payara.demos.conference.speaker.entitites.Speaker;
 import fish.payara.demos.conference.vote.entities.Attendee;
-import fish.payara.demos.conference.vote.entities.Credentials;
-import fish.payara.demos.conference.vote.entities.Role;
 
 import static fish.payara.demos.combined.utils.ContainerUtils.buildURI;
 import static io.restassured.RestAssured.given;
@@ -17,7 +15,6 @@ import org.junit.jupiter.api.*;
 import org.testcontainers.containers.GenericContainer;
 import org.testcontainers.containers.MySQLContainer;
 import org.testcontainers.containers.Network;
-import org.testcontainers.containers.output.ToStringConsumer;
 import org.testcontainers.containers.wait.strategy.Wait;
 import org.testcontainers.junit.jupiter.Container;
 import org.testcontainers.junit.jupiter.Testcontainers;
@@ -28,9 +25,6 @@ import java.nio.file.Paths;
 import java.time.Duration;
 import java.time.LocalDate;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.TimeoutException;
-import java.util.logging.Logger;
 
 @Testcontainers
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
@@ -102,7 +96,7 @@ public class VoteServiceTest {
     @DisplayName("Register attendee")
     @Order(1)
     public void registerAttendee(){
-        Attendee sampleAttendee = new Attendee("Alfredo Molina", "alfredo.molina@gmail.com", "123456789", Role.CAN_VOTE);
+        Attendee sampleAttendee = new Attendee("Alfredo Molina", "alfredo.molina@gmail.com");
         given().
                 contentType(ContentType.JSON).
                 body(sampleAttendee).
@@ -113,38 +107,12 @@ public class VoteServiceTest {
     }
 
     @Test
-    @DisplayName("Login attendee success")
-    @Order(2)
-    public void loginAttendee(){
-        given().
-                contentType(ContentType.JSON).
-                body(new Credentials("alfredo.molina@gmail.com", "123456789")).
-                when().
-                post(buildURI(voteService, "/attendee/login")).
-                then().
-                assertThat().statusCode(200);
-    }
-
-    @Test
-    @DisplayName("Login attendee failure")
-    @Order(2)
-    public void loginAttendeeFail(){
-        given().
-                contentType(ContentType.JSON).
-                body(new Credentials("alfredo.molina@gmail.com", "--------")).
-                when().
-                post(buildURI(voteService, "/attendee/login")).
-                then().
-                assertThat().statusCode(400);
-    }
-
-    @Test
     @DisplayName("Rate session #1")
     @Order(3)
     public void rateSession1(){
         SessionRating sampleRating = new SessionRating("1", 5);
         given().
-                auth().preemptive().oauth2(retrieveAccessToken()).
+                //auth().preemptive().oauth2(retrieveAccessToken()).
                 contentType(ContentType.JSON).
                 body(sampleRating).
                 when().
@@ -159,7 +127,7 @@ public class VoteServiceTest {
     public void rateSession2(){
         SessionRating sampleRating = new SessionRating("1", 3);
         given().
-                auth().preemptive().oauth2(retrieveAccessToken()).
+                //auth().preemptive().oauth2(retrieveAccessToken()).
                 contentType(ContentType.JSON).
                 body(sampleRating).
                 when().
@@ -173,7 +141,7 @@ public class VoteServiceTest {
     @Order(4)
     public void getSessionSummary(){
         given().
-                auth().preemptive().oauth2(retrieveAccessToken()).
+                //auth().preemptive().oauth2(retrieveAccessToken()).
                 contentType(ContentType.JSON).
                 when().
                 get(buildURI(voteService, "/rating/summary/1")).
@@ -181,16 +149,5 @@ public class VoteServiceTest {
                 assertThat().statusCode(200).
                              and().
                              body("count", equalTo( 2));
-    }
-
-    private String retrieveAccessToken(){
-        return given().
-                    contentType(ContentType.JSON).
-                    body(new Credentials("alfredo.molina@gmail.com", "123456789")).
-                    when().
-                    post(buildURI(voteService, "/attendee/login")).
-                    then().
-                    extract().
-                    path("token");
     }
 }

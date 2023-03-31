@@ -32,9 +32,6 @@ import jakarta.ws.rs.core.Response;
 public class SessionVoteResource {
 
     @Inject
-    Principal jwtPrincipal;
-
-    @Inject
     AttendeeService attendeeService;
 
     @Inject
@@ -43,7 +40,9 @@ public class SessionVoteResource {
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     public Response rate(SessionRating rating) {
-        Attendee currentUser = attendeeService.getByEmail(jwtPrincipal.getName())
+        //TODO - Get email properly from logged in user via JWT
+        var email = "";
+        Attendee currentUser = attendeeService.getByEmail(email)
                 .orElseThrow(() -> new BadRequestException("Invalid JWT token"));
         return Response.ok(ratingService.addRating(rating, currentUser)).build();
     }

@@ -1,7 +1,7 @@
 package fish.payara.demos.conference.vote.services;
 
 import fish.payara.demos.conference.vote.entities.Attendee;
-import fish.payara.demos.conference.vote.entities.Credentials;
+
 import java.util.List;
 import java.util.Optional;
 import javax.cache.Cache;
@@ -47,20 +47,8 @@ public class AttendeeService {
             return result;
         }
     }
-    
-    public Optional<Attendee> getById(String id) {
-        return Optional.ofNullable(em.find(Attendee.class, id));
-    }
 
     public List<Attendee> getAllAttendees() {
         return em.createNamedQuery("Attendee.getAll", Attendee.class).getResultList();
-    }
-
-    public Optional<Attendee> verify(Credentials credentials) {
-        return em.createNamedQuery("Attendee.checkCredentials", Attendee.class)
-                .setParameter("email", credentials.getEmail())
-                .setParameter("password", credentials.getPassword())
-                .getResultStream()
-                .findFirst();
     }
 }

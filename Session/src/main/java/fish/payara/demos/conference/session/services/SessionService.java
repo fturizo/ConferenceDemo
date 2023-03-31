@@ -67,6 +67,10 @@ public class SessionService {
     public Optional<Session> retrieve(String id){
         return Optional.ofNullable(em.find(Session.class, id));
     }
+
+    public List<Session> all(){
+        return em.createNamedQuery("Session.all", Session.class).getResultList();
+    }
     
     public List<Session> retrieve(LocalDate date){
         return em.createNamedQuery("Session.getForDay", Session.class).setParameter("date", date).getResultList();
