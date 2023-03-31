@@ -14,7 +14,7 @@
                     <div class="flex align-items-center text-700 flex-wrap">
                         <div class="mr-5 flex align-items-center mt-3">
                             <i class="pi pi-users mr-2"/>
-                            <span>#{fn:length(speakerController.speakers)} Active Speakers!</span>
+                            <h:outputText id="countText" value="#{fn:length(speakerController.speakers)} Active Speakers!"/>
                         </div>
                     </div>
                 </div>
@@ -56,7 +56,7 @@
                     </p:panelGrid>
                     <f:facet name="footer">
                         <p:commandButton value="Save" actionListener="#{speakerController.saveNewSpeaker()}"
-                                         update="speakerTable" type="submit"/>
+                                         update="speakerTable, countText" type="submit"/>
                         <p:commandButton value="Cancel" oncomplete="PF('newSpeakerDialog').hide()"/>
                     </f:facet>
             </p:dialog>

@@ -10,17 +10,10 @@
           <root url="file://$MODULE_DIR$/Dashboard/src/main/webapp" relative="/" />
         </webroots>
         <sourceRoots>
-          <root url="file://$MODULE_DIR$/Dashboard/src/main/java" />
           <root url="file://$MODULE_DIR$/Dashboard/src/main/resources" />
+          <root url="file://$MODULE_DIR$/Dashboard/src/main/java" />
           <root url="file://$MODULE_DIR$/Dashboard/target/generated-sources/annotations" />
         </sourceRoots>
-      </configuration>
-    </facet>
-    <facet type="javaeeApplication" name="javaEEApplication">
-      <configuration>
-        <descriptors>
-          <deploymentDescriptor name="application.xml" url="file://$MODULE_DIR$/Dashboard/META-INF/application.xml" />
-        </descriptors>
       </configuration>
     </facet>
   </component>

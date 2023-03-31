@@ -4,14 +4,18 @@ This small sample project showcase the development of 3 microservices using both
 
 The domain model and real-world requirements are inspired in the https://github.com/eclipse/microprofile-conference[official conference demo project] for the Eclipse MicroProfile stack.
 
-== Services
+== Modules
 
-The following services are defined:
+The following service modules are defined:
 
 . *Speaker*: Handles all speakers data and provides a default configurable list of venues.
 . *Session*: Handles session data. Unlike the official Conference demo, here scheduling sessions is doing in tandem while creating them, so no `schedule` service is used.
 . *Vote*: Handles session rating and the creation of attendees.
 
+Additionally, the *Dashboard* module has a UI that interacts with these services.
+
 == Provisioning
 
-All three services are provisioned using https://www.payara.fish/payara_micro[Payara Micro 6]. The Payara Micro Maven Plugin is configured on all three projects.
+All three services are provisioned using https://www.payara.fish/payara_micro[Payara Community Micro 6].
+
+The Payara Micro Maven Plugin is configured on all projects for a quick launch-up.

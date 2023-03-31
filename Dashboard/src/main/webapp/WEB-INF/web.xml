@@ -20,6 +20,36 @@
         <servlet-name>Faces Servlet</servlet-name>
         <url-pattern>*.xhtml</url-pattern>
     </servlet-mapping>
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>Speaker Resources</web-resource-name>
+            <url-pattern>/speakers/*</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>admin</role-name>
+            <role-name>speaker</role-name>
+        </auth-constraint>
+    </security-constraint>
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>Session Resources</web-resource-name>
+            <url-pattern>/sessions/*</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>admin</role-name>
+            <role-name>speaker</role-name>
+            <role-name>attendee</role-name>
+        </auth-constraint>
+    </security-constraint>
+    <security-role>
+        <role-name>speaker</role-name>
+    </security-role>
+    <security-role>
+        <role-name>attendee</role-name>
+    </security-role>
+    <security-role>
+        <role-name>admin</role-name>
+    </security-role>
     <welcome-file-list>
         <welcome-file>index.xhtml</welcome-file>
     </welcome-file-list>

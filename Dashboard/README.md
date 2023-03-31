@@ -1,0 +1,32 @@
+# Conference Dashboard UI
+
+A dashboard UI interface designed using Jakarta Faces and Primefaces to interact with the deployed microservices.
+
+# Roles
+
+Users managed by this application have the following Jakarta Security roles:
+
+* `attendee`
+* `speaker`
+* `admin`
+
+By default, all users logged into the web application MUST have the `attendee` role assigned by default.
+
+# OpenID Security Configuration
+
+This web application is configured with Jakarta Security Open ID integration (through `@OpenIdAuthenticationMechanismDefinition` support). The following properties must be configured to access the OpenID provider:
+
+* `fish.payara.demos.conference.security.openid.clientId`
+* `fish.payara.demos.conference.security.openid.clientSecret`
+* `fish.payara.demos.conference.security.openid.provider.uri`
+* `fish.payara.demos.conference.security.openid.custom.namespace`
+
+# Running the Dashboard UI
+
+You can run the service directly by using the `payara-micro.jar` like this:
+
+	java -jar payara-micro.jar --deploy target/dashboard.war --noCluster --port 8880
+
+Or by running the `payara-micro:start` goal:
+
+	mvn payara-micro:start

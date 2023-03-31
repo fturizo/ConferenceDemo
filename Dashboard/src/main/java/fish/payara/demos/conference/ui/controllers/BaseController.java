@@ -2,6 +2,7 @@ package fish.payara.demos.conference.ui.controllers;
 
 import jakarta.faces.application.FacesMessage;
 import jakarta.faces.context.FacesContext;
+import org.primefaces.PrimeFaces;
 
 import java.io.Serializable;
 
@@ -17,5 +18,9 @@ public interface BaseController extends Serializable {
 
     default void addErrorMessage(String summary, String message){
         addMessage(summary, message, FacesMessage.SEVERITY_ERROR);
+    }
+
+    default void hidePFDialog(String dialogName){
+        PrimeFaces.current().executeScript("PF('" + dialogName + "').hide()");
     }
 }

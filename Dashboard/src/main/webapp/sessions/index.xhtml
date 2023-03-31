@@ -1,11 +1,106 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
-<f:view>
-    <h:outputLabel value="Hello, world"/>
-</f:view>
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+      xmlns:p="http://primefaces.org/ui">
+<h:body>
+    <ui:composition template="/WEB-INF/templates/main.xhtml">
+        <ui:define name="content">
+            <div class="flex align-items-start flex-column lg:justify-content-between lg:flex-row">
+                <div>
+                    <div class="font-medium text-3xl text-900">Sessions</div>
+                    <div class="flex align-items-center text-700 flex-wrap">
+                        <div class="mr-5 flex align-items-center mt-3">
+                            <i class="pi pi-users mr-2"/>
+                            <h:outputText id="countText" value="#{fn:length(sessionController.sessions)} Registered sessions!"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-3 lg:mt-0">
+                    <p:commandButton type="submit" value="New" icon="pi pi-calendar-plus"
+                                     styleClass="ui-button-outlined mr-2"
+                                     actionListener="#{sessionController.prepareNewSession}"
+                                     update="sessionData" oncomplete="PF('newSessionDialog').show()"
+                                     rendered="#{authController.hasAdminRole()}"/>
+                </div>
+            </div>
+            <div class="block flex flex-wrap align-items-center lg:mt-5">
+                <p:dataTable id="sessionTable" value="#{sessionController.sessions}" var="cSession">
+                    <p:column headerText="Title">
+                        <h:outputText value="#{cSession.title}"/>
+                    </p:column>
+                    <p:column headerText="Organisation">
+                        <h:outputText value="#{cSession.venue}"/>
+                    </p:column>
+                    <p:column headerText="Session Date">
+                        <h:outputText value="#{cSession.date}">
+                            <f:convertDateTime type="localDate" pattern="yyyy-MM-dd"/>
+                        </h:outputText>
+                    </p:column>
+                    <p:column headerText="Duration">
+                        <h:outputText value="#{cSession.duration}"/>
+                    </p:column>
+                    <p:column headerText="Speaker(s)">
+                        <ui:repeat value="#{cSession.speakers}" var="speaker">
+                            <h:outputText value="#{speaker}"/>
+                        </ui:repeat>
+                    </p:column>
+                    <p:column>
+                        <p:commandButton icon="pi pi-pencil" value="Edit"
+                                        rendered="#{authController.hasAdminRole()}"/>
+                        <p:commandButton icon="pi pi-calendar-minus" value="Delete"
+                                         styleClass="ml-1" rendered="#{authController.hasAdminRole()}"
+                                         actionListener="#{sessionController.removeSession(session.id)}" update="sessionTable"/>
+                    </p:column>
+                </p:dataTable>
+            </div>
+            <h:form id="sessionData">
+                <p:dialog header="Add a new Session" widgetVar="newSessionDialog" modal="true"
+                          resizable="false">
+                    <p:panelGrid layout="flex" columns="3" rendered="#{sessionController.currentSession ne null}"
+                                 contentStyleClass="align-items-baseline ui-fluid">
+                        <h:outputLabel value="Title" for="title"/>
+                        <p:inputText id="title" value="#{sessionController.currentSession.title}" label="title"/>
+                        <p:message for="title" display="tooltip"/>
+
+                        <h:outputLabel value="Venue" for="venue"/>
+                        <p:selectOneMenu id="venue" value="#{sessionController.currentSession.venue}" label="venue">
+                            <f:selectItem itemLabel="Select a venue" itemDescription=""/>
+                            <f:selectItems value="#{sessionController.venueNames}"/>
+                        </p:selectOneMenu>
+                        <p:message for="venue" display="tooltip"/>
+
+                        <h:outputLabel value="Date" for="sdate"/>
+                        <p:datePicker id="sdate" value="#{sessionController.currentSession.date}" label="sdate"
+                                    showIcon="true" pattern="yyyy-MM-dd">
+                            <f:convertDateTime type="localDate" pattern="yyyy-MM-dd"/>
+                        </p:datePicker>
+                        <p:message for="sdate" display="tooltip"/>
+
+                        <h:outputLabel value="Duration" for="duration"/>
+                        <p:inputText id="duration" value="#{sessionController.currentSession.duration}" label="duration">
+                            <f:converter converterId="java.time.Duration"/>
+                        </p:inputText>
+                        <p:message for="duration" display="tooltip"/>
+
+                        <h:outputLabel value="Speaker(s)" for="speakers"/>
+                        <p:selectCheckboxMenu id="speakers" value="#{sessionController.currentSession.speakers}" label="speakers"
+                                                multiple="true" filterMatchMode="startsWith">
+                            <f:selectItems value="#{speakerController.speakers}" var="speaker"
+                                           itemValue="#{speaker.name}" itemLabel="#{speaker.name}"/>
+                        </p:selectCheckboxMenu>
+                        <p:message for="speakers" display="tooltip"/>
+                    </p:panelGrid>
+                    <f:facet name="footer">
+                        <p:commandButton value="Save" actionListener="#{sessionController.saveNewSession()}"
+                                         update="sessionTable, countText" type="submit"/>
+                        <p:commandButton value="Cancel" oncomplete="PF('newSessionDialog').hide()"/>
+                    </f:facet>
+                </p:dialog>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+</h:body>
 </html>
