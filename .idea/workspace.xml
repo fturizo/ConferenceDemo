@@ -5,13 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="19c9dcd9-9911-4ae1-895d-64ea7062b75d" name="Default Changelist" comment="Minor update to revamped test">
+      <change afterPath="$PROJECT_DIR$/Dashboard/src/main/resources/META-INF/microprofile-config.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CombinedTestModule/CombinedTestModule.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dashboard/src/main/webapp/sessions/index.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/Dashboard/src/main/webapp/sessions/index.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Session/microservice-session.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Session/microservice-session.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Speaker/microservice-speaker.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Speaker/microservice-speaker.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vote/microservice-vote.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Vote/microservice-vote.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dashboard/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Dashboard/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Session/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Session/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Speaker/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Speaker/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vote/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Vote/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +26,13 @@
         <option value="jsf" />
         <option value="Class" />
       </list>
+    </option>
+  </component>
+  <component name="Git.Pull.Settings">
+    <option name="OPTIONS">
+      <set>
+        <option value="REBASE" />
+      </set>
     </option>
   </component>
   <component name="Git.Rebase.Settings">
@@ -49,13 +55,6 @@
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
-  </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="useMavenConfig" value="true" />
-      </MavenGeneralSettings>
-    </option>
   </component>
   <component name="MavenRunner">
     <option name="delegateBuildToMaven" value="true" />
@@ -86,7 +85,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
+    "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.30884808",
     "settings.editor.selected.configurable": "preferences.pluginManager",
@@ -189,6 +188,7 @@
         <option name="myRunnerSettings" />
         <option name="myRunnerParameters">
           <MavenRunnerParameters>
+            <option name="cmdOptions" />
             <option name="profiles">
               <set />
             </option>
@@ -201,6 +201,9 @@
             <option name="pomFileName" />
             <option name="profilesMap">
               <map />
+            </option>
+            <option name="projectsCmdOptionValues">
+              <list />
             </option>
             <option name="resolveToWorkspace" value="false" />
             <option name="workingDirPath" value="$PROJECT_DIR$/Dashboard" />
@@ -215,6 +218,7 @@
         <option name="myRunnerSettings" />
         <option name="myRunnerParameters">
           <MavenRunnerParameters>
+            <option name="cmdOptions" />
             <option name="profiles">
               <set />
             </option>
@@ -227,6 +231,9 @@
             <option name="pomFileName" />
             <option name="profilesMap">
               <map />
+            </option>
+            <option name="projectsCmdOptionValues">
+              <list />
             </option>
             <option name="resolveToWorkspace" value="false" />
             <option name="workingDirPath" value="$PROJECT_DIR$/Session" />
@@ -241,6 +248,7 @@
         <option name="myRunnerSettings" />
         <option name="myRunnerParameters">
           <MavenRunnerParameters>
+            <option name="cmdOptions" />
             <option name="profiles">
               <set />
             </option>
@@ -253,6 +261,9 @@
             <option name="pomFileName" />
             <option name="profilesMap">
               <map />
+            </option>
+            <option name="projectsCmdOptionValues">
+              <list />
             </option>
             <option name="resolveToWorkspace" value="false" />
             <option name="workingDirPath" value="$PROJECT_DIR$/Speaker" />
@@ -267,6 +278,7 @@
         <option name="myRunnerSettings" />
         <option name="myRunnerParameters">
           <MavenRunnerParameters>
+            <option name="cmdOptions" />
             <option name="profiles">
               <set />
             </option>
@@ -278,6 +290,9 @@
             <option name="pomFileName" />
             <option name="profilesMap">
               <map />
+            </option>
+            <option name="projectsCmdOptionValues">
+              <list />
             </option>
             <option name="resolveToWorkspace" value="false" />
             <option name="workingDirPath" value="$PROJECT_DIR$/Vote" />
@@ -351,16 +366,12 @@
       </method>
     </configuration>
     <configuration default="true" type="SwaggerCodegen">
-      <option name="activeConfigurationType" value="FILE" />
-      <option name="configurationPath" value="" />
-      <option name="customJreEnabled" value="false" />
       <option name="customTemplatesPath" value="" />
-      <option name="enableDebugLogging" value="false" />
       <option name="generateToPath" value="" />
       <option name="generationParameters">
         <list />
       </option>
-      <option name="generatorPath" value="" />
+      <option name="generatorType" value="OPENAPI_GENERATOR_V6" />
       <option name="jdkPath" value="Default" />
       <option name="language" value="" />
       <option name="specificationPath" value="" />
