@@ -14,12 +14,12 @@
     
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
         <jakarta.ee.version>10.0.0</jakarta.ee.version>
         <eclipse.microprofile.version>6.0</eclipse.microprofile.version>
-        <payara.version>6.2023.3</payara.version>
-        <payara.micro.maven.version>1.4.0</payara.micro.maven.version>
+        <payara.version>6.2023.7</payara.version>
+        <payara.micro.maven.version>2.0</payara.micro.maven.version>
         <failOnMissingWebXml>false</failOnMissingWebXml>
         <conference.service.speaker.port>8881</conference.service.speaker.port>
         <conference.service.session.port>8882</conference.service.session.port>

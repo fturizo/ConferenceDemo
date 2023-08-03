@@ -4,58 +4,14 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="19c9dcd9-9911-4ae1-895d-64ea7062b75d" name="Default Changelist" comment="Updated project files">
-      <change afterPath="$PROJECT_DIR$/Dashboard/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dashboard/src/main/java/fish/payara/demos/conference/ui/clients/SessionServiceClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dashboard/src/main/java/fish/payara/demos/conference/ui/controllers/AuthController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dashboard/src/main/java/fish/payara/demos/conference/ui/controllers/SessionController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dashboard/src/main/java/fish/payara/demos/conference/ui/entities/Session.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dashboard/src/main/java/fish/payara/demos/conference/ui/security/OpenIDSecurityConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dashboard/src/main/java/fish/payara/demos/conference/ui/util/DurationConverter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="19c9dcd9-9911-4ae1-895d-64ea7062b75d" name="Default Changelist" comment="Minor update to revamped test">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CombinedTestModule/src/test/java/fish/payara/demos/combined/VoteServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/CombinedTestModule/src/test/java/fish/payara/demos/combined/VoteServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dashboard.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Dashboard.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dashboard/src/main/java/fish/payara/demos/conference/ui/clients/VenueServiceClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/Dashboard/src/main/java/fish/payara/demos/conference/ui/clients/VenueServiceClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dashboard/src/main/java/fish/payara/demos/conference/ui/controllers/BaseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Dashboard/src/main/java/fish/payara/demos/conference/ui/controllers/BaseController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dashboard/src/main/java/fish/payara/demos/conference/ui/controllers/SpeakerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Dashboard/src/main/java/fish/payara/demos/conference/ui/controllers/SpeakerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dashboard/src/main/resources/META-INF/microprofile-config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Dashboard/src/main/resources/META-INF/microprofile-config.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dashboard/src/main/webapp/WEB-INF/templates/main.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/Dashboard/src/main/webapp/WEB-INF/templates/main.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dashboard/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Dashboard/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dashboard/src/main/webapp/index.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/Dashboard/src/main/webapp/index.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CombinedTestModule/CombinedTestModule.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Dashboard/src/main/webapp/sessions/index.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/Dashboard/src/main/webapp/sessions/index.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dashboard/src/main/webapp/speakers/index.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/Dashboard/src/main/webapp/speakers/index.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dashboard/target/classes/META-INF/microprofile-config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Dashboard/target/classes/META-INF/microprofile-config.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dashboard/target/classes/fish/payara/demos/conference/ui/clients/VenueServiceClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/Dashboard/target/classes/fish/payara/demos/conference/ui/clients/VenueServiceClient.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dashboard/target/classes/fish/payara/demos/conference/ui/controllers/BaseController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Dashboard/target/classes/fish/payara/demos/conference/ui/controllers/BaseController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dashboard/target/classes/fish/payara/demos/conference/ui/controllers/SpeakerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Dashboard/target/classes/fish/payara/demos/conference/ui/controllers/SpeakerController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dashboard/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Dashboard/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dashboard/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Dashboard/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dashboard/target/ui-dashboard.war" beforeDir="false" afterPath="$PROJECT_DIR$/Dashboard/target/ui-dashboard.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dashboard/target/ui-dashboard/WEB-INF/classes/META-INF/microprofile-config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Dashboard/target/ui-dashboard/WEB-INF/classes/META-INF/microprofile-config.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dashboard/target/ui-dashboard/WEB-INF/classes/fish/payara/demos/conference/ui/clients/VenueServiceClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/Dashboard/target/ui-dashboard/WEB-INF/classes/fish/payara/demos/conference/ui/clients/VenueServiceClient.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dashboard/target/ui-dashboard/WEB-INF/classes/fish/payara/demos/conference/ui/controllers/BaseController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Dashboard/target/ui-dashboard/WEB-INF/classes/fish/payara/demos/conference/ui/controllers/BaseController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dashboard/target/ui-dashboard/WEB-INF/classes/fish/payara/demos/conference/ui/controllers/SpeakerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Dashboard/target/ui-dashboard/WEB-INF/classes/fish/payara/demos/conference/ui/controllers/SpeakerController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dashboard/target/ui-dashboard/WEB-INF/templates/main.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/Dashboard/target/ui-dashboard/WEB-INF/templates/main.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dashboard/target/ui-dashboard/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Dashboard/target/ui-dashboard/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dashboard/target/ui-dashboard/index.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/Dashboard/target/ui-dashboard/index.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dashboard/target/ui-dashboard/sessions/index.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/Dashboard/target/ui-dashboard/sessions/index.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dashboard/target/ui-dashboard/speakers/index.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/Dashboard/target/ui-dashboard/speakers/index.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.adoc" beforeDir="false" afterPath="$PROJECT_DIR$/README.adoc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Session/src/main/java/fish/payara/demos/conference/session/api/SessionResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/Session/src/main/java/fish/payara/demos/conference/session/api/SessionResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Session/src/main/java/fish/payara/demos/conference/session/entities/Session.java" beforeDir="false" afterPath="$PROJECT_DIR$/Session/src/main/java/fish/payara/demos/conference/session/entities/Session.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Session/src/main/java/fish/payara/demos/conference/session/services/SessionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Session/src/main/java/fish/payara/demos/conference/session/services/SessionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vote/src/main/java/fish/payara/demos/conference/vote/VoteApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/Vote/src/main/java/fish/payara/demos/conference/vote/VoteApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vote/src/main/java/fish/payara/demos/conference/vote/api/AttendeeResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/Vote/src/main/java/fish/payara/demos/conference/vote/api/AttendeeResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vote/src/main/java/fish/payara/demos/conference/vote/api/SessionVoteResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/Vote/src/main/java/fish/payara/demos/conference/vote/api/SessionVoteResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vote/src/main/java/fish/payara/demos/conference/vote/entities/Attendee.java" beforeDir="false" afterPath="$PROJECT_DIR$/Vote/src/main/java/fish/payara/demos/conference/vote/entities/Attendee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vote/src/main/java/fish/payara/demos/conference/vote/entities/Credentials.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vote/src/main/java/fish/payara/demos/conference/vote/entities/Role.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vote/src/main/java/fish/payara/demos/conference/vote/jwt/TokenGenerator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vote/src/main/java/fish/payara/demos/conference/vote/services/AttendeeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Vote/src/main/java/fish/payara/demos/conference/vote/services/AttendeeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vote/src/main/resources/META-INF/keys/privateKey.pem" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vote/src/main/resources/META-INF/keys/publicKey.pem" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vote/src/main/resources/META-INF/microprofile-config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Vote/src/main/resources/META-INF/microprofile-config.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Session/microservice-session.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Session/microservice-session.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Speaker/microservice-speaker.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Speaker/microservice-speaker.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vote/microservice-vote.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Vote/microservice-vote.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,11 +56,6 @@
         <option name="useMavenConfig" value="true" />
       </MavenGeneralSettings>
     </option>
-    <option name="importingSettings">
-      <MavenImportingSettings>
-        <option name="workspaceImportEnabled" value="true" />
-      </MavenImportingSettings>
-    </option>
   </component>
   <component name="MavenRunner">
     <option name="delegateBuildToMaven" value="true" />
@@ -126,6 +77,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "full.screen.before.presentation.mode": "false",
+    "git-widget-placeholder": "jakarta10-update",
     "jdk.selected.JAVA_MODULE": "Zulu 17",
     "last_opened_file_path": "C:/Users/fabio/Documents/Work/Demos/ConferenceDemo/Dashboard",
     "list.type.of.created.stylesheet": "CSS",
@@ -333,31 +285,6 @@
         </option>
       </MavenSettings>
       <method v="2" />
-    </configuration>
-    <configuration default="true" type="PAYARA_MICRO_CONFIGURATION" factoryName="Maven">
-      <MavenSettings>
-        <option name="myGeneralSettings" />
-        <option name="myRunnerSettings" />
-        <option name="myRunnerParameters">
-          <MavenRunnerParameters>
-            <option name="profiles">
-              <set />
-            </option>
-            <option name="goals">
-              <list />
-            </option>
-            <option name="pomFileName" />
-            <option name="profilesMap">
-              <map />
-            </option>
-            <option name="resolveToWorkspace" value="false" />
-            <option name="workingDirPath" value="" />
-          </MavenRunnerParameters>
-        </option>
-      </MavenSettings>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
     </configuration>
     <configuration default="true" type="PayaraServerConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="Payara 5.2020.4" ALTERNATIVE_JRE_ENABLED="false">
       <option name="OPEN_IN_BROWSER" value="false" />
@@ -570,6 +497,8 @@
       <workItem from="1680125752273" duration="8129000" />
       <workItem from="1680184140943" duration="1979000" />
       <workItem from="1680186135028" duration="61707000" />
+      <workItem from="1683063943721" duration="1286000" />
+      <workItem from="1691010273054" duration="8402000" />
     </task>
     <task id="LOCAL-00001" summary="-Implemented Integration tests project with TestContainers&#10;-Updated project to Java11">
       <created>1601683750426</created>
