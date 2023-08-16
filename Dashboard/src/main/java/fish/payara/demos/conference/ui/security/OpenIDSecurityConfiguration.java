@@ -1,6 +1,7 @@
 package fish.payara.demos.conference.ui.security;
 
 import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.enterprise.inject.build.compatible.spi.ScopeInfo;
 import jakarta.inject.Inject;
 import jakarta.inject.Named;
 import jakarta.security.enterprise.authentication.mechanism.http.OpenIdAuthenticationMechanismDefinition;
@@ -13,12 +14,13 @@ import org.eclipse.microprofile.config.inject.ConfigProperty;
         clientId = "${oidConfig.clientID}",
         clientSecret = "${oidConfig.clientSecret}",
         redirectURI = "${baseURL}/index.xhtml",
+        scope = {"openid", "email", "profile", "offline_access"},
         prompt = PromptType.LOGIN,
         providerURI = "${oidConfig.providerUri}",
         jwksReadTimeout = 10_000,
         jwksConnectTimeout = 10_000,
         claimsDefinition = @ClaimsDefinition(callerGroupsClaim = "${oidConfig.callerGroupsClaim}"),
-        extraParameters = "audience=https://payara.auth0.com/api/v2/",
+        extraParameters = "audience=https://api.payara.fish/",
         logout = @LogoutDefinition(redirectURI = "${baseURL}/index.xhtml")
 )
 @Named("oidConfig")

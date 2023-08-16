@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="19c9dcd9-9911-4ae1-895d-64ea7062b75d" name="Default Changelist" comment="Minor update to revamped test">
+    <list default="true" id="19c9dcd9-9911-4ae1-895d-64ea7062b75d" name="Default Changelist" comment="Minor updates">
       <change afterPath="$PROJECT_DIR$/Dashboard/src/main/resources/META-INF/microprofile-config.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dashboard/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Dashboard/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Session/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Session/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Speaker/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Speaker/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vote/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Vote/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dashboard/src/main/java/fish/payara/demos/conference/ui/controllers/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Dashboard/src/main/java/fish/payara/demos/conference/ui/controllers/AuthController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,13 +24,6 @@
         <option value="jsf" />
         <option value="Class" />
       </list>
-    </option>
-  </component>
-  <component name="Git.Pull.Settings">
-    <option name="OPTIONS">
-      <set>
-        <option value="REBASE" />
-      </set>
     </option>
   </component>
   <component name="Git.Rebase.Settings">
@@ -56,6 +47,13 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
   <component name="MavenRunner">
     <option name="delegateBuildToMaven" value="true" />
     <option name="skipTests" value="true" />
@@ -68,30 +66,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "full.screen.before.presentation.mode": "false",
-    "git-widget-placeholder": "jakarta10-update",
-    "jdk.selected.JAVA_MODULE": "Zulu 17",
-    "last_opened_file_path": "C:/Users/fabio/Documents/Work/Demos/ConferenceDemo/Dashboard",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.30884808",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;full.screen.before.presentation.mode&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;jakarta10-update&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;Zulu 17&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/fabio/Documents/Work/Demos/ConferenceDemo/Dashboard&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.30884808&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\fabio\Documents\Work\Demos\ConferenceDemo\Dashboard" />
@@ -188,7 +186,6 @@
         <option name="myRunnerSettings" />
         <option name="myRunnerParameters">
           <MavenRunnerParameters>
-            <option name="cmdOptions" />
             <option name="profiles">
               <set />
             </option>
@@ -201,9 +198,6 @@
             <option name="pomFileName" />
             <option name="profilesMap">
               <map />
-            </option>
-            <option name="projectsCmdOptionValues">
-              <list />
             </option>
             <option name="resolveToWorkspace" value="false" />
             <option name="workingDirPath" value="$PROJECT_DIR$/Dashboard" />
@@ -218,7 +212,6 @@
         <option name="myRunnerSettings" />
         <option name="myRunnerParameters">
           <MavenRunnerParameters>
-            <option name="cmdOptions" />
             <option name="profiles">
               <set />
             </option>
@@ -231,9 +224,6 @@
             <option name="pomFileName" />
             <option name="profilesMap">
               <map />
-            </option>
-            <option name="projectsCmdOptionValues">
-              <list />
             </option>
             <option name="resolveToWorkspace" value="false" />
             <option name="workingDirPath" value="$PROJECT_DIR$/Session" />
@@ -248,7 +238,6 @@
         <option name="myRunnerSettings" />
         <option name="myRunnerParameters">
           <MavenRunnerParameters>
-            <option name="cmdOptions" />
             <option name="profiles">
               <set />
             </option>
@@ -261,9 +250,6 @@
             <option name="pomFileName" />
             <option name="profilesMap">
               <map />
-            </option>
-            <option name="projectsCmdOptionValues">
-              <list />
             </option>
             <option name="resolveToWorkspace" value="false" />
             <option name="workingDirPath" value="$PROJECT_DIR$/Speaker" />
@@ -278,7 +264,6 @@
         <option name="myRunnerSettings" />
         <option name="myRunnerParameters">
           <MavenRunnerParameters>
-            <option name="cmdOptions" />
             <option name="profiles">
               <set />
             </option>
@@ -290,9 +275,6 @@
             <option name="pomFileName" />
             <option name="profilesMap">
               <map />
-            </option>
-            <option name="projectsCmdOptionValues">
-              <list />
             </option>
             <option name="resolveToWorkspace" value="false" />
             <option name="workingDirPath" value="$PROJECT_DIR$/Vote" />
@@ -366,12 +348,16 @@
       </method>
     </configuration>
     <configuration default="true" type="SwaggerCodegen">
+      <option name="activeConfigurationType" value="FILE" />
+      <option name="configurationPath" value="" />
+      <option name="customJreEnabled" value="false" />
       <option name="customTemplatesPath" value="" />
+      <option name="enableDebugLogging" value="false" />
       <option name="generateToPath" value="" />
       <option name="generationParameters">
         <list />
       </option>
-      <option name="generatorType" value="OPENAPI_GENERATOR_V6" />
+      <option name="generatorPath" value="" />
       <option name="jdkPath" value="Default" />
       <option name="language" value="" />
       <option name="specificationPath" value="" />
@@ -509,7 +495,12 @@
       <workItem from="1680184140943" duration="1979000" />
       <workItem from="1680186135028" duration="61707000" />
       <workItem from="1683063943721" duration="1286000" />
-      <workItem from="1691010273054" duration="8402000" />
+      <workItem from="1691010273054" duration="8543000" />
+      <workItem from="1691091604592" duration="750000" />
+      <workItem from="1692043425748" duration="1233000" />
+      <workItem from="1692117066612" duration="3804000" />
+      <workItem from="1692195022421" duration="3578000" />
+      <workItem from="1692220362683" duration="3505000" />
     </task>
     <task id="LOCAL-00001" summary="-Implemented Integration tests project with TestContainers&#10;-Updated project to Java11">
       <created>1601683750426</created>
@@ -623,7 +614,31 @@
       <option name="project" value="LOCAL" />
       <updated>1680213850567</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Minor updates">
+      <option name="closed" value="true" />
+      <created>1691083813623</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1691083813623</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Minor updates">
+      <option name="closed" value="true" />
+      <created>1692223853034</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1692223853034</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Minor updates">
+      <option name="closed" value="true" />
+      <created>1692223997227</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1692223997227</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -668,7 +683,8 @@
     <MESSAGE value="Created new Dashboard UI" />
     <MESSAGE value="Updated services for newest platform" />
     <MESSAGE value="Updated project files" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated project files" />
+    <MESSAGE value="Minor updates" />
+    <option name="LAST_COMMIT_MESSAGE" value="Minor updates" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

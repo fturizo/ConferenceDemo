@@ -33,7 +33,7 @@ public class AuthController implements Serializable {
 
     public String getCurrentIdentityName(){
         var nameClaim = openIdContext.getClaims().getName();
-        return nameClaim.isPresent() ? nameClaim.get() : null;
+        return nameClaim.orElse(null);
     }
 
     public boolean hasSpeakerRole(){
