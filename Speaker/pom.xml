@@ -39,12 +39,6 @@
                             <value>speaker</value>
                         </option>
                     </commandLineOptions>
-                    <javaCommandLineOptions>
-                        <option>
-                            <key>-Djdk.util.zip.disableZip64ExtraFieldValidation</key>
-                            <value>true</value>
-                        </option>
-                    </javaCommandLineOptions>
                     <contextRoot>/</contextRoot>
                 </configuration>
             </plugin>

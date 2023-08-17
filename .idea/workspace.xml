@@ -5,10 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="19c9dcd9-9911-4ae1-895d-64ea7062b75d" name="Default Changelist" comment="Minor updates">
-      <change afterPath="$PROJECT_DIR$/Dashboard/src/main/resources/META-INF/microprofile-config.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dashboard/src/main/java/fish/payara/demos/conference/ui/controllers/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Dashboard/src/main/java/fish/payara/demos/conference/ui/controllers/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dashboard/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Dashboard/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Session/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Session/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Speaker/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Speaker/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vote/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Vote/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +37,7 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -500,7 +502,9 @@
       <workItem from="1692043425748" duration="1233000" />
       <workItem from="1692117066612" duration="3804000" />
       <workItem from="1692195022421" duration="3578000" />
-      <workItem from="1692220362683" duration="3505000" />
+      <workItem from="1692220362683" duration="4661000" />
+      <workItem from="1692278387384" duration="3202000" />
+      <workItem from="1692299712936" duration="217000" />
     </task>
     <task id="LOCAL-00001" summary="-Implemented Integration tests project with TestContainers&#10;-Updated project to Java11">
       <created>1601683750426</created>
@@ -638,7 +642,15 @@
       <option name="project" value="LOCAL" />
       <updated>1692223997227</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Minor updates">
+      <option name="closed" value="true" />
+      <created>1692224283859</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1692224283859</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
