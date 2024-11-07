@@ -1,7 +1,6 @@
 package fish.payara.demos.conference.ui.security;
 
 import jakarta.enterprise.context.ApplicationScoped;
-import jakarta.enterprise.inject.build.compatible.spi.ScopeInfo;
 import jakarta.inject.Inject;
 import jakarta.inject.Named;
 import jakarta.security.enterprise.authentication.mechanism.http.OpenIdAuthenticationMechanismDefinition;
@@ -13,10 +12,10 @@ import org.eclipse.microprofile.config.inject.ConfigProperty;
 @OpenIdAuthenticationMechanismDefinition(
         clientId = "${oidConfig.clientID}",
         clientSecret = "${oidConfig.clientSecret}",
+        providerURI = "${oidConfig.providerUri}",
         redirectURI = "${baseURL}/index.xhtml",
         scope = {"openid", "email", "profile", "offline_access"},
         prompt = PromptType.LOGIN,
-        providerURI = "${oidConfig.providerUri}",
         jwksReadTimeout = 10_000,
         jwksConnectTimeout = 10_000,
         claimsDefinition = @ClaimsDefinition(callerGroupsClaim = "${oidConfig.callerGroupsClaim}"),
@@ -25,16 +24,17 @@ import org.eclipse.microprofile.config.inject.ConfigProperty;
 )
 @Named("oidConfig")
 @ApplicationScoped
+@SuppressWarnings("unused")
 public class OpenIDSecurityConfiguration {
 
     private static final String ROLES_CLAIM = "/roles";
 
     @Inject
-    @ConfigProperty(name = "fish.payara.demos.conference.security.openid.clientId")
+    @ConfigProperty(name = "fish.payara.demos.conference.security.openid.client.id")
     private String clientID;
 
     @Inject
-    @ConfigProperty(name = "fish.payara.demos.conference.security.openid.clientSecret")
+    @ConfigProperty(name = "fish.payara.demos.conference.security.openid.client.secret")
     private String clientSecret;
 
     @Inject

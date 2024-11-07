@@ -6,19 +6,19 @@
     <name>Conference Demo</name>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
-    
+
     <organization>
         <name>Payara Services Ltd.</name>
         <url>https://www.payara.fish/support</url>
     </organization>
-    
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
         <jakarta.ee.version>10.0.0</jakarta.ee.version>
         <eclipse.microprofile.version>6.1</eclipse.microprofile.version>
-        <payara.version>6.2023.11</payara.version>
+        <payara.version>6.2024.10</payara.version>
         <payara.micro.maven.version>2.0</payara.micro.maven.version>
         <failOnMissingWebXml>false</failOnMissingWebXml>
         <conference.service.speaker.port>8881</conference.service.speaker.port>
@@ -26,7 +26,7 @@
         <conference.service.vote.port>8883</conference.service.vote.port>
         <conference.dashboard.port>8880</conference.dashboard.port>
     </properties>
-    
+
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -48,7 +48,7 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
-    
+
     <modules>
         <module>Session</module>
         <module>Vote</module>

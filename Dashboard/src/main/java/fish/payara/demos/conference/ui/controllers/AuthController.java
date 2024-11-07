@@ -22,6 +22,7 @@ public class AuthController implements Serializable {
     private static final Logger LOGGER = Logger.getLogger(AuthController.class.getName());
 
     @Inject
+    @SuppressWarnings("injection")
     SecurityContext securityContext;
 
     @Inject
@@ -40,6 +41,7 @@ public class AuthController implements Serializable {
         return securityContext.isCallerInRole("speaker");
     }
 
+    @SuppressWarnings("unused")
     public boolean hasAttendeeRole(){
         return securityContext.isCallerInRole("attendee");
     }
@@ -50,14 +52,16 @@ public class AuthController implements Serializable {
 
     public void login(){
         LOGGER.info("Signing in");
-        var request = (HttpServletRequest)FacesContext.getCurrentInstance().getExternalContext().getRequest();
-        var response = (HttpServletResponse)FacesContext.getCurrentInstance().getExternalContext().getResponse();
+        var context = FacesContext.getCurrentInstance().getExternalContext();
+        var request = (HttpServletRequest)context.getRequest();
+        var response = (HttpServletResponse)context.getResponse();
         securityContext.authenticate(request, response, new AuthenticationParameters());
     }
 
     public void logout() throws ServletException {
         LOGGER.info("Logging out");
-        var request = (HttpServletRequest)FacesContext.getCurrentInstance().getExternalContext().getRequest();
+        var context = FacesContext.getCurrentInstance().getExternalContext();
+        var request = (HttpServletRequest)context.getRequest();
         request.logout();
         FacesContext.getCurrentInstance().responseComplete();
     }
