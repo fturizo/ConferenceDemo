@@ -69,7 +69,7 @@ public class CompleteServiceTest {
                 .withCopyFileToContainer(VOTE_DEPLOYABLE, "/opt/payara/deployments/micro-service-vote.war")
                 .withCopyFileToContainer(MYSQL_DRIVER, "/opt/payara/libs/mysql-connector.jar")
                 .waitingFor(Wait.forHttp("/application.wadl").forStatusCode(200))
-                .withCommand("--deploy /opt/payara/deployments/micro-service-vote.war --addLibs /opt/payara/libs/mysql-connector.jar --enablerequesttracing --contextRoot /");
+                .withCommand("--deploy /opt/payara/deployments/micro-service-vote.war --addLibs /opt/payara/libs/mysql-connector.jar --contextRoot /");
 
     //Create sample speaker and session data
     @BeforeAll
@@ -104,11 +104,10 @@ public class CompleteServiceTest {
     @Order(3)
     public void rateSession1(){
         given().
-                //auth().preemptive().oauth2(retrieveAccessToken()).
                 contentType(ContentType.JSON).
                 body(SESSION_RATING.formatted("1", 5)).
                 when().
-                post(buildURI(voteService, "/rating")).
+                post(buildURI(voteService, "/rating/1")).
                 then().
                 assertThat().statusCode(200);
     }
@@ -118,11 +117,10 @@ public class CompleteServiceTest {
     @Order(3)
     public void rateSession2(){
         given().
-                //auth().preemptive().oauth2(retrieveAccessToken()).
                 contentType(ContentType.JSON).
                 body(SESSION_RATING.formatted("1", 3)).
                 when().
-                post(buildURI(voteService, "/rating")).
+                post(buildURI(voteService, "/rating/1")).
                 then().
                 assertThat().statusCode(200);
     }
