@@ -11,6 +11,8 @@ The following service modules are defined:
 . *Speaker*: Handles all speakers data and provides a default configurable list of venues.
 . *Session*: Handles session data. Unlike the official Conference demo, here scheduling sessions is doing in tandem while creating them, so no `schedule` service is used.
 . *Vote*: Handles session rating and the creation of attendees.
+. *CombinedTests* : A separate modules with integration testing cases for all application uses cases.
+. *Dashboard*: A UI dashboard application that integrates all services.
 
 Additionally, the *Dashboard* module has a UI that interacts with these services.
 

@@ -4,20 +4,11 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="19c9dcd9-9911-4ae1-895d-64ea7062b75d" name="Default Changelist" comment="Simplified testcontainers setup for Payara Micro containers">
-      <change afterPath="$PROJECT_DIR$/CombinedTests/src/test/java/fish/payara/demos/combined/CustomModuleTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CombinedTests/src/test/java/fish/payara/demos/combined/containers/PayaraMicroContainer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/fabio.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/fabio.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="19c9dcd9-9911-4ae1-895d-64ea7062b75d" name="Default Changelist" comment="Implemented custom Testcontainers module">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CombinedTests/src/test/java/fish/payara/demos/combined/CompleteServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/CombinedTests/src/test/java/fish/payara/demos/combined/CompleteServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CombinedTests/src/test/java/fish/payara/demos/combined/utils/JSONTemplates.java" beforeDir="false" afterPath="$PROJECT_DIR$/CombinedTests/src/test/java/fish/payara/demos/combined/utils/JSONTemplates.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Session/src/main/java/fish/payara/demos/conference/session/entities/Session.java" beforeDir="false" afterPath="$PROJECT_DIR$/Session/src/main/java/fish/payara/demos/conference/session/entities/Session.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Session/src/main/java/fish/payara/demos/conference/session/services/SessionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Session/src/main/java/fish/payara/demos/conference/session/services/SessionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vote/src/main/java/fish/payara/demos/conference/vote/api/SessionVoteResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/Vote/src/main/java/fish/payara/demos/conference/vote/api/SessionVoteResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vote/src/main/java/fish/payara/demos/conference/vote/entities/Attendee.java" beforeDir="false" afterPath="$PROJECT_DIR$/Vote/src/main/java/fish/payara/demos/conference/vote/entities/Attendee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vote/src/main/java/fish/payara/demos/conference/vote/entities/SessionRating.java" beforeDir="false" afterPath="$PROJECT_DIR$/Vote/src/main/java/fish/payara/demos/conference/vote/entities/SessionRating.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vote/src/main/java/fish/payara/demos/conference/vote/services/AttendeeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Vote/src/main/java/fish/payara/demos/conference/vote/services/AttendeeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CombinedTests/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/CombinedTests/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dashboard/README.adoc" beforeDir="false" afterPath="$PROJECT_DIR$/Dashboard/README.adoc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.adoc" beforeDir="false" afterPath="$PROJECT_DIR$/README.adoc" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -176,7 +167,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.CompleteServiceTest">
+  <component name="RunManager" selected="JUnit.CustomModuleTest">
     <configuration name="BasicServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CombinedTests" />
       <extension name="coverage">
@@ -520,8 +511,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.CompleteServiceTest" />
         <item itemvalue="JUnit.CustomModuleTest" />
+        <item itemvalue="JUnit.CompleteServiceTest" />
         <item itemvalue="JUnit.BasicServiceTest" />
         <item itemvalue="JUnit.BasicServiceTest" />
       </list>
@@ -603,7 +594,7 @@
       <workItem from="1740009398162" duration="1672000" />
       <workItem from="1740056542343" duration="31681000" />
       <workItem from="1740343129251" duration="70000" />
-      <workItem from="1740343236460" duration="5859000" />
+      <workItem from="1740343236460" duration="6179000" />
     </task>
     <task id="LOCAL-00001" summary="-Implemented Integration tests project with TestContainers&#10;-Updated project to Java11">
       <created>1601683750426</created>
@@ -689,7 +680,23 @@
       <option name="project" value="LOCAL" />
       <updated>1670282893630</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Multiple fixes and additions to dashboard app, integration tests and more">
+      <option name="closed" value="true" />
+      <created>1740349139829</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1740349139829</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Implemented custom Testcontainers module">
+      <option name="closed" value="true" />
+      <created>1740349240691</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1740349240691</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -718,7 +725,9 @@
     <MESSAGE value="Fixed it tests on Vote service + removed unused dependencies." />
     <MESSAGE value="Minor re-layout of test class" />
     <MESSAGE value="Simplified testcontainers setup for Payara Micro containers" />
-    <option name="LAST_COMMIT_MESSAGE" value="Simplified testcontainers setup for Payara Micro containers" />
+    <MESSAGE value="Multiple fixes and additions to dashboard app, integration tests and more" />
+    <MESSAGE value="Implemented custom Testcontainers module" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemented custom Testcontainers module" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
