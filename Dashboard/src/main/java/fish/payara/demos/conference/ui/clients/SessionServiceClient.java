@@ -12,7 +12,7 @@ import java.util.List;
  *
  * @author Fabio Turizo
  */
-@RegisterRestClient
+@RegisterRestClient(configKey = "session")
 @Path("/session")
 public interface SessionServiceClient {
 

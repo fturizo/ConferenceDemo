@@ -26,8 +26,7 @@
             <url-pattern>/speakers/*</url-pattern>
         </web-resource-collection>
         <auth-constraint>
-            <role-name>admin</role-name>
-            <role-name>speaker</role-name>
+            <role-name>can-see-speakers</role-name>
         </auth-constraint>
     </security-constraint>
     <security-constraint>
@@ -36,19 +35,29 @@
             <url-pattern>/sessions/*</url-pattern>
         </web-resource-collection>
         <auth-constraint>
-            <role-name>admin</role-name>
-            <role-name>speaker</role-name>
-            <role-name>attendee</role-name>
+            <role-name>can-see-sessions</role-name>
         </auth-constraint>
     </security-constraint>
     <security-role>
-        <role-name>speaker</role-name>
+        <role-name>accept-speakers</role-name>
     </security-role>
     <security-role>
-        <role-name>attendee</role-name>
+        <role-name>can-add-speakers</role-name>
     </security-role>
     <security-role>
-        <role-name>admin</role-name>
+        <role-name>can-create-sessions</role-name>
+    </security-role>
+    <security-role>
+        <role-name>can-delete-sessions</role-name>
+    </security-role>
+    <security-role>
+        <role-name>can-register-to-sessions</role-name>
+    </security-role>
+    <security-role>
+        <role-name>can-see-sessions</role-name>
+    </security-role>
+    <security-role>
+        <role-name>can-see-speakers</role-name>
     </security-role>
     <welcome-file-list>
         <welcome-file>index.xhtml</welcome-file>

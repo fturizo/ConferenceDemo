@@ -1,46 +1,36 @@
-package fish.payara.demos.conference.vote.entities;
+package fish.payara.demos.conference.ui.entities;
+
+import jakarta.json.bind.annotation.JsonbCreator;
+import jakarta.json.bind.annotation.JsonbProperty;
 
 import java.io.Serializable;
 import java.util.Objects;
-import jakarta.json.bind.annotation.JsonbCreator;
-import jakarta.json.bind.annotation.JsonbProperty;
-import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.NamedQuery;
 
 /**
  *
  * @author Fabio Turizo
  */
-@Entity
-@NamedQuery(name = "Attendee.fromEmail", query = "select at from Attendee at where at.email = :email")
-@NamedQuery(name = "Attendee.getAll", query = "select at from Attendee at order by at.email")
 public class Attendee implements Serializable {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
-
+    private String id;
     private String name;
-
     private String email;
 
-    public Attendee() {
-    }
-
-    @JsonbCreator
-    public Attendee(@JsonbProperty("name") String name,
-            @JsonbProperty("email") String email) {
+    public Attendee(String name, String email) {
         this.name = name;
         this.email = email;
     }
 
+    @JsonbCreator
+    public Attendee(@JsonbProperty("id") String id,
+                    @JsonbProperty("name") String name,
+                    @JsonbProperty("email") String email) {
+        this(name, email);
+        this.id = id;
+    }
+
     @JsonbProperty
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 

@@ -6,14 +6,14 @@
         <artifactId>conference</artifactId>
         <version>1.0.0-SNAPSHOT</version>
     </parent>
-    <artifactId>CombinedTestModule</artifactId>
+    <artifactId>CombinedTests</artifactId>
     <name>Combined Integration Tests</name>
     <packaging>jar</packaging>
 
     <properties>
         <junit.version>5.8.1</junit.version>
-        <testcontainers.version>1.17.3</testcontainers.version>
-        <mysql.jdbc.version>8.0.21</mysql.jdbc.version>
+        <testcontainers.version>1.20.4</testcontainers.version>
+        <jackson.version>2.18.2</jackson.version>
     </properties>
 
     <dependencies>
@@ -39,7 +39,7 @@
             <artifactId>junit-jupiter-engine</artifactId>
             <version>${junit.version}</version>
             <scope>test</scope>
-        </dependency>        
+        </dependency>
         <dependency>
             <groupId>org.testcontainers</groupId>
             <artifactId>testcontainers</artifactId>
@@ -59,36 +59,35 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>${mysql.jdbc.version}</version>
+            <groupId>com.mysql</groupId>
+            <artifactId>mysql-connector-j</artifactId>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-simple</artifactId>
-            <version>1.7.30</version>
+            <artifactId>slf4j-api</artifactId>
+            <version>2.0.16</version>
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>io.rest-assured</groupId>
-            <artifactId>rest-assured</artifactId>
-            <version>4.3.1</version>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-jdk14</artifactId>
+            <version>2.0.16</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.glassfish.jersey.core</groupId>
             <artifactId>jersey-client</artifactId>
-            <version>2.25.1</version>
+            <version>3.1.7</version>
             <scope>test</scope>
         </dependency>
-        <!--NEEDED for RestAssured POJO de/serialization-->
         <dependency>
-            <groupId>org.eclipse</groupId>
-            <artifactId>yasson</artifactId>
-            <version>1.0.8</version>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>rest-assured</artifactId>
+            <version>5.5.1</version>
             <scope>test</scope>
         </dependency>
+
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>microservice-speaker</artifactId>
@@ -131,7 +130,7 @@
                                     <version>${project.version}</version>
                                     <type>war</type>
                                     <destFileName>microservice-speaker.war</destFileName>
-                                </artifactItem> 
+                                </artifactItem>
                                 <artifactItem>
                                     <groupId>${project.groupId}</groupId>
                                     <artifactId>microservice-session</artifactId>
@@ -147,9 +146,9 @@
                                     <destFileName>microservice-vote.war</destFileName>
                                 </artifactItem>
                                 <artifactItem>
-                                    <groupId>mysql</groupId>
-                                    <artifactId>mysql-connector-java</artifactId>
-                                    <version>${mysql.jdbc.version}</version>
+                                    <groupId>com.mysql</groupId>
+                                    <artifactId>mysql-connector-j</artifactId>
+                                    <version>${mysql.connector-j.version}</version>
                                     <destFileName>mysql-connector.jar</destFileName>
                                     <outputDirectory>${project.build.directory}/libs</outputDirectory>
                                 </artifactItem>
@@ -164,11 +163,17 @@
             </plugin>
             <plugin>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.22.2</version>
+                <version>3.5.2</version>
             </plugin>
             <plugin>
                 <artifactId>maven-failsafe-plugin</artifactId>
-                <version>2.22.2</version>
+                <version>3.2.5</version>
+                <configuration>
+                    <systemPropertyVariables>
+                        <payaraVersion>${payara.version}</payaraVersion>
+                        <jdkVersion>${maven.compiler.target}</jdkVersion>
+                    </systemPropertyVariables>
+                </configuration>
             </plugin>
         </plugins>
     </build>

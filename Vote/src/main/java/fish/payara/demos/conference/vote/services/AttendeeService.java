@@ -22,7 +22,7 @@ public class AttendeeService {
 
     @PersistenceContext(unitName = "Vote")
     EntityManager em;
-    
+
     @Inject
     Cache<String, Attendee> attendees;
 
@@ -34,7 +34,10 @@ public class AttendeeService {
         return attendee;
     }
 
-    
+    public Optional<Attendee> getAttendee(Integer id) {
+        return Optional.ofNullable(em.find(Attendee.class, id));
+    }
+
     public Optional<Attendee> getByEmail(String email) {
         if(attendees.containsKey(email)){
             return Optional.of(attendees.get(email));

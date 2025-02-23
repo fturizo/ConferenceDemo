@@ -23,11 +23,12 @@
                                      styleClass="ui-button-outlined mr-2"
                                      actionListener="#{sessionController.prepareNewSession}"
                                      update="sessionData" oncomplete="PF('newSessionDialog').show()"
-                                     rendered="#{authController.hasAdminRole()}"/>
+                                     rendered="#{authController.hasRole('can-create-sessions')}"/>
                 </div>
             </div>
             <div class="block flex flex-wrap align-items-center lg:mt-5">
-                <p:dataTable id="sessionTable" value="#{sessionController.sessions}" var="cSession">
+                <h:form id="tableForm">
+                    <p:dataTable id="sessionTable" value="#{sessionController.sessions}" var="cSession">
                     <p:column headerText="Title">
                         <h:outputText value="#{cSession.title}"/>
                     </p:column>
@@ -47,14 +48,22 @@
                             <h:outputText value="#{speaker}"/><br/>
                         </ui:repeat>
                     </p:column>
+                    <p:column headerText="Your Rating">
+                        <p:rating id="rating" value="#{sessionController.ratings[cSession.id]}"
+                                readonly="#{sessionController.ratingChecks[cSession.id]}"/>
+                        <p:commandButton value="Rate" update="@form" proccess="@this rating"
+                                         action="#{sessionController.submitRating(cSession)}"
+                                         rendered="#{!sessionController.ratingChecks[cSession.id]}"/>
+                    </p:column>
                     <p:column>
                         <p:commandButton icon="pi pi-pencil" value="Edit"
-                                        rendered="#{authController.hasAdminRole()}"/>
+                                        rendered="#{authController.hasRole('can-edit-sessions')}"/>
                         <p:commandButton icon="pi pi-calendar-minus" value="Delete"
-                                         styleClass="ml-1" rendered="#{authController.hasAdminRole()}"
+                                         styleClass="ml-1" rendered="#{authController.hasRole('can-delete-sessions')}"
                                          actionListener="#{sessionController.removeSession(session.id)}" update="sessionTable"/>
                     </p:column>
                 </p:dataTable>
+                </h:form>
             </div>
             <h:form id="sessionData">
                 <p:dialog header="Add a new Session" widgetVar="newSessionDialog" modal="true"
@@ -95,7 +104,7 @@
                     </p:panelGrid>
                     <f:facet name="footer">
                         <p:commandButton value="Save" actionListener="#{sessionController.saveNewSession()}"
-                                         update="sessionTable, countText" type="submit"/>
+                                         update="tableForm:sessionTable, countText" type="submit"/>
                         <p:commandButton value="Cancel" oncomplete="PF('newSessionDialog').hide()"/>
                     </f:facet>
                 </p:dialog>

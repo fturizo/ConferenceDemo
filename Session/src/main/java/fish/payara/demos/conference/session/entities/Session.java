@@ -10,8 +10,6 @@ import jakarta.json.bind.annotation.JsonbCreator;
 import jakarta.json.bind.annotation.JsonbProperty;
 import jakarta.persistence.Convert;
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.NamedQuery;
 
@@ -21,23 +19,27 @@ import jakarta.persistence.NamedQuery;
  */
 @Entity
 @NamedQuery(name = "Session.all", query = "select s from Session s order by s.date")
-@NamedQuery(name = "Session.getForDay", 
+@NamedQuery(name = "Session.getForDay",
             query = "select s from Session s where s.date = :date order by s.title")
 public class Session implements Serializable{
-    
+
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
-    
+
     private String title;
     private String venue;
     private LocalDate date;
     private Duration duration;
-    
+
     @Convert(converter = SpeakersConverter.class)
     private List<String> speakers;
 
     public Session() {
+    }
+
+    public Session(String id, String title, String venue, LocalDate date, Duration duration, List<String> speakers) {
+        this(title, venue, date, duration, speakers);
+        this.id = id;
     }
 
     @JsonbCreator

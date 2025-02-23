@@ -24,25 +24,26 @@ import org.eclipse.microprofile.metrics.annotation.Timed;
  */
 @ApplicationScoped
 public class SessionService {
-    
+
     @PersistenceContext(unitName = "Session")
     EntityManager em;
-    
+
     @Inject
     SpeakerDomainChecker domainChecker;
-    
+
     AtomicInteger sessionSpaces;
-    
+    AtomicInteger sessionCounter = new AtomicInteger(0);
+
     @PostConstruct
     public void init(){
         sessionSpaces = new AtomicInteger(5);
     }
-            
+
     @Gauge(name = "session.spaces", absolute = true, unit = MetricUnits.NONE)
     public Integer sessionSpaces(){
         return sessionSpaces.get();
     }
-    
+
     @Transactional
     @Timed(name = "session.creation.time", absolute = true)
     public Session register(Session session){
@@ -51,19 +52,21 @@ public class SessionService {
         }else if(sessionSpaces.get() == 0){
             throw new IllegalStateException("No more session spaces");
         }
+        var id = String.valueOf(sessionCounter.incrementAndGet());
+        session = new Session(id, session.getTitle(), session.getVenue(), session.getDate(), session.getDuration(), session.getSpeakers());
         em.persist(session);
         em.flush();
         sessionSpaces.decrementAndGet();
         return session;
     }
-    
+
     @Transactional
     public void delete(Session session){
         em.remove(em.find(Session.class, session.getId()));
         sessionSpaces.incrementAndGet();
         em.flush();
     }
-    
+
     public Optional<Session> retrieve(String id){
         return Optional.ofNullable(em.find(Session.class, id));
     }
@@ -71,7 +74,7 @@ public class SessionService {
     public List<Session> all(){
         return em.createNamedQuery("Session.all", Session.class).getResultList();
     }
-    
+
     public List<Session> retrieve(LocalDate date){
         return em.createNamedQuery("Session.getForDay", Session.class).setParameter("date", date).getResultList();
     }

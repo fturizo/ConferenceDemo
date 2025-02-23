@@ -8,11 +8,7 @@ import java.util.List;
 
 import jakarta.enterprise.context.RequestScoped;
 import jakarta.inject.Inject;
-import jakarta.ws.rs.Consumes;
-import jakarta.ws.rs.GET;
-import jakarta.ws.rs.POST;
-import jakarta.ws.rs.Path;
-import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 import org.eclipse.microprofile.faulttolerance.Retry;
@@ -25,10 +21,10 @@ import org.eclipse.microprofile.faulttolerance.Retry;
 @RequestScoped
 @Produces(MediaType.APPLICATION_JSON)
 public class AttendeeResource {
-    
+
     @Inject
     AttendeeService attendeeService;
-    
+
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Retry(maxRetries = 5, delay = 30, delayUnit = ChronoUnit.SECONDS)
@@ -37,10 +33,18 @@ public class AttendeeResource {
         return Response.created(URI.create("/attendee/" + result.getId()))
                        .entity(result).build();
     }
-    
+
     @GET
     @Path("/all")
     public List<Attendee> getAll(){
         return attendeeService.getAllAttendees();
+    }
+
+    @GET
+    public Response getAttendee(@QueryParam("email") String email){
+        var builder = attendeeService.getByEmail(email)
+                .map(Response::ok)
+                .orElse(Response.status(404));
+        return builder.build();
     }
 }

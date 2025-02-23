@@ -17,12 +17,12 @@ import java.util.logging.Logger;
 
 @Named
 @RequestScoped
+@SuppressWarnings("injection")
 public class AuthController implements Serializable {
 
     private static final Logger LOGGER = Logger.getLogger(AuthController.class.getName());
 
     @Inject
-    @SuppressWarnings("injection")
     SecurityContext securityContext;
 
     @Inject
@@ -37,17 +37,22 @@ public class AuthController implements Serializable {
         return nameClaim.orElse(null);
     }
 
-    public boolean hasSpeakerRole(){
-        return securityContext.isCallerInRole("speaker");
+    public String getCurrentIdentityEmail(){
+        var emailClaim = openIdContext.getClaims().getEmail();
+        return emailClaim.orElse(null);
     }
 
-    @SuppressWarnings("unused")
-    public boolean hasAttendeeRole(){
-        return securityContext.isCallerInRole("attendee");
+    public String getAccessToken(){
+        if(isAuthenticated()){
+            var token = openIdContext.getAccessToken();
+            return token.getToken();
+        }else {
+            return "NONE";
+        }
     }
 
-    public boolean hasAdminRole(){
-        return securityContext.isCallerInRole("admin");
+    public boolean hasRole(String role){
+        return securityContext.isCallerInRole(role);
     }
 
     public void login(){

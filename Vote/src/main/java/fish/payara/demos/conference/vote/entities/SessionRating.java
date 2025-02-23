@@ -2,7 +2,6 @@ package fish.payara.demos.conference.vote.entities;
 
 import java.io.Serializable;
 import java.util.Objects;
-import java.util.Optional;
 import jakarta.json.bind.annotation.JsonbCreator;
 import jakarta.json.bind.annotation.JsonbProperty;
 import jakarta.json.bind.annotation.JsonbTransient;
@@ -14,36 +13,38 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.NamedQuery;
 
 /**
- * 
+ *
  * @author Fabio Turizo
  */
 @Entity
-@NamedQuery(name = "SessionRating.getForSession", 
+@NamedQuery(name = "SessionRating.getForSession",
             query = "select sr from SessionRating sr where sr.sessionId = :id order by sr.rating")
+@NamedQuery(name = "SessionRating.getByAttendee",
+            query = "select sr from SessionRating sr where sr.attendee.id = :id order by sr.sessionId")
 public class SessionRating implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private String id;
-    
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+
     private String sessionId;
     private String sessionSummary;
-    
+
     private Integer rating;
-    
+
     @ManyToOne
     private Attendee attendee;
 
     public SessionRating() {
     }
-    
+
     @JsonbCreator
     public SessionRating(@JsonbProperty("sessionId") String sessionId,
                          @JsonbProperty("rating") Integer rating) {
         this.sessionId = sessionId;
         this.rating = rating;
     }
-    
+
     private SessionRating(String sessionId, Integer rating, Attendee attendee) {
         this(sessionId, rating);
         this.attendee = attendee;
@@ -55,7 +56,7 @@ public class SessionRating implements Serializable {
     }
 
     @JsonbProperty
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 
@@ -73,7 +74,7 @@ public class SessionRating implements Serializable {
     public Integer getRating() {
         return rating;
     }
-    
+
     @JsonbProperty
     public String getAttendeeName(){
         return attendee != null ? attendee.getName() : null;
@@ -83,11 +84,11 @@ public class SessionRating implements Serializable {
     public Attendee getAttendee() {
         return attendee;
     }
-    
+
     public SessionRating with(Attendee attendee){
         return new SessionRating(sessionId, rating, attendee);
     }
-    
+
     public SessionRating with(Attendee attendee, String sessionSummary){
         return new SessionRating(sessionId, sessionSummary, rating, attendee);
     }

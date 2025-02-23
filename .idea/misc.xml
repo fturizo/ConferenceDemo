@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="EntryPointsManager">
+    <writeAnnotations>
+      <writeAnnotation name="org.testcontainers.junit.jupiter.Container" />
+    </writeAnnotations>
+  </component>
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/CombinedTests/pom.xml" />
+        <option value="$PROJECT_DIR$/Speaker/pom.xml" />
+        <option value="$PROJECT_DIR$/Session/pom.xml" />
+        <option value="$PROJECT_DIR$/Vote/pom.xml" />
+        <option value="$PROJECT_DIR$/Dashboard/pom.xml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_21" default="true" project-jdk-name="Zulu 21" project-jdk-type="JavaSDK" />
+  <component name="ProjectType">
+    <option name="id" value="jpab" />
+  </component>
+</project>

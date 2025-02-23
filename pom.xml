@@ -18,13 +18,14 @@
         <maven.compiler.target>21</maven.compiler.target>
         <jakarta.ee.version>10.0.0</jakarta.ee.version>
         <eclipse.microprofile.version>6.1</eclipse.microprofile.version>
-        <payara.version>6.2024.10</payara.version>
-        <payara.micro.maven.version>2.0</payara.micro.maven.version>
+        <payara.version>6.2025.1</payara.version>
+        <payara.micro.maven.version>2.3</payara.micro.maven.version>
         <failOnMissingWebXml>false</failOnMissingWebXml>
         <conference.service.speaker.port>8881</conference.service.speaker.port>
         <conference.service.session.port>8882</conference.service.session.port>
         <conference.service.vote.port>8883</conference.service.vote.port>
         <conference.dashboard.port>8880</conference.dashboard.port>
+        <mysql.connector-j.version>8.4.0</mysql.connector-j.version>
     </properties>
 
     <dependencyManagement>
@@ -46,6 +47,11 @@
                 <version>1.1.1</version>
                 <scope>provided</scope>
             </dependency>
+            <dependency>
+                <groupId>com.mysql</groupId>
+                <artifactId>mysql-connector-j</artifactId>
+                <version>${mysql.connector-j.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -53,7 +59,7 @@
         <module>Session</module>
         <module>Vote</module>
         <module>Speaker</module>
-        <module>CombinedTestModule</module>
+        <module>CombinedTests</module>
         <module>Dashboard</module>
     </modules>
 </project>

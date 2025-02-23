@@ -14,10 +14,10 @@ import java.util.List;
  *
  * @author Fabio Turizo
  */
-@RegisterRestClient
+@RegisterRestClient(configKey = "speaker")
 @Path("/speaker")
 public interface SpeakerServiceClient {
-    
+
     @GET
     List<Speaker> getSpeakers();
 

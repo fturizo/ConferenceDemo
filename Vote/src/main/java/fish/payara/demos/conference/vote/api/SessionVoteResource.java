@@ -1,17 +1,12 @@
 package fish.payara.demos.conference.vote.api;
 
-import fish.payara.demos.conference.vote.entities.Attendee;
 import fish.payara.demos.conference.vote.entities.SessionRating;
 import fish.payara.demos.conference.vote.services.AttendeeService;
 import fish.payara.demos.conference.vote.services.SessionRatingService;
-import java.security.Principal;
 import java.util.List;
-import io.opentracing.Tracer;
-import jakarta.annotation.security.RolesAllowed;
 import jakarta.enterprise.context.RequestScoped;
 import jakarta.inject.Inject;
 import jakarta.json.Json;
-import jakarta.ws.rs.BadRequestException;
 import jakarta.ws.rs.Consumes;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.POST;
@@ -28,7 +23,6 @@ import jakarta.ws.rs.core.Response;
 @Path("/rating")
 @RequestScoped
 @Produces(MediaType.APPLICATION_JSON)
-@RolesAllowed("CAN_VOTE")
 public class SessionVoteResource {
 
     @Inject
@@ -38,19 +32,28 @@ public class SessionVoteResource {
     SessionRatingService ratingService;
 
     @POST
+    @Path("/{attendee}")
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response rate(SessionRating rating) {
+    public Response rate(@PathParam("attendee") Integer attendeeId, SessionRating rating) {
         //TODO - Get email properly from logged in user via JWT
-        var email = "";
-        Attendee currentUser = attendeeService.getByEmail(email)
-                .orElseThrow(() -> new BadRequestException("Invalid JWT token"));
-        return Response.ok(ratingService.addRating(rating, currentUser)).build();
+        var attendee = attendeeService.getAttendee(attendeeId);
+        if(attendee.isPresent()) {
+            return Response.ok(ratingService.addRating(rating, attendee.get())).build();
+        }else{
+            return Response.status(Response.Status.BAD_REQUEST).build();
+        }
     }
 
     @GET
     @Path("/session/{session}")
     public List<SessionRating> getRatingsForSession(@PathParam("session") String sessionId) {
         return ratingService.getRatingsFor(sessionId);
+    }
+
+    @GET
+    @Path("/{attendee}")
+    public List<SessionRating> getRatingsByAttendee(@PathParam("attendee") String attendeeId) {
+        return ratingService.getRatingsBy(attendeeId);
     }
 
     @GET

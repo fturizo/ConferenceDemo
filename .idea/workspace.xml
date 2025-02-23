@@ -4,10 +4,20 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="19c9dcd9-9911-4ae1-895d-64ea7062b75d" name="Default Changelist" comment="Updated project for newer Payara Platform versions">
+    <list default="true" id="19c9dcd9-9911-4ae1-895d-64ea7062b75d" name="Default Changelist" comment="Simplified testcontainers setup for Payara Micro containers">
+      <change afterPath="$PROJECT_DIR$/CombinedTests/src/test/java/fish/payara/demos/combined/CustomModuleTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CombinedTests/src/test/java/fish/payara/demos/combined/containers/PayaraMicroContainer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/fabio.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/fabio.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dashboard/src/main/java/fish/payara/demos/conference/ui/controllers/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Dashboard/src/main/java/fish/payara/demos/conference/ui/controllers/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dashboard/src/main/java/fish/payara/demos/conference/ui/security/OpenIDSecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/Dashboard/src/main/java/fish/payara/demos/conference/ui/security/OpenIDSecurityConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CombinedTests/src/test/java/fish/payara/demos/combined/CompleteServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/CombinedTests/src/test/java/fish/payara/demos/combined/CompleteServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CombinedTests/src/test/java/fish/payara/demos/combined/utils/JSONTemplates.java" beforeDir="false" afterPath="$PROJECT_DIR$/CombinedTests/src/test/java/fish/payara/demos/combined/utils/JSONTemplates.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Session/src/main/java/fish/payara/demos/conference/session/entities/Session.java" beforeDir="false" afterPath="$PROJECT_DIR$/Session/src/main/java/fish/payara/demos/conference/session/entities/Session.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Session/src/main/java/fish/payara/demos/conference/session/services/SessionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Session/src/main/java/fish/payara/demos/conference/session/services/SessionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vote/src/main/java/fish/payara/demos/conference/vote/api/SessionVoteResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/Vote/src/main/java/fish/payara/demos/conference/vote/api/SessionVoteResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vote/src/main/java/fish/payara/demos/conference/vote/entities/Attendee.java" beforeDir="false" afterPath="$PROJECT_DIR$/Vote/src/main/java/fish/payara/demos/conference/vote/entities/Attendee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vote/src/main/java/fish/payara/demos/conference/vote/entities/SessionRating.java" beforeDir="false" afterPath="$PROJECT_DIR$/Vote/src/main/java/fish/payara/demos/conference/vote/entities/SessionRating.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vote/src/main/java/fish/payara/demos/conference/vote/services/AttendeeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Vote/src/main/java/fish/payara/demos/conference/vote/services/AttendeeService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,21 +38,64 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="test-module" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;fturizo&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/fturizo/ConferenceDemo.git&quot;,
+    &quot;accountId&quot;: &quot;57e08c9e-daa1-45ee-baf6-b191e59fbf87&quot;
+  }
+}</component>
+  <component name="JpbToolWindowState">
+    <option name="myId2FirstActivated">
+      <map>
+        <entry key="JPA Inspector" value="true" />
+        <entry key="JPA Palette" value="true" />
+        <entry key="JPA Structure" value="true" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="true" />
+      </map>
+    </option>
+    <option name="myId2Visible">
+      <map>
+        <entry key="JPA Inspector" value="true" />
+        <entry key="JPA Structure" value="false" />
+        <entry key="com.haulmont.jpb.jpaInspector" value="false" />
+        <entry key="com.haulmont.jpb.jpaPalette" value="false" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="false" />
+      </map>
+    </option>
+  </component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="alwaysUpdateSnapshots" value="true" />
+        <option name="failureBehavior" value="FAST" />
+      </MavenGeneralSettings>
+    </option>
   </component>
   <component name="MavenRunner">
     <option name="delegateBuildToMaven" value="true" />
     <option name="skipTests" value="true" />
   </component>
-  <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
-  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
   <component name="ProjectId" id="1TIvUwvKeuVVe0rzl5KrpKWvJ2r" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -53,39 +106,61 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Docker.Run Keycloak.executor": "Run",
+    "Docker.Run MySQL DB.executor": "Run",
+    "JUnit.BasicServiceTest.executor": "Run",
+    "JUnit.CompleteServiceTest.executor": "Run",
+    "JUnit.CustomModuleTest.executor": "Run",
+    "JUnit.SessionServiceTest.executor": "Run",
+    "JUnit.SpeakerServiceTest.executor": "Run",
+    "Maven.CombinedTestModule [install].executor": "Run",
+    "Maven.CombinedTests [clean].executor": "Run",
+    "Maven.CombinedTests [install].executor": "Run",
+    "Maven.CombinedTests [package].executor": "Run",
     "Maven.Dashboard [clean].executor": "Run",
-    "Maven.Dashboard [compile,war:war].executor": "Run",
+    "Maven.Dashboard [install].executor": "Run",
     "Maven.Dashboard [package].executor": "Run",
-    "Maven.Run Dashboard.executor": "Run",
-    "Maven.Run SessionService.executor": "Run",
-    "Maven.Run SpeakerService.executor": "Run",
     "Maven.conference [clean].executor": "Run",
     "Maven.conference [install].executor": "Run",
     "Maven.conference [package].executor": "Run",
+    "Maven.microservice-vote [clean].executor": "Run",
+    "Maven.microservice-vote [package].executor": "Run",
+    "Payara Micro.Run Dashboard UI.executor": "Debug",
+    "Payara Micro.Run Session Service.executor": "Run",
+    "Payara Micro.Run Speaker Service.executor": "Run",
+    "Payara Micro.Run Vote Service.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "jakarta10-update",
-    "last_opened_file_path": "C:/Users/fabio/Documents/Work/Demos/ConferenceDemo/Dashboard",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/fabio/Documents/Work/Demos/ConferenceDemo",
     "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15429688",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "settings.sync"
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\fabio\Documents\Work\Demos\ConferenceDemo" />
       <recent name="C:\Users\fabio\Documents\Work\Conference\ConferenceDemo\CombinedTestModule" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\fabio\Documents\Work\Demos\ConferenceDemo\Dashboard\src\main\resources\META-INF" />
+      <recent name="C:\Users\fabio\Documents\Work\Demos\ConferenceDemo" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="fish.payara.demos.conference.ui.entities" />
+      <recent name="fish.payara.demos.conference.ui.clients" />
       <recent name="fish.payara.demos.combined" />
     </key>
   </component>
@@ -101,19 +176,9 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Maven.Run Dashboard">
-    <configuration name="All in CombinedTestModule" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CombinedTestModule" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SessionServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CombinedTestModule" />
+  <component name="RunManager" selected="JUnit.CompleteServiceTest">
+    <configuration name="BasicServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CombinedTests" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="fish.payara.demos.combined.*" />
@@ -121,14 +186,15 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="fish.payara.demos.combined" />
-      <option name="MAIN_CLASS_NAME" value="fish.payara.demos.combined.SessionServiceTest" />
+      <option name="MAIN_CLASS_NAME" value="fish.payara.demos.combined.BasicServiceTest" />
+      <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SpeakerServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CombinedTestModule" />
+    <configuration name="CompleteServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CombinedTests" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="fish.payara.demos.combined.*" />
@@ -136,15 +202,15 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="fish.payara.demos.combined" />
-      <option name="MAIN_CLASS_NAME" value="fish.payara.demos.combined.SpeakerServiceTest" />
+      <option name="MAIN_CLASS_NAME" value="fish.payara.demos.combined.CompleteServiceTest" />
       <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="VoteServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CombinedTestModule" />
+    <configuration name="CustomModuleTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CombinedTests" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="fish.payara.demos.combined.*" />
@@ -152,27 +218,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="fish.payara.demos.combined" />
-      <option name="MAIN_CLASS_NAME" value="fish.payara.demos.combined.VoteServiceTest" />
-      <option name="METHOD_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="fish.payara.demos.combined.CustomModuleTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="conference" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="conference" />
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Run Dashboard" type="MavenRunConfiguration" factoryName="Maven">
+    <configuration name="Run Dashboard UI" type="PAYARA_MICRO_CONFIGURATION" factoryName="Maven">
       <MavenSettings>
         <option name="myGeneralSettings" />
         <option name="myRunnerSettings" />
@@ -184,7 +236,8 @@
             </option>
             <option name="goals">
               <list>
-                <option value="payara-micro:start" />
+                <option value="package" />
+                <option value="payara-micro:dev" />
               </list>
             </option>
             <option name="multimoduleDir" />
@@ -200,13 +253,9 @@
           </MavenRunnerParameters>
         </option>
       </MavenSettings>
-      <method v="2">
-        <option name="BuildArtifacts" enabled="true">
-          <artifact name="Dashboard:war" />
-        </option>
-      </method>
+      <method v="2" />
     </configuration>
-    <configuration name="Run SessionService" type="MavenRunConfiguration" factoryName="Maven">
+    <configuration name="Run Session Service" type="PAYARA_MICRO_CONFIGURATION" factoryName="Maven">
       <MavenSettings>
         <option name="myGeneralSettings" />
         <option name="myRunnerSettings" />
@@ -218,6 +267,7 @@
             </option>
             <option name="goals">
               <list>
+                <option value="package" />
                 <option value="payara-micro:start" />
               </list>
             </option>
@@ -236,7 +286,7 @@
       </MavenSettings>
       <method v="2" />
     </configuration>
-    <configuration name="Run SpeakerService" type="MavenRunConfiguration" factoryName="Maven">
+    <configuration name="Run Speaker Service" type="PAYARA_MICRO_CONFIGURATION" factoryName="Maven">
       <MavenSettings>
         <option name="myGeneralSettings" />
         <option name="myRunnerSettings" />
@@ -248,6 +298,7 @@
             </option>
             <option name="goals">
               <list>
+                <option value="package" />
                 <option value="payara-micro:start" />
               </list>
             </option>
@@ -261,6 +312,56 @@
             </option>
             <option name="resolveToWorkspace" value="false" />
             <option name="workingDirPath" value="$PROJECT_DIR$/Speaker" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <configuration name="Run Vote Service" type="PAYARA_MICRO_CONFIGURATION" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings">
+          <MavenRunnerSettings>
+            <option name="delegateBuildToMaven" value="true" />
+            <option name="environmentProperties">
+              <map>
+                <entry key="DB_JDBC_URL" value="jdbc:mysql://localhost:3306/test" />
+                <entry key="DB_PASSWORD" value="test" />
+                <entry key="DB_USER" value="test" />
+              </map>
+            </option>
+            <option name="jreName" value="#USE_PROJECT_JDK" />
+            <option name="mavenProperties">
+              <map />
+            </option>
+            <option name="passParentEnv" value="true" />
+            <option name="runMavenInBackground" value="true" />
+            <option name="skipTests" value="true" />
+            <option name="vmOptions" value="" />
+          </MavenRunnerSettings>
+        </option>
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="cmdOptions" />
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="package" />
+                <option value="payara-micro:start" />
+              </list>
+            </option>
+            <option name="multimoduleDir" />
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="projectsCmdOptionValues">
+              <list />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$/Vote" />
           </MavenRunnerParameters>
         </option>
       </MavenSettings>
@@ -330,24 +431,109 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Run Keycloak" type="docker-deploy" factoryName="docker-image" server-name="Docker">
+      <deployment type="docker-image">
+        <settings>
+          <option name="imageTag" value="quay.io/keycloak/keycloak:21.1.1" />
+          <option name="command" value="start-dev --import-realm" />
+          <option name="containerName" value="keycloak-test" />
+          <option name="envVars">
+            <list>
+              <DockerEnvVarImpl>
+                <option name="name" value="KEYCLOAK_ADMIN" />
+                <option name="value" value="admin" />
+              </DockerEnvVarImpl>
+              <DockerEnvVarImpl>
+                <option name="name" value="KEYCLOAK_ADMIN_PASSWORD" />
+                <option name="value" value="admin" />
+              </DockerEnvVarImpl>
+            </list>
+          </option>
+          <option name="portBindings">
+            <list>
+              <DockerPortBindingImpl>
+                <option name="containerPort" value="8080" />
+                <option name="hostPort" value="8888" />
+              </DockerPortBindingImpl>
+            </list>
+          </option>
+          <option name="volumeBindings">
+            <list>
+              <DockerVolumeBindingImpl>
+                <option name="containerPath" value="/opt/keycloak/data/import" />
+                <option name="hostPath" value="C:\Users\fabio\Documents\Work\Demos\ConferenceDemo\.data" />
+                <option name="readOnly" value="true" />
+              </DockerVolumeBindingImpl>
+            </list>
+          </option>
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="Run MySQL DB" type="docker-deploy" factoryName="docker-image" server-name="Docker">
+      <deployment type="docker-image">
+        <settings>
+          <option name="imageTag" value="mysql:8.4.0" />
+          <option name="containerName" value="mysql-test" />
+          <option name="envVars">
+            <list>
+              <DockerEnvVarImpl>
+                <option name="name" value="MYSQL_ROOT_PASSWORD" />
+                <option name="value" value="test" />
+              </DockerEnvVarImpl>
+              <DockerEnvVarImpl>
+                <option name="name" value="MYSQL_USER" />
+                <option name="value" value="test" />
+              </DockerEnvVarImpl>
+              <DockerEnvVarImpl>
+                <option name="name" value="MYSQL_DATABASE" />
+                <option name="value" value="test" />
+              </DockerEnvVarImpl>
+              <DockerEnvVarImpl>
+                <option name="name" value="MYSQL_PASSWORD" />
+                <option name="value" value="test" />
+              </DockerEnvVarImpl>
+            </list>
+          </option>
+          <option name="portBindings">
+            <list>
+              <DockerPortBindingImpl>
+                <option name="containerPort" value="3306" />
+                <option name="hostPort" value="3306" />
+              </DockerPortBindingImpl>
+            </list>
+          </option>
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
     <list>
-      <item itemvalue="JUnit.All in CombinedTestModule" />
-      <item itemvalue="JUnit.SessionServiceTest" />
-      <item itemvalue="JUnit.SpeakerServiceTest" />
-      <item itemvalue="JUnit.VoteServiceTest" />
-      <item itemvalue="Maven.Run SpeakerService" />
-      <item itemvalue="Maven.Run SessionService" />
-      <item itemvalue="Maven.Run Dashboard" />
+      <item itemvalue="Docker.Run Keycloak" />
+      <item itemvalue="Docker.Run MySQL DB" />
+      <item itemvalue="JUnit.CustomModuleTest" />
+      <item itemvalue="JUnit.CompleteServiceTest" />
+      <item itemvalue="JUnit.BasicServiceTest" />
+      <item itemvalue="Payara Micro.Run Speaker Service" />
+      <item itemvalue="Payara Micro.Run Session Service" />
+      <item itemvalue="Payara Micro.Run Vote Service" />
+      <item itemvalue="Payara Micro.Run Dashboard UI" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.VoteServiceTest" />
-        <item itemvalue="JUnit.SpeakerServiceTest" />
-        <item itemvalue="JUnit.SessionServiceTest" />
-        <item itemvalue="JUnit.All in CombinedTestModule" />
-        <item itemvalue="JUnit.SpeakerServiceTest" />
+        <item itemvalue="JUnit.CompleteServiceTest" />
+        <item itemvalue="JUnit.CustomModuleTest" />
+        <item itemvalue="JUnit.BasicServiceTest" />
+        <item itemvalue="JUnit.BasicServiceTest" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-b114ca120d71-intellij.indexing.shared.core-IU-242.21829.142" />
+        <option value="bundled-js-predefined-d6986cc7102b-7c0b70fcd90d-JavaScript-IU-242.21829.142" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="project-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
@@ -412,7 +598,12 @@
       <workItem from="1668453833677" duration="184000" />
       <workItem from="1668694989972" duration="1352000" />
       <workItem from="1670252155157" duration="8384000" />
-      <workItem from="1673018693590" duration="825000" />
+      <workItem from="1739890191175" duration="1813000" />
+      <workItem from="1739912791212" duration="28711000" />
+      <workItem from="1740009398162" duration="1672000" />
+      <workItem from="1740056542343" duration="31681000" />
+      <workItem from="1740343129251" duration="70000" />
+      <workItem from="1740343236460" duration="5859000" />
     </task>
     <task id="LOCAL-00001" summary="-Implemented Integration tests project with TestContainers&#10;-Updated project to Java11">
       <created>1601683750426</created>
@@ -498,23 +689,7 @@
       <option name="project" value="LOCAL" />
       <updated>1670282893630</updated>
     </task>
-    <task id="LOCAL-00013" summary="Updated project for newer Payara Platform versions">
-      <option name="closed" value="true" />
-      <created>1730945818064</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1730945818064</updated>
-    </task>
-    <task id="LOCAL-00014" summary="Updated project for newer Payara Platform versions">
-      <option name="closed" value="true" />
-      <created>1731017960922</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1731017960922</updated>
-    </task>
-    <option name="localTasksCounter" value="15" />
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -543,8 +718,23 @@
     <MESSAGE value="Fixed it tests on Vote service + removed unused dependencies." />
     <MESSAGE value="Minor re-layout of test class" />
     <MESSAGE value="Simplified testcontainers setup for Payara Micro containers" />
-    <MESSAGE value="Updated project for newer Payara Platform versions" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated project for newer Payara Platform versions" />
+    <option name="LAST_COMMIT_MESSAGE" value="Simplified testcontainers setup for Payara Micro containers" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Session/src/main/java/fish/payara/demos/conference/session/services/SessionService.java</url>
+          <line>49</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="PAYARA_MICRO_CONFIGURATION">
+        <watch expression="((HashMap.Node)((HashMap)ratings).entrySet().toArray()[0]).getValue()" custom="java.util.HashMap.Node,java.util.HashMap" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -1,15 +1,13 @@
 package fish.payara.demos.combined;
 
 import fish.payara.demos.combined.utils.ContainerUtils;
-import fish.payara.demos.conference.session.entities.Session;
-import fish.payara.demos.conference.speaker.entitites.Speaker;
-import fish.payara.demos.conference.vote.entities.Attendee;
 
+import static fish.payara.demos.combined.BasicServiceTest.SPEAKER_DEPLOYABLE;
 import static fish.payara.demos.combined.utils.ContainerUtils.buildURI;
+import static fish.payara.demos.combined.utils.JSONTemplates.*;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
 
-import fish.payara.demos.conference.vote.entities.SessionRating;
 import io.restassured.http.ContentType;
 import org.junit.jupiter.api.*;
 import org.testcontainers.containers.GenericContainer;
@@ -24,44 +22,43 @@ import org.testcontainers.utility.MountableFile;
 import java.nio.file.Paths;
 import java.time.Duration;
 import java.time.LocalDate;
-import java.util.List;
 
 @Testcontainers
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-public class VoteServiceTest {
+public class CompleteServiceTest {
 
     static final MountableFile VOTE_DEPLOYABLE = MountableFile.forHostPath(Paths.get("target/wars/microservice-vote.war").toAbsolutePath(), 0777);
     static final MountableFile MYSQL_DRIVER = MountableFile.forHostPath("target/libs/mysql-connector.jar", 0777);
     private static final Network INTERNAL_NETWORK = Network.newNetwork();
     private static final String DB_ALIAS = "db";
-    
+
     @Container
     private static MySQLContainer dbContainer = new MySQLContainer<>(DockerImageName.parse("mysql:8.0"))
                                                 .withNetwork(INTERNAL_NETWORK)
                                                 .withNetworkAliases(DB_ALIAS);
     @Container
-    private static GenericContainer speakerService = new GenericContainer(ContainerUtils.PAYARA_MICRO_IMAGE)
+    private static GenericContainer speakerService = new GenericContainer(ContainerUtils.getDefaultImage())
                 .withNetwork(INTERNAL_NETWORK)
                 .withNetworkAliases("speaker")
                 .withExposedPorts(ContainerUtils.HTTP_PORT)
-                .withCopyFileToContainer(SpeakerServiceTest.SPEAKER_DEPLOYABLE, "/opt/payara/deployments/microservice-speaker.war")
+                .withCopyFileToContainer(SPEAKER_DEPLOYABLE, "/opt/payara/deployments/microservice-speaker.war")
                 .waitingFor(Wait.forHttp("/application.wadl").forStatusCode(200))
                 .withCommand("--noCluster --deploy /opt/payara/deployments/microservice-speaker.war --contextRoot /");
 
     @Container
-    private static GenericContainer sessionService = new GenericContainer(ContainerUtils.PAYARA_MICRO_IMAGE)
+    private static GenericContainer sessionService = new GenericContainer(ContainerUtils.getDefaultImage())
                 .withExposedPorts(ContainerUtils.HTTP_PORT)
                 .dependsOn(speakerService)
                 .withNetwork(INTERNAL_NETWORK)
                 .withNetworkAliases("session")
                 .withEnv("fish.payara.demos.conference.session.rs.clients.SpeakerServiceClient/mp-rest/url", "http://speaker:8080/")
                 .withEnv("fish.payara.demos.conference.session.rs.clients.VenueServiceClient/mp-rest/url", "http://speaker:8080/")
-                .withCopyFileToContainer(SessionServiceTest.SESSION_DEPLOYABLE, "/opt/payara/deployments/microservice-session.war")
+                .withCopyFileToContainer(BasicServiceTest.SESSION_DEPLOYABLE, "/opt/payara/deployments/microservice-session.war")
                 .waitingFor(Wait.forHttp("/application.wadl").forStatusCode(200))
                 .withCommand("--noCluster --deploy /opt/payara/deployments/microservice-session.war --contextRoot /");
 
     @Container
-    private static GenericContainer voteService = new GenericContainer(ContainerUtils.PAYARA_MICRO_IMAGE)
+    private static GenericContainer voteService = new GenericContainer(ContainerUtils.getDefaultImage())
                 .withExposedPorts(ContainerUtils.HTTP_PORT)
                 .withNetwork(INTERNAL_NETWORK)
                 .dependsOn(dbContainer, sessionService)
@@ -77,17 +74,14 @@ public class VoteServiceTest {
     //Create sample speaker and session data
     @BeforeAll
     public static void prepareData(){
-        Speaker sampleSpeaker = new Speaker("Fabio Turizo", "Payara Services Limited");
         given().
                 contentType(ContentType.JSON).
-                body(sampleSpeaker).
+                body(SPEAKER.formatted("Fabio Turizo", "Payara Services Limited")).
                 when().
                 post(buildURI(speakerService, "/speaker"));
-
-        Session sampleSession = new Session("Easy IT with TestContainers", "OCARINA", LocalDate.now(), Duration.ofHours(1), List.of(sampleSpeaker.getName()));
         given().
                 contentType(ContentType.JSON).
-                body(sampleSession).
+                body(SESSION.formatted("Easy IT with TestContainers", "OCARINA", LocalDate.now(), Duration.ofHours(1), "[\"Fabio Turizo\"]")).
                 when().
                 post(buildURI(sessionService, "/session"));
     }
@@ -96,25 +90,23 @@ public class VoteServiceTest {
     @DisplayName("Register attendee")
     @Order(1)
     public void registerAttendee(){
-        Attendee sampleAttendee = new Attendee("Alfredo Molina", "alfredo.molina@gmail.com");
         given().
                 contentType(ContentType.JSON).
-                body(sampleAttendee).
+                body(ATTENDEE.formatted("Alfredo Molina", "alfredo.molina@gmail.com")).
                 when().
                 post(buildURI(voteService, "/attendee")).
                 then().
-                assertThat().statusCode(201);     
+                assertThat().statusCode(201);
     }
 
     @Test
     @DisplayName("Rate session #1")
     @Order(3)
     public void rateSession1(){
-        SessionRating sampleRating = new SessionRating("1", 5);
         given().
                 //auth().preemptive().oauth2(retrieveAccessToken()).
                 contentType(ContentType.JSON).
-                body(sampleRating).
+                body(SESSION_RATING.formatted("1", 5)).
                 when().
                 post(buildURI(voteService, "/rating")).
                 then().
@@ -125,11 +117,10 @@ public class VoteServiceTest {
     @DisplayName("Rate session #2")
     @Order(3)
     public void rateSession2(){
-        SessionRating sampleRating = new SessionRating("1", 3);
         given().
                 //auth().preemptive().oauth2(retrieveAccessToken()).
                 contentType(ContentType.JSON).
-                body(sampleRating).
+                body(SESSION_RATING.formatted("1", 3)).
                 when().
                 post(buildURI(voteService, "/rating")).
                 then().
@@ -141,7 +132,6 @@ public class VoteServiceTest {
     @Order(4)
     public void getSessionSummary(){
         given().
-                //auth().preemptive().oauth2(retrieveAccessToken()).
                 contentType(ContentType.JSON).
                 when().
                 get(buildURI(voteService, "/rating/summary/1")).

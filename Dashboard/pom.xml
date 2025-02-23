@@ -14,11 +14,6 @@
     <name>Conference Demo [Dashboard]</name>
     <packaging>war</packaging>
 
-    <properties>
-        <!-- For the dashboard we use an older Payara Micro version due to a JSF compatibility bug-->
-        <payara.version>6.2024.8</payara.version>
-    </properties>
-
     <build>
         <finalName>ui-dashboard</finalName>
         <plugins>

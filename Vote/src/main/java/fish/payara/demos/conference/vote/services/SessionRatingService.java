@@ -27,13 +27,13 @@ import org.eclipse.microprofile.faulttolerance.Timeout;
 public class SessionRatingService {
 
     private static final Logger LOG = Logger.getLogger(SessionRatingService.class.getName());
-    
+
     @PersistenceContext(unitName = "Vote")
     EntityManager em;
-    
+
     @Inject
     SessionDataService dataService;
-    
+
     @Inject
     Cache<String, List<SessionRating>> cachedRatings;
 
@@ -46,7 +46,7 @@ public class SessionRatingService {
         em.flush();
         return rating;
     }
-    
+
     public SessionRating cacheRating(SessionRating rating, Attendee attendee){
         LOG.info("Caching attendee session rating");
         rating = rating.with(attendee);
@@ -54,10 +54,9 @@ public class SessionRatingService {
         cachedRatings.get(rating.getSessionId()).add(rating);
         return rating;
     }
-    
+
     @Timeout(value = 1, unit = MINUTES)
     public List<SessionRating> getRatingsFor(String sessionId){
-        isSlow(11);
         var results = em.createNamedQuery("SessionRating.getForSession", SessionRating.class)
                                         .setParameter("id", sessionId)
                                         .getResultList();
@@ -66,15 +65,10 @@ public class SessionRatingService {
         }
         return results;
     }
-    
-    private boolean isSlow(int secondsToSleep){
-        if (Math.random() > 0.4) {
-            LOG.log(Level.INFO, "Sleeping {0}s", secondsToSleep);
-            try {
-                Thread.sleep(secondsToSleep * 1_000);
-            } catch (InterruptedException ex) {}
-            return true;
-        }
-        return false;
+
+    public List<SessionRating> getRatingsBy(String attendeeId){
+        return em.createNamedQuery("SessionRating.getByAttendee", SessionRating.class)
+                .setParameter("id", attendeeId)
+                .getResultList();
     }
 }

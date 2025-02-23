@@ -10,7 +10,7 @@ import java.util.List;
  *
  * @author Fabio Turizo
  */
-@RegisterRestClient
+@RegisterRestClient(configKey = "speaker")
 @Path("/venue")
 public interface VenueServiceClient {
 

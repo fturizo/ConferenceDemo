@@ -17,9 +17,9 @@
                     <p:menubar styleClass="p-3 m-0 font-medium mb-3">
                         <p:menuitem value="Home" outcome="home" icon="pi pi-home"/>
                         <p:menuitem value="Speakers" outcome="speakers" icon="pi pi-users"
-                                    rendered="#{authController.authenticated and (authController.hasAdminRole() or authController.hasSpeakerRole())}"/>
+                                    rendered="#{authController.authenticated and authController.hasRole('can-see-speakers')}"/>
                         <p:menuitem value="Sessions" outcome="sessions" icon="pi pi-calendar"
-                                    rendered="#{authController.authenticated}"/>
+                                    rendered="#{authController.authenticated and authController.hasRole('can-see-sessions')}"/>
                         <f:facet name="options">
                             <p:commandButton value="Sign in" icon="pi pi-fw pi-sign-in" styleClass="ui-button-info"
                                              actionListener="#{authController.login}" ajax="false"
