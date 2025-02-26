@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="19c9dcd9-9911-4ae1-895d-64ea7062b75d" name="Default Changelist" comment="Implemented custom Testcontainers module">
+    <list default="true" id="19c9dcd9-9911-4ae1-895d-64ea7062b75d" name="Default Changelist" comment="Implemented propagation of JWT from the dashboard to the services (session, vote)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CombinedTests/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/CombinedTests/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dashboard/README.adoc" beforeDir="false" afterPath="$PROJECT_DIR$/Dashboard/README.adoc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.adoc" beforeDir="false" afterPath="$PROJECT_DIR$/README.adoc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vote/src/main/java/fish/payara/demos/conference/vote/services/SessionRatingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Vote/src/main/java/fish/payara/demos/conference/vote/services/SessionRatingService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,7 +27,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="test-module" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -114,22 +112,25 @@
     "Maven.Dashboard [install].executor": "Run",
     "Maven.Dashboard [package].executor": "Run",
     "Maven.conference [clean].executor": "Run",
+    "Maven.conference [compile].executor": "Run",
     "Maven.conference [install].executor": "Run",
     "Maven.conference [package].executor": "Run",
     "Maven.microservice-vote [clean].executor": "Run",
+    "Maven.microservice-vote [install].executor": "Run",
     "Maven.microservice-vote [package].executor": "Run",
-    "Payara Micro.Run Dashboard UI.executor": "Debug",
+    "Payara Micro.Run Dashboard UI.executor": "Run",
     "Payara Micro.Run Session Service.executor": "Run",
     "Payara Micro.Run Speaker Service.executor": "Run",
-    "Payara Micro.Run Vote Service.executor": "Run",
+    "Payara Micro.Run Vote Service.executor": "Debug",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "full-secured",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/fabio/Documents/Work/Demos/ConferenceDemo",
+    "last_opened_file_path": "C:/Users/fabio/Documents/Work/Demos/MicroServicesKeycloak",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
@@ -167,7 +168,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.CustomModuleTest">
+  <component name="RunManager" selected="Payara Micro.Run Dashboard UI">
     <configuration name="BasicServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CombinedTests" />
       <extension name="coverage">
@@ -521,8 +522,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-b114ca120d71-intellij.indexing.shared.core-IU-242.21829.142" />
-        <option value="bundled-js-predefined-d6986cc7102b-7c0b70fcd90d-JavaScript-IU-242.21829.142" />
+        <option value="bundled-jdk-9823dce3aa75-fdfe4dae3a2d-intellij.indexing.shared.core-IU-243.22562.218" />
+        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-IU-243.22562.218" />
       </set>
     </attachedChunks>
   </component>
@@ -595,6 +596,9 @@
       <workItem from="1740056542343" duration="31681000" />
       <workItem from="1740343129251" duration="70000" />
       <workItem from="1740343236460" duration="6179000" />
+      <workItem from="1740352670693" duration="333000" />
+      <workItem from="1740437007790" duration="1213000" />
+      <workItem from="1740577242579" duration="10734000" />
     </task>
     <task id="LOCAL-00001" summary="-Implemented Integration tests project with TestContainers&#10;-Updated project to Java11">
       <created>1601683750426</created>
@@ -696,7 +700,15 @@
       <option name="project" value="LOCAL" />
       <updated>1740349240691</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Implemented propagation of JWT from the dashboard to the services (session, vote)">
+      <option name="closed" value="true" />
+      <created>1740595815436</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1740595815436</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -727,7 +739,8 @@
     <MESSAGE value="Simplified testcontainers setup for Payara Micro containers" />
     <MESSAGE value="Multiple fixes and additions to dashboard app, integration tests and more" />
     <MESSAGE value="Implemented custom Testcontainers module" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implemented custom Testcontainers module" />
+    <MESSAGE value="Implemented propagation of JWT from the dashboard to the services (session, vote)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemented propagation of JWT from the dashboard to the services (session, vote)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

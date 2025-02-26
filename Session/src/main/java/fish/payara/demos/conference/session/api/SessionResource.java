@@ -5,6 +5,8 @@ import fish.payara.demos.conference.session.services.SessionService;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
+
+import jakarta.annotation.security.RolesAllowed;
 import jakarta.enterprise.context.RequestScoped;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.Consumes;
@@ -25,6 +27,7 @@ import org.eclipse.microprofile.metrics.annotation.Counted;
 @Path("/session")
 @RequestScoped
 @Produces(MediaType.APPLICATION_JSON)
+@RolesAllowed("can-see-sessions")
 public class SessionResource {
 
     @Inject
@@ -36,6 +39,7 @@ public class SessionResource {
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Counted(name = "session.creation.tries", absolute = true)
+    @RolesAllowed("can-create-sessions")
     public Response create(Session session) {
         session = sessionService.register(session);
         return Response.created(UriBuilder.fromPath(uriInfo.getPath()).path("{id}").build(session.getId()))
@@ -51,6 +55,7 @@ public class SessionResource {
 
     @DELETE
     @Path("/{id}")
+    @RolesAllowed("can-delete-sessions")
     @Counted(name = "session.deletion.tries", absolute = true)
     public Response delete(@PathParam("id") String id) {
         Optional<Session> session = sessionService.retrieve(id);

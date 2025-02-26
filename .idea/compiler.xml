@@ -13,5 +13,8 @@
         <module name="CombinedTests" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="CombinedTestModule" target="21" />
+    </bytecodeTargetLevel>
   </component>
 </project>

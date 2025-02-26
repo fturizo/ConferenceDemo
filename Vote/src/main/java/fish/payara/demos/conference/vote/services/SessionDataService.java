@@ -22,11 +22,14 @@ public class SessionDataService {
     @RestClient
     private SessionServiceClient sessionService;
 
-    public String getSessionSummary(String id) {
+    public String getSessionSummary(String token, String id) {
         try{
-            JsonObject result = sessionService.get(id);
-            return String.format("[%s] - %s, V: %s", result.getString("date"), 
-                                result.getString("title"), result.getString("venue"));
+            JsonObject result = sessionService.get("Bearer %s".formatted(token), id);
+            return "[%s] - %s, V: %s".formatted(
+                    result.getString("date"),
+                    result.getString("title"),
+                    result.getString("venue")
+            );
         }catch(WebApplicationException ex){
             LOG.log(Level.WARNING, "Error retrieving session with id: {0} message: {1}", new Object[]{id, ex.getLocalizedMessage()});
             throw new IllegalArgumentException("Invalid session id");
