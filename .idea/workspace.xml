@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="19c9dcd9-9911-4ae1-895d-64ea7062b75d" name="Default Changelist" comment="Implemented propagation of JWT from the dashboard to the services (session, vote)">
-      <change afterPath="$PROJECT_DIR$/Session/src/main/java/fish/payara/demos/conference/session/services/SessionInitializer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Speaker/src/main/java/fish/payara/demos/conference/speaker/services/SpeakerInitializer.java" afterDir="false" />
+    <list default="true" id="19c9dcd9-9911-4ae1-895d-64ea7062b75d" name="Default Changelist" comment="Introduced initializer components">
+      <change afterPath="$PROJECT_DIR$/Dashboard/src/main/java/fish/payara/demos/conference/ui/controllers/TokenPrinterController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dashboard/src/main/java/fish/payara/demos/conference/ui/controllers/SessionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Dashboard/src/main/java/fish/payara/demos/conference/ui/controllers/SessionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dashboard/src/main/webapp/index.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/Dashboard/src/main/webapp/index.xhtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -171,7 +172,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Payara Micro.Run Dashboard UI">
+  <component name="RunManager" selected="Payara Micro.Run Vote Service">
     <configuration name="BasicServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CombinedTests" />
       <extension name="coverage">
@@ -702,7 +703,15 @@
       <option name="project" value="LOCAL" />
       <updated>1740349240691</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Introduced initializer components">
+      <option name="closed" value="true" />
+      <created>1741285962859</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1741285962859</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -733,7 +742,8 @@
     <MESSAGE value="Simplified testcontainers setup for Payara Micro containers" />
     <MESSAGE value="Multiple fixes and additions to dashboard app, integration tests and more" />
     <MESSAGE value="Implemented custom Testcontainers module" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implemented custom Testcontainers module" />
+    <MESSAGE value="Introduced initializer components" />
+    <option name="LAST_COMMIT_MESSAGE" value="Introduced initializer components" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -742,11 +752,6 @@
           <url>file://$PROJECT_DIR$/Session/src/main/java/fish/payara/demos/conference/session/services/SessionService.java</url>
           <line>49</line>
           <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Dashboard/src/main/java/fish/payara/demos/conference/ui/controllers/SessionController.java</url>
-          <line>65</line>
-          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

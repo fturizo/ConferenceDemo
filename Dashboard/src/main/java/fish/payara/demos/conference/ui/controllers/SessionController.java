@@ -26,10 +26,6 @@ import java.util.stream.Collectors;
 
 @Named
 @ViewScoped
-/*
-  TODO - features to add:
-  - Give session summary
- */
 public class SessionController implements BaseController{
 
     private static final Logger LOGGER = Logger.getLogger(SessionController.class.getName());
