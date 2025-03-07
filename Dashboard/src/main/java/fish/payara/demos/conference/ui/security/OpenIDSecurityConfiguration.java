@@ -17,6 +17,7 @@ import org.eclipse.microprofile.config.inject.ConfigProperty;
         prompt = PromptType.LOGIN,
         jwksReadTimeout = 10_000,
         jwksConnectTimeout = 10_000,
+        tokenAutoRefresh = true,
         extraParameters = "audience=https://api.payara.fish/",
         logout = @LogoutDefinition(redirectURI = "${baseURL}/index.xhtml")
 )

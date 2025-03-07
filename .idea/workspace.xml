@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="19c9dcd9-9911-4ae1-895d-64ea7062b75d" name="Default Changelist" comment="Introduced initializer components">
-      <change afterPath="$PROJECT_DIR$/Dashboard/src/main/java/fish/payara/demos/conference/ui/controllers/TokenPrinterController.java" afterDir="false" />
+    <list default="true" id="19c9dcd9-9911-4ae1-895d-64ea7062b75d" name="Default Changelist" comment="Minor fix to speaker operations">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dashboard/src/main/java/fish/payara/demos/conference/ui/controllers/SessionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Dashboard/src/main/java/fish/payara/demos/conference/ui/controllers/SessionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dashboard/src/main/webapp/index.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/Dashboard/src/main/webapp/index.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CombinedTests/src/test/java/fish/payara/demos/combined/BasicServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/CombinedTests/src/test/java/fish/payara/demos/combined/BasicServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CombinedTests/src/test/java/fish/payara/demos/combined/CompleteServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/CombinedTests/src/test/java/fish/payara/demos/combined/CompleteServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dashboard/src/main/java/fish/payara/demos/conference/ui/controllers/SpeakerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Dashboard/src/main/java/fish/payara/demos/conference/ui/controllers/SpeakerController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,55 +95,55 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Docker.Run Keycloak.executor": "Run",
-    "Docker.Run MySQL DB.executor": "Run",
-    "JUnit.BasicServiceTest.executor": "Run",
-    "JUnit.CompleteServiceTest.executor": "Run",
-    "JUnit.CustomModuleTest.executor": "Run",
-    "JUnit.SessionServiceTest.executor": "Run",
-    "JUnit.SpeakerServiceTest.executor": "Run",
-    "Maven.CombinedTestModule [install].executor": "Run",
-    "Maven.CombinedTests [clean].executor": "Run",
-    "Maven.CombinedTests [install].executor": "Run",
-    "Maven.CombinedTests [package].executor": "Run",
-    "Maven.Dashboard [clean].executor": "Run",
-    "Maven.Dashboard [install].executor": "Run",
-    "Maven.Dashboard [package].executor": "Run",
-    "Maven.conference [clean].executor": "Run",
-    "Maven.conference [install].executor": "Run",
-    "Maven.conference [package].executor": "Run",
-    "Maven.conference [validate].executor": "Run",
-    "Maven.microservice-vote [clean].executor": "Run",
-    "Maven.microservice-vote [package].executor": "Run",
-    "Payara Micro.Run Dashboard UI.executor": "Debug",
-    "Payara Micro.Run Session Service.executor": "Run",
-    "Payara Micro.Run Speaker Service.executor": "Run",
-    "Payara Micro.Run Vote Service.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "full.screen.before.presentation.mode": "false",
-    "git-widget-placeholder": "full-secured",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/fabio/Documents/Work/Demos/ConferenceDemo",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15429688",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.editor",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Docker.Run Keycloak.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.Run MySQL DB.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.BasicServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CompleteServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CustomModuleTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SessionServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SpeakerServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.CombinedTestModule [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.CombinedTests [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.CombinedTests [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.CombinedTests [package].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.Dashboard [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.Dashboard [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.Dashboard [package].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.conference [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.conference [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.conference [package].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.conference [validate].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.microservice-vote [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.microservice-vote [package].executor&quot;: &quot;Run&quot;,
+    &quot;Payara Micro.Run Dashboard UI.executor&quot;: &quot;Debug&quot;,
+    &quot;Payara Micro.Run Session Service.executor&quot;: &quot;Run&quot;,
+    &quot;Payara Micro.Run Speaker Service.executor&quot;: &quot;Run&quot;,
+    &quot;Payara Micro.Run Vote Service.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;full.screen.before.presentation.mode&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;full-secured&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/fabio/Documents/Work/Demos/ConferenceDemo&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15429688&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.editor&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\fabio\Documents\Work\Demos\ConferenceDemo" />
@@ -172,7 +172,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Payara Micro.Run Vote Service">
+  <component name="RunManager" selected="Payara Micro.Run Dashboard UI">
     <configuration name="BasicServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CombinedTests" />
       <extension name="coverage">
@@ -602,6 +602,8 @@
       <workItem from="1740343129251" duration="70000" />
       <workItem from="1740343236460" duration="6179000" />
       <workItem from="1740662579114" duration="6614000" />
+      <workItem from="1741370095384" duration="1195000" />
+      <workItem from="1741385997764" duration="1011000" />
     </task>
     <task id="LOCAL-00001" summary="-Implemented Integration tests project with TestContainers&#10;-Updated project to Java11">
       <created>1601683750426</created>
@@ -711,7 +713,23 @@
       <option name="project" value="LOCAL" />
       <updated>1741285962859</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Introduced token printer">
+      <option name="closed" value="true" />
+      <created>1741287709765</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1741287709765</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Minor fix to speaker operations">
+      <option name="closed" value="true" />
+      <created>1741371286113</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1741371286113</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -743,7 +761,9 @@
     <MESSAGE value="Multiple fixes and additions to dashboard app, integration tests and more" />
     <MESSAGE value="Implemented custom Testcontainers module" />
     <MESSAGE value="Introduced initializer components" />
-    <option name="LAST_COMMIT_MESSAGE" value="Introduced initializer components" />
+    <MESSAGE value="Introduced token printer" />
+    <MESSAGE value="Minor fix to speaker operations" />
+    <option name="LAST_COMMIT_MESSAGE" value="Minor fix to speaker operations" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
