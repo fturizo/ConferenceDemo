@@ -1,6 +1,7 @@
 package fish.payara.demos.conference.ui.controllers;
 
 import jakarta.enterprise.context.RequestScoped;
+import jakarta.enterprise.inject.spi.CDI;
 import jakarta.faces.context.FacesContext;
 import jakarta.inject.Inject;
 import jakarta.inject.Named;
@@ -69,5 +70,15 @@ public class AuthController implements Serializable {
         var request = (HttpServletRequest)context.getRequest();
         request.logout();
         FacesContext.getCurrentInstance().responseComplete();
+    }
+
+    public static String buildAuthHeader(){
+        var self = CDI.current().select(AuthController.class).get();
+        if(self.isAuthenticated()) {
+            var token = self.getAccessToken();
+            return "Bearer %s".formatted(token);
+        }else {
+            return null;
+        }
     }
 }

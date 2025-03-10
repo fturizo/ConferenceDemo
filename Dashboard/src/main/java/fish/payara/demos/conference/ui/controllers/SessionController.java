@@ -26,11 +26,6 @@ import java.util.stream.Collectors;
 
 @Named
 @ViewScoped
-/*
-  TODO - features to add:
-  - Vote on sessions
-  - Auto register attendees the first time (so they can vote on sessions)
- */
 public class SessionController implements BaseController{
 
     private static final Logger LOGGER = Logger.getLogger(SessionController.class.getName());
@@ -172,7 +167,7 @@ public class SessionController implements BaseController{
     public void submitRating(Session session){
         var rating = processRating(session);
         if(rating != null && rating > 0){
-            var response = this.sessionVoteServiceClient.rate(currentAttendee.getId(), new SessionRating(session, rating));
+            var response = this.sessionVoteServiceClient.rate(new SessionRating(session, rating));
             if(response.getStatus() == 200) {
                 ratingChecks.put(session.getId(), true);
                 addSuccessMessage("Rating Successful", "Thank you for rating this session!");

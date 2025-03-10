@@ -12,13 +12,13 @@ import java.util.Objects;
  */
 public class SessionRating implements Serializable {
 
-    private String id;
+    private Integer id;
     private String sessionId;
     private String sessionSummary;
     private Integer rating;
 
     @JsonbCreator
-    public SessionRating(@JsonbProperty("id") String id,
+    public SessionRating(@JsonbProperty("id") Integer id,
                          @JsonbProperty("sessionId") String sessionId,
                          @JsonbProperty("sessionSummary") String sessionSummary,
                          @JsonbProperty("rating") Integer rating) {
@@ -34,7 +34,7 @@ public class SessionRating implements Serializable {
         this.rating = rating;
     }
 
-    public String getId() {
+    public Integer getId() {
         return id;
     }
     public String getSessionId() {

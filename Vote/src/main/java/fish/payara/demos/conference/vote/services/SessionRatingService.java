@@ -7,7 +7,6 @@ import java.time.temporal.ChronoUnit;
 import static java.time.temporal.ChronoUnit.MINUTES;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.cache.Cache;
 import jakarta.enterprise.context.ApplicationScoped;
@@ -32,24 +31,21 @@ public class SessionRatingService {
     EntityManager em;
 
     @Inject
-    SessionDataService dataService;
-
-    @Inject
     Cache<String, List<SessionRating>> cachedRatings;
 
     @Transactional
     @Retry(maxRetries = 3, delay = 1, delayUnit = ChronoUnit.MINUTES)
     @Fallback(fallbackMethod = "cacheRating")
-    public SessionRating addRating(SessionRating rating, Attendee attendee) {
-        rating = rating.with(attendee, dataService.getSessionSummary(rating.getSessionId()));
+    public SessionRating addRating(SessionRating rating, Attendee attendee, String summary) {
+        rating = rating.with(attendee, summary);
         em.persist(rating);
         em.flush();
         return rating;
     }
 
-    public SessionRating cacheRating(SessionRating rating, Attendee attendee){
+    public SessionRating cacheRating(SessionRating rating, Attendee attendee, String summary){
         LOG.info("Caching attendee session rating");
-        rating = rating.with(attendee);
+        rating = rating.with(attendee, summary);
         cachedRatings.putIfAbsent(rating.getSessionId(), new ArrayList<>());
         cachedRatings.get(rating.getSessionId()).add(rating);
         return rating;
@@ -66,7 +62,7 @@ public class SessionRatingService {
         return results;
     }
 
-    public List<SessionRating> getRatingsBy(String attendeeId){
+    public List<SessionRating> getRatingsBy(Integer attendeeId){
         return em.createNamedQuery("SessionRating.getByAttendee", SessionRating.class)
                 .setParameter("id", attendeeId)
                 .getResultList();

@@ -27,6 +27,9 @@ public class SpeakerController implements BaseController{
     @Inject
     @RestClient
     SpeakerServiceClient speakerService;
+    @Named
+    @Inject
+    private AuthController authController;
 
     @PostConstruct
     public void init(){
@@ -51,13 +54,18 @@ public class SpeakerController implements BaseController{
     }
 
     public void saveNewSpeaker(){
-        try {
-            speakerService.addSpeaker(currentSpeaker);
-            loadSpeakers();
+        if(!authController.hasRole("can-add-speakers")){
             hidePFDialog("newSpeakerDialog");
-            addSuccessMessage("Success!", "New speaker added");
-        }catch(Exception exception){
-            addErrorMessage("An error has occurred!", exception.getMessage());
+            addErrorMessage("Unauthorized operation", "Cannot add speaker");
+        }else {
+            try {
+                speakerService.addSpeaker(currentSpeaker);
+                loadSpeakers();
+                hidePFDialog("newSpeakerDialog");
+                addSuccessMessage("Success!", "New speaker added");
+            } catch (Exception exception) {
+                addErrorMessage("An error has occurred!", exception.getMessage());
+            }
         }
     }
 

@@ -38,6 +38,8 @@ public class BasicServiceTest {
                 .waitingFor(Wait.forHttp("/application.wadl").forStatusCode(200))
                 .withCommand("--noCluster --deploy /opt/payara/deployments/microservice-speaker.war --contextRoot /");
 
+    //TODO - Session service requires authentication through keycloak
+
     @Container
     private static GenericContainer sessionService = new GenericContainer(ContainerUtils.getDefaultImage())
             .withExposedPorts(ContainerUtils.HTTP_PORT)

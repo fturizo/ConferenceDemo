@@ -45,6 +45,7 @@ public class CompleteServiceTest {
                 .waitingFor(Wait.forHttp("/application.wadl").forStatusCode(200))
                 .withCommand("--noCluster --deploy /opt/payara/deployments/microservice-speaker.war --contextRoot /");
 
+    //TODO - Both the sesssion and vote services require authentication details
     @Container
     private static GenericContainer sessionService = new GenericContainer(ContainerUtils.getDefaultImage())
                 .withExposedPorts(ContainerUtils.HTTP_PORT)

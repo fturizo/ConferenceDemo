@@ -12,7 +12,7 @@ import java.util.Objects;
  */
 public class Attendee implements Serializable {
 
-    private String id;
+    private Integer id;
     private String name;
     private String email;
 
@@ -22,7 +22,7 @@ public class Attendee implements Serializable {
     }
 
     @JsonbCreator
-    public Attendee(@JsonbProperty("id") String id,
+    public Attendee(@JsonbProperty("id") Integer id,
                     @JsonbProperty("name") String name,
                     @JsonbProperty("email") String email) {
         this(name, email);
@@ -30,7 +30,7 @@ public class Attendee implements Serializable {
     }
 
     @JsonbProperty
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 
